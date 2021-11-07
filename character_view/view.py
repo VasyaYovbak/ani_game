@@ -5,6 +5,7 @@ from flask_restful import Resource
 from flask import Blueprint, request, Response, redirect
 from character_view.schema import character_schema
 from connection import session
+from game_view.models import Card
 
 character_blueprint = Blueprint("character", __name__)
 
@@ -23,12 +24,12 @@ class CharacterBase(Resource):
         try:
             for character in request.json:
                 table_character = Character(**character_schema.load(character))
-                if not session.query(Character).filter(Character.name == table_character.name):
+                if not session.query(Character).filter(Character.name == table_character.name).all():
                     session.add(table_character)
                 else:
                     raise ValidationError(f'{table_character.name} already exists')
             session.commit()
-            return "All Achievement successfully added", 200
+            return "All Character successfully added", 200
         except ValidationError as e:
             return str(e.__dict__.get("messages")), 400
 
@@ -59,8 +60,12 @@ class CharacterCRUD(Resource):
         character = session.query(Character).get(character_id)
         if not character:
             return "Wrong Achievement id", 400
-        session.query(Character).filter(Character.id == character_id).delete()
-
+        cards_with_character = session.query(Card).filter(Card.character_id == character_id).all()
+        for card in cards_with_character:
+            session.delete(card)
+        session.commit()
+        session.query(Character).filter(Character.character_id == character_id).delete()
+        session.commit()
         return "Achievement successfully deleted", 200
 
 

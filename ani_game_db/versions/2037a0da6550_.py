@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: a9358b2a7e02
+Revision ID: 2037a0da6550
 Revises: 
-Create Date: 2021-11-04 17:52:15.678535
+Create Date: 2021-11-07 17:45:41.542260
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a9358b2a7e02'
+revision = '2037a0da6550'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,13 +25,6 @@ def upgrade():
     sa.Column('description', sa.String(length=120), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('blacklist_tokens',
-    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
-    sa.Column('token', sa.String(length=500), nullable=False),
-    sa.Column('blacklisted_on', sa.DateTime(), nullable=False),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('token')
-    )
     op.create_table('character',
     sa.Column('character_id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=40), nullable=False),
@@ -45,6 +38,7 @@ def upgrade():
     sa.Column('username', sa.String(length=50), nullable=False),
     sa.Column('email', sa.String(length=200), nullable=False),
     sa.Column('permission', sa.String(length=30), nullable=True),
+    sa.Column('rating', sa.Integer(), nullable=False),
     sa.Column('password', sa.String(length=100), nullable=False),
     sa.Column('image', sa.String(length=200), nullable=True),
     sa.PrimaryKeyConstraint('id')
@@ -57,7 +51,7 @@ def upgrade():
     sa.Column('loser_id', sa.Integer(), nullable=True),
     sa.Column('date', sa.DateTime(), nullable=True),
     sa.Column('duration', sa.Time(), nullable=True),
-    sa.Column('chat', sa.String(length=1000), nullable=False),
+    sa.Column('chat', sa.String(length=1000), nullable=True),
     sa.ForeignKeyConstraint(['guested_character_id'], ['character.character_id'], ),
     sa.ForeignKeyConstraint(['loser_id'], ['user.id'], ),
     sa.ForeignKeyConstraint(['unguested_character_id'], ['character.character_id'], ),
@@ -100,6 +94,5 @@ def downgrade():
     op.drop_table('game')
     op.drop_table('user')
     op.drop_table('character')
-    op.drop_table('blacklist_tokens')
     op.drop_table('achievement')
     # ### end Alembic commands ###

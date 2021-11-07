@@ -16,6 +16,7 @@ class User(Base):
     username = Column(String(50), nullable=False)
     email = Column(String(200), nullable=False)
     permission = Column(String(30))
+    rating = Column(Integer(), nullable=False)
     password = Column(String(100), nullable=False)
     image = Column(String(200), nullable=True)
 
@@ -24,12 +25,14 @@ class User(Base):
         self.email = kwargs.get('email')
         self.password = bcrypt.hash(kwargs.get('password'))
         self.permission = 'user'
+        self.rating = 0
 
     def get_token(self, expire_time=24):
         expire_delta = timedelta(expire_time)
         token = create_access_token(
             identity=self.id, expires_delta=expire_delta)
         return token
+
 
 class Achievement(Base):
     __tablename__ = 'achievement'
@@ -46,5 +49,3 @@ class UserAchievement(Base):
 
     user = relationship("User")
     achievement = relationship("Achievement")
-
-

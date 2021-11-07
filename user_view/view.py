@@ -53,7 +53,7 @@ class AchievementsBase(Resource):
             achievement = achievement.__dict__
             del achievement['_sa_instance_state']
             result.append(achievement)
-        return result
+        return str(result)
 
     @jwt_required()
     def post(self):
@@ -67,7 +67,11 @@ class AchievementsBase(Resource):
 
 class AchievementCRUD(Resource):
     def get(self, achievement_id):
-        achievement = session.query(Achievement).get(achievement_id).__dict__
+
+        achievement = session.query(Achievement).get(achievement_id)
+        if not achievement:
+            return Response("Wrong Achievement id", status=HTTPStatus.BAD_REQUEST)
+        achievement = achievement.__dict__
         del achievement['_sa_instance_state']
         return Response(str(achievement), status=HTTPStatus.OK)
 
@@ -91,7 +95,13 @@ class AchievementCRUD(Resource):
         if not achievement:
             return Response("Wrong Achievement id", status=HTTPStatus.BAD_REQUEST)
 
+        user_achievements = session.query(UserAchievement).filter(UserAchievement.achievement_id == achievement_id).all()
+        for user_achievement in user_achievements:
+            session.delete(user_achievement)
+        session.commit()
+
         session.query(Achievement).filter(Achievement.id == achievement_id).delete()
+        session.commit()
         return Response("Achievement successfully deleted", status=HTTPStatus.OK)
 
 

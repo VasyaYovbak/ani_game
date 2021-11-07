@@ -17,10 +17,12 @@ api.add_resource(HelloWorld, '/api/v1/hello-world-<int:variant>')
 from user_view.view import user_info
 from database_test import database_test
 from character_view.view import character_blueprint
+from game_view.view import game_blueprint
 
 app.register_blueprint(database_test)
 app.register_blueprint(user_info)
 app.register_blueprint(character_blueprint)
+app.register_blueprint(game_blueprint)
 
 
 if __name__ == '__main__':

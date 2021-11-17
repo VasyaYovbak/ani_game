@@ -27,7 +27,7 @@ class User(Base):
         self.permission = 'user'
         self.rating = 0
 
-    def get_token(self, expire_time=24):
+    def get_token(self, expire_time=1):
         expire_delta = timedelta(expire_time)
         token = create_access_token(
             identity=self.id, expires_delta=expire_delta)
@@ -49,3 +49,10 @@ class UserAchievement(Base):
 
     user = relationship("User")
     achievement = relationship("Achievement")
+
+
+class TokenBlocklist(Base):
+    __tablename__ = 'token_block_list'
+    id = Column(Integer(), primary_key=True)
+    jti = Column(String(36), nullable=False)
+    created_at = Column(DateTime(), nullable=False)

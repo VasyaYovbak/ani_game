@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import timedelta, datetime, timezone
 
 from flask import Blueprint, request, Response, redirect, jsonify
 from flask_cors import cross_origin
@@ -7,7 +7,7 @@ from passlib.hash import bcrypt
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 from http import HTTPStatus
 from connection import session
-from user_view.models import User, Achievement, UserAchievement
+from user_view.models import User, Achievement, UserAchievement, TokenBlocklist
 from user_view.schema import register_schema, newAchievement
 from marshmallow import ValidationError
 
@@ -17,20 +17,17 @@ user_info = Blueprint('user_info', __name__)
 
 
 class RegisterApi(Resource):
-    def get(self):
-        return redirect("/users/registunininnpration")
-
     def post(self):
         try:
             user = User(**register_schema.load(request.json))
             if session.query(User).filter(User.email == f'{user.email}').count() or \
                     session.query(User).filter(User.username == f'{user.username}').count():
-                return Response("this user already registered", status=HTTPStatus.BAD_REQUEST)
+                return "this user already registered", 400
 
             session.add(user)
             session.commit()
             token = user.get_token()
-            return Response(str({'access_token': token}), status=HTTPStatus.OK)
+            return jsonify({'access_token': token}), 200
 
         except ValidationError as e:
             return e.__dict__.get("messages")
@@ -42,7 +39,17 @@ class LoginApi(Resource):
         if not bcrypt.verify(request.json['password'], user.password):
             raise Exception('Wrong user password')
         token = user.get_token()
-        return Response(str({'access_token': token}), status=HTTPStatus.OK)
+        return jsonify({'access_token': token}), 200
+
+
+class Logout(Resource):
+    @jwt_required()
+    def post(self):
+        jti = get_jwt()["jti"]
+        now = datetime.now(timezone.utc)
+        session.add(TokenBlocklist(jti=jti, created_at=now))
+        session.commit()
+        return jsonify(msg="JWT revoked")
 
 
 class AchievementsBase(Resource):
@@ -53,16 +60,19 @@ class AchievementsBase(Resource):
             achievement = achievement.__dict__
             del achievement['_sa_instance_state']
             result.append(achievement)
-        return str(result)
+        return jsonify(result)
 
     @jwt_required()
     def post(self):
+        permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
+        if permission[0] != 'admin':
+            return "You dont have permissions to make this operation", 403
         achievements = request.json
         for achievement in achievements:
             table_achievement = Achievement(**newAchievement.load(achievement))
             session.add(table_achievement)
         session.commit()
-        return Response("All Achievement successfully added ", status=HTTPStatus.OK)
+        return "All Achievement successfully added ", 200
 
 
 class AchievementCRUD(Resource):
@@ -70,15 +80,19 @@ class AchievementCRUD(Resource):
 
         achievement = session.query(Achievement).get(achievement_id)
         if not achievement:
-            return Response("Wrong Achievement id", status=HTTPStatus.BAD_REQUEST)
+            return "Wrong Achievement id", 400
         achievement = achievement.__dict__
         del achievement['_sa_instance_state']
-        return Response(str(achievement), status=HTTPStatus.OK)
+        return jsonify(achievement), 200
 
+    @jwt_required()
     def put(self, achievement_id):
+        permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
+        if permission[0] != 'admin':
+            return "You dont have permissions to make this operation", 403
         achievement = session.query(Achievement).get(achievement_id)
         if not achievement:
-            return Response("Wrong Achievement id", status=HTTPStatus.BAD_REQUEST)
+            return "Wrong Achievement id", 400
 
         new_achievement = Achievement(**newAchievement.load(request.json))
 
@@ -88,21 +102,26 @@ class AchievementCRUD(Resource):
 
         session.commit()
 
-        return Response("Achievement successfully changed ", status=HTTPStatus.OK)
+        return "Achievement successfully changed ", 200
 
+    @jwt_required()
     def delete(self, achievement_id):
+        permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
+        if permission[0] != 'admin':
+            return "You dont have permissions to make this operation", 403
         achievement = session.query(Achievement).get(achievement_id)
         if not achievement:
             return Response("Wrong Achievement id", status=HTTPStatus.BAD_REQUEST)
 
-        user_achievements = session.query(UserAchievement).filter(UserAchievement.achievement_id == achievement_id).all()
+        user_achievements = session.query(UserAchievement).filter(
+            UserAchievement.achievement_id == achievement_id).all()
         for user_achievement in user_achievements:
             session.delete(user_achievement)
         session.commit()
 
         session.query(Achievement).filter(Achievement.id == achievement_id).delete()
         session.commit()
-        return Response("Achievement successfully deleted", status=HTTPStatus.OK)
+        return "Achievement successfully deleted", 200
 
 
 @user_info.route('/profile/<int:user_id>', methods=['GET'])
@@ -115,7 +134,7 @@ def get_profile(user_id):
     response.setdefault('user_info', user_info[0])
     response.setdefault('user_achievements', achievements)
 
-    return str(response), 200
+    return jsonify(response), 200
 
 
 @user_info.route('/profile/change/password', methods=['PUT'])
@@ -143,6 +162,7 @@ def change():
 
 user_info.add_url_rule('/registration', view_func=RegisterApi.as_view("register"))
 user_info.add_url_rule('/login', view_func=LoginApi.as_view("login"))
+user_info.add_url_rule('/logout', view_func=Logout.as_view("logout"))
 
 user_info.add_url_rule('/achievements', view_func=AchievementsBase.as_view("achievements_base"))
 user_info.add_url_rule('/achievement/<int:achievement_id>', view_func=AchievementCRUD.as_view("achievementCRUD"))

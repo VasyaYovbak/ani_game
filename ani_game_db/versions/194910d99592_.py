@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 2037a0da6550
+Revision ID: 194910d99592
 Revises: 
-Create Date: 2021-11-07 17:45:41.542260
+Create Date: 2021-11-17 16:38:45.196776
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '2037a0da6550'
+revision = '194910d99592'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -32,6 +32,12 @@ def upgrade():
     sa.Column('is_good', sa.String(length=15), nullable=False),
     sa.Column('image', sa.String(length=250), nullable=False),
     sa.PrimaryKeyConstraint('character_id')
+    )
+    op.create_table('token_block_list',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('jti', sa.String(length=36), nullable=False),
+    sa.Column('created_at', sa.DateTime(), nullable=False),
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -93,6 +99,7 @@ def downgrade():
     op.drop_table('user_achievement')
     op.drop_table('game')
     op.drop_table('user')
+    op.drop_table('token_block_list')
     op.drop_table('character')
     op.drop_table('achievement')
     # ### end Alembic commands ###

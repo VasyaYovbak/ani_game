@@ -1,11 +1,8 @@
 import random
 from time import sleep
 
-import flask
 import sqlalchemy
-from flask import Blueprint, request, redirect
-from flask_restful import Resource
-from sqlalchemy.orm import Session
+from flask import Blueprint, request, redirect, jsonify
 
 from character_view.models import Character
 from connection import session, engine
@@ -74,7 +71,7 @@ def getCards(game_id):
         (Card.game_id == game_id) & (Card.user_id == opponent) & (Card.is_selected_hero == True)).first().__dict__
     del selected_character['_sa_instance_state']
 
-    return str({"cards": result, "selected_character": selected_character})
+    return jsonify({"cards": result, "selected_character": selected_character})
 
 
 def gameStart(game_id):

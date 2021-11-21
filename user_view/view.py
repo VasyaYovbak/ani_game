@@ -13,6 +13,7 @@ from marshmallow import ValidationError
 
 ACCESS_EXPIRES = timedelta(hours=1)
 
+
 user_info = Blueprint('user_info', __name__)
 
 
@@ -125,11 +126,12 @@ class AchievementCRUD(Resource):
 
 
 @user_info.route('/profile/<int:user_id>', methods=['GET'])
-def get_profile(user_id):
+def get_profile(user_id):  # what if user doesn't exist
     achievement = AchievementsBase()
     achievements = achievement.get()
     user_info = session.query(User.email, User.username).filter(User.id == user_id)
-
+    if not user_info:
+        return jsonify({"msg": "User doesn't exist"}), 404
     response = dict()
     response.setdefault('user_info', user_info[0])
     response.setdefault('user_achievements', achievements)
@@ -139,12 +141,15 @@ def get_profile(user_id):
 
 @user_info.route('/profile/change/password', methods=['PUT'])
 @jwt_required()
-def change_password():
+def change_password():  # check old_password
     user_id = get_jwt_identity()
-    new_password = request.json['password']
-    session.query(User).filter(User.id == user_id).update({"password": str(bcrypt.hash(new_password))})
+    old_password = session.query(User.password).filter(User.id == user_id)
+    info = request.json
+    if not bcrypt.verify(info['old_password'], old_password[0][0]):
+        return jsonify({"msg": "old_password is not correct"})
+    session.query(User).filter(User.id == user_id).update({"password": str(bcrypt.hash(info['new_password']))})
     session.commit()
-    return "Password successfully changed", 200
+    return jsonify({"msg": "Password successfully changed"}), 200
 
 
 @user_info.route('/profile/change', methods=['PUT'])

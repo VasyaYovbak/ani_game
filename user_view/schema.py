@@ -4,11 +4,19 @@ from marshmallow.validate import Length
 
 class RegisterSchema(Schema):
     username = fields.Str()
-    email = fields.Str(validate=Length(min=10))
+    email = fields.Str()
     password = fields.Str(required=True)
 
     class Meta:
         fields = ('username', 'email', 'password')
+
+
+class LoginSchema(Schema):
+    email = fields.Str()
+    password = fields.Str(required=True)
+
+    class Meta:
+        fields = ('email', 'password')
 
 
 class NewAchievement(Schema):
@@ -22,3 +30,4 @@ class NewAchievement(Schema):
 
 register_schema = RegisterSchema()
 newAchievement = NewAchievement()
+login_schema = LoginSchema()

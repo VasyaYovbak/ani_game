@@ -66,6 +66,8 @@ class AchievementsBase(Resource):
     @jwt_required()
     def post(self):
         permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
+        if permission is None:
+            return jsonify({"msg": "Permission denied"}), 403
         if permission[0] != 'admin':
             return "You dont have permissions to make this operation", 403
         achievements = request.json
@@ -141,7 +143,7 @@ def get_profile(user_id):  # what if user doesn't exist
 
 @user_info.route('/profile/change/password', methods=['PUT'])
 @jwt_required()
-def change_password():  # check old_password
+def change_password():
     user_id = get_jwt_identity()
     old_password = session.query(User.password).filter(User.id == user_id)
     info = request.json

@@ -28,8 +28,6 @@ def upgrade():
     op.create_table('character',
     sa.Column('character_id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=40), nullable=False),
-    sa.Column('is_alive', sa.String(length=15), nullable=False),
-    sa.Column('is_good', sa.String(length=15), nullable=False),
     sa.Column('image', sa.String(length=250), nullable=False),
     sa.PrimaryKeyConstraint('character_id')
     )

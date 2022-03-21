@@ -1,11 +1,14 @@
 import random
+
 from time import sleep
 
 import sqlalchemy
 from flask import Blueprint, request, redirect, jsonify
 
 from character_view.models import Character
-from connection import session, engine
+from connection import engine
+from sqlalchemy.orm import Session
+from game_view.game_logic import create_game
 from game_view.models import Game, UserQueue, Card
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
@@ -17,8 +20,9 @@ game_blueprint = Blueprint("game", __name__)
 @game_blueprint.route("/game/start", methods=['POST'])
 @jwt_required()
 def gameSearch():
+    session = Session(bind=engine)
     user_id = get_jwt_identity()
-
+    print('here')
     user = session.query(User).get(user_id)
 
     available_user = session.query(UserQueue).filter(
@@ -37,21 +41,30 @@ def gameSearch():
                 condition = False
             sleep(1)
         game = session.query(Game).order_by(sqlalchemy.desc(Game.game_id)).first()
+        session.commit()
+        print(game.game_id)
         session.close()
-        return redirect(f"/game/{game.game_id}", code=307)
+        return str(game.game_id), 200
     else:
         session.query(UserQueue).filter(UserQueue.user_id == available_user.__dict__["user_id"]).delete()
-        game = Game(loser_id=available_user.__dict__["user_id"], winner_id=user_id)
+        game = Game(loser_id=available_user.__dict__["user_id"], winner_id=user_id, chat='[]')
         session.add(game)
         session.commit()
         game = session.query(Game).order_by(sqlalchemy.desc(Game.game_id)).first()
         gameStart(game.game_id)
-        return redirect(f"/game/{game.game_id}", code=307)
+        print("WE ARE HERE")
+        create_game({
+            "id": game.game_id,
+            "users": [game.loser_id, game.winner_id]
+        })
+        session.close()
+        return str(game.game_id), 200
 
 
 @game_blueprint.route("/game/<int:game_id>", methods=['POST'])
 @jwt_required()
 def getCards(game_id):
+    session = Session(bind=engine)
     user_id = get_jwt_identity()
     game = session.query(Game).get(game_id)
     players = [game.winner_id, game.loser_id]
@@ -64,32 +77,41 @@ def getCards(game_id):
     all_cards = session.query(Card).filter((Card.game_id == game_id) & (Card.user_id == user_id)).all()
     for card in all_cards:
         card = card.__dict__
-        del card['_sa_instance_state'], card['is_selected_hero']
+        character = session.query(Character).filter(Character.character_id == card['character_id']).first().__dict__
+        del card['_sa_instance_state'], card['is_selected_hero'], card['character_id']
+        del character['_sa_instance_state'], character['character_id']
+        card['character'] = character
         result.append(card)
 
     selected_character = session.query(Card).filter(
-        (Card.game_id == game_id) & (Card.user_id == opponent) & (Card.is_selected_hero == True)).first().__dict__
-    del selected_character['_sa_instance_state']
-
+        (Card.game_id == game_id) & (Card.user_id == opponent) & Card.is_selected_hero).first().__dict__
+    character = session.query(Character).filter(
+        Character.character_id == selected_character['character_id']).first().__dict__
+    del character['_sa_instance_state'], character['character_id']
+    del selected_character['_sa_instance_state'], selected_character['character_id']
+    selected_character['character'] = character
+    session.close()
     return jsonify({"cards": result, "selected_character": selected_character})
 
 
 def gameStart(game_id):
-    COUNT_OF_CARDS = 3
+    session = Session(bind=engine)
+    COUNT_OF_CARDS = 23
     game = session.query(Game).get(game_id)
     character_list = session.query(Character).all()
     size = len(character_list)
     cards_id_1 = []
     cards_id_2 = []
     while len(cards_id_1) != COUNT_OF_CARDS:
-        number = int(random.random() * size + 1)
+        number = int(random.random() * size)
         if number not in cards_id_1:
-            cards_id_1.append(number)
+            print(character_list[number].character_id)
+            cards_id_1.append(character_list[number].character_id)
 
     while len(cards_id_2) != COUNT_OF_CARDS:
-        number = int(random.random() * size + 1)
+        number = int(random.random() * size)
         if number not in cards_id_2:
-            cards_id_2.append(number)
+            cards_id_2.append(character_list[number].character_id)
 
     selected_hero_1 = random.choice(cards_id_1)
     selected_hero_2 = random.choice(cards_id_2)
@@ -116,3 +138,4 @@ def gameStart(game_id):
                         game_id=game_id)
         session.add(card)
     session.commit()
+    session.close()

@@ -29,7 +29,11 @@ class RegisterApi(Resource):
             session.add(user)
             session.commit()
             token = user.get_token()
-            return jsonify({'access_token': token}), 200
+            user = user.__dict__
+            del user['password'], user['_sa_instance_state'], user['permission']
+            return jsonify({'access_token': token,
+                            'user': user
+                            }), 200
 
         except ValidationError as e:
             return e.__dict__.get("messages"), 400
@@ -55,7 +59,11 @@ class LoginApi(Resource):
                 raise Exception('403:Wrong user password')
 
             token = user.get_token()
-            return jsonify({'access_token': token}), 200
+            user = user.__dict__
+            del user['password'], user['_sa_instance_state'], user['permission']
+            return jsonify({'access_token': token,
+                            'user': user
+                            }), 200
         except ValidationError as e:
             return e.__dict__.get("messages"), 400
         except Exception as e:

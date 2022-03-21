@@ -1,0 +1,2059 @@
+.naruto_hero_1 {
+    background-position: -0px -0px
+}
+
+.naruto_hero_2 {
+    background-position: -150px -0px
+}
+
+.naruto_hero_3 {
+    background-position: -150px -150px
+}
+
+.naruto_hero_4 {
+    background-position: -0px -150px
+}
+
+.naruto_hero_5 {
+    background-position: -300px -0px
+}
+
+.naruto_hero_6 {
+    background-position: -300px -150px
+}
+
+.naruto_hero_7 {
+    background-position: -300px -300px
+}
+
+.naruto_hero_8 {
+    background-position: -150px -300px
+}
+
+.naruto_hero_9 {
+    background-position: -0px -300px
+}
+
+.naruto_hero_10 {
+    background-position: -450px -0px
+}
+
+.naruto_hero_11 {
+    background-position: -450px -150px
+}
+
+.naruto_hero_12 {
+    background-position: -450px -300px
+}
+
+.naruto_hero_13 {
+    background-position: -450px -450px
+}
+
+.naruto_hero_14 {
+    background-position: -300px -450px
+}
+
+.naruto_hero_15 {
+    background-position: -150px -450px
+}
+
+.naruto_hero_16 {
+    background-position: -0px -450px
+}
+
+.naruto_hero_17 {
+    background-position: -600px -0px
+}
+
+.naruto_hero_18 {
+    background-position: -600px -150px
+}
+
+.naruto_hero_19 {
+    background-position: -600px -300px
+}
+
+.naruto_hero_20 {
+    background-position: -600px -450px
+}
+
+.naruto_hero_21 {
+    background-position: -600px -600px
+}
+
+.naruto_hero_22 {
+    background-position: -450px -600px
+}
+
+.naruto_hero_23 {
+    background-position: -300px -600px
+}
+
+.naruto_hero_24 {
+    background-position: -150px -600px
+}
+
+.naruto_hero_25 {
+    background-position: -0px -600px
+}
+
+.naruto_hero_26 {
+    background-position: -750px -0px
+}
+
+.naruto_hero_27 {
+    background-position: -750px -150px
+}
+
+.naruto_hero_28 {
+    background-position: -750px -300px
+}
+
+.naruto_hero_29 {
+    background-position: -750px -450px
+}
+
+.naruto_hero_30 {
+    background-position: -750px -600px
+}
+
+.naruto_hero_31 {
+    background-position: -750px -750px
+}
+
+.naruto_hero_32 {
+    background-position: -600px -750px
+}
+
+.naruto_hero_33 {
+    background-position: -450px -750px
+}
+
+.naruto_hero_34 {
+    background-position: -300px -750px
+}
+
+.naruto_hero_35 {
+    background-position: -150px -750px
+}
+
+.naruto_hero_36 {
+    background-position: -0px -750px
+}
+
+.naruto_hero_37 {
+    background-position: -900px -0px
+}
+
+.naruto_hero_38 {
+    background-position: -900px -150px
+}
+
+.naruto_hero_39 {
+    background-position: -900px -300px
+}
+
+.naruto_hero_40 {
+    background-position: -900px -450px
+}
+
+.naruto_hero_41 {
+    background-position: -900px -600px
+}
+
+.naruto_hero_42 {
+    background-position: -900px -750px
+}
+
+.naruto_hero_43 {
+    background-position: -900px -900px
+}
+
+.naruto_hero_44 {
+    background-position: -750px -900px
+}
+
+.naruto_hero_45 {
+    background-position: -600px -900px
+}
+
+.naruto_hero_46 {
+    background-position: -450px -900px
+}
+
+.naruto_hero_47 {
+    background-position: -300px -900px
+}
+
+.naruto_hero_48 {
+    background-position: -150px -900px
+}
+
+.naruto_hero_49 {
+    background-position: -0px -900px
+}
+
+.naruto_hero_50 {
+    background-position: -1050px -0px
+}
+
+.naruto_hero_51 {
+    background-position: -1050px -150px
+}
+
+.naruto_hero_52 {
+    background-position: -1050px -300px
+}
+
+.naruto_hero_53 {
+    background-position: -1050px -450px
+}
+
+.naruto_hero_54 {
+    background-position: -1050px -600px
+}
+
+.naruto_hero_55 {
+    background-position: -1050px -750px
+}
+
+.naruto_hero_56 {
+    background-position: -1050px -900px
+}
+
+.naruto_hero_57 {
+    background-position: -1050px -1050px
+}
+
+.naruto_hero_58 {
+    background-position: -900px -1050px
+}
+
+.naruto_hero_59 {
+    background-position: -750px -1050px
+}
+
+.naruto_hero_60 {
+    background-position: -600px -1050px
+}
+
+.naruto_hero_61 {
+    background-position: -450px -1050px
+}
+
+.naruto_hero_62 {
+    background-position: -300px -1050px
+}
+
+.naruto_hero_63 {
+    background-position: -150px -1050px
+}
+
+.naruto_hero_64 {
+    background-position: -0px -1050px
+}
+
+.naruto_hero_65 {
+    background-position: -1200px -0px
+}
+
+.naruto_hero_66 {
+    background-position: -1200px -150px
+}
+
+.naruto_hero_67 {
+    background-position: -1200px -300px
+}
+
+.naruto_hero_68 {
+    background-position: -1200px -450px
+}
+
+.naruto_hero_69 {
+    background-position: -1200px -600px
+}
+
+.naruto_hero_70 {
+    background-position: -1200px -750px
+}
+
+.naruto_hero_71 {
+    background-position: -1200px -900px
+}
+
+.naruto_hero_72 {
+    background-position: -1200px -1050px
+}
+
+.naruto_hero_73 {
+    background-position: -1200px -1200px
+}
+
+.naruto_hero_74 {
+    background-position: -1050px -1200px
+}
+
+.naruto_hero_75 {
+    background-position: -900px -1200px
+}
+
+.naruto_hero_76 {
+    background-position: -750px -1200px
+}
+
+.naruto_hero_77 {
+    background-position: -600px -1200px
+}
+
+.naruto_hero_78 {
+    background-position: -450px -1200px
+}
+
+.naruto_hero_79 {
+    background-position: -300px -1200px
+}
+
+.naruto_hero_80 {
+    background-position: -150px -1200px
+}
+
+.naruto_hero_81 {
+    background-position: -0px -1200px
+}
+
+.naruto_hero_82 {
+    background-position: -1350px -0px
+}
+
+.naruto_hero_83 {
+    background-position: -1350px -150px
+}
+
+.naruto_hero_84 {
+    background-position: -1350px -300px
+}
+
+.naruto_hero_85 {
+    background-position: -1350px -450px
+}
+
+.naruto_hero_86 {
+    background-position: -1350px -600px
+}
+
+.naruto_hero_87 {
+    background-position: -1350px -750px
+}
+
+.naruto_hero_88 {
+    background-position: -1350px -900px
+}
+
+.naruto_hero_89 {
+    background-position: -1350px -1050px
+}
+
+.naruto_hero_90 {
+    background-position: -1350px -1200px
+}
+
+.naruto_hero_91 {
+    background-position: -1350px -1350px
+}
+
+.naruto_hero_92 {
+    background-position: -1200px -1350px
+}
+
+.naruto_hero_93 {
+    background-position: -1050px -1350px
+}
+
+.naruto_hero_94 {
+    background-position: -900px -1350px
+}
+
+.naruto_hero_95 {
+    background-position: -750px -1350px
+}
+
+.naruto_hero_96 {
+    background-position: -600px -1350px
+}
+
+.naruto_hero_97 {
+    background-position: -450px -1350px
+}
+
+.naruto_hero_98 {
+    background-position: -300px -1350px
+}
+
+.naruto_hero_99 {
+    background-position: -150px -1350px
+}
+
+.naruto_hero_100 {
+    background-position: -0px -1350px
+}
+
+.naruto_hero_101 {
+    background-position: -1500px -0px
+}
+
+.naruto_hero_102 {
+    background-position: -1500px -150px
+}
+
+.naruto_hero_103 {
+    background-position: -1500px -300px
+}
+
+.naruto_hero_104 {
+    background-position: -1500px -450px
+}
+
+.naruto_hero_105 {
+    background-position: -1500px -600px
+}
+
+.naruto_hero_106 {
+    background-position: -1500px -750px
+}
+
+.naruto_hero_107 {
+    background-position: -1500px -900px
+}
+
+.naruto_hero_108 {
+    background-position: -1500px -1050px
+}
+
+.naruto_hero_109 {
+    background-position: -1500px -1200px
+}
+
+.naruto_hero_110 {
+    background-position: -1500px -1350px
+}
+
+.naruto_hero_111 {
+    background-position: -1500px -1500px
+}
+
+.naruto_hero_112 {
+    background-position: -1350px -1500px
+}
+
+.naruto_hero_113 {
+    background-position: -1200px -1500px
+}
+
+.naruto_hero_114 {
+    background-position: -1050px -1500px
+}
+
+.naruto_hero_115 {
+    background-position: -900px -1500px
+}
+
+.naruto_hero_116 {
+    background-position: -750px -1500px
+}
+
+.naruto_hero_117 {
+    background-position: -600px -1500px
+}
+
+.naruto_hero_118 {
+    background-position: -450px -1500px
+}
+
+.naruto_hero_119 {
+    background-position: -300px -1500px
+}
+
+.naruto_hero_120 {
+    background-position: -150px -1500px
+}
+
+.naruto_hero_121 {
+    background-position: -0px -1500px
+}
+
+.naruto_hero_122 {
+    background-position: -1650px -0px
+}
+
+.naruto_hero_123 {
+    background-position: -1650px -150px
+}
+
+.naruto_hero_124 {
+    background-position: -1650px -300px
+}
+
+.naruto_hero_125 {
+    background-position: -1650px -450px
+}
+
+.naruto_hero_126 {
+    background-position: -1650px -600px
+}
+
+.naruto_hero_127 {
+    background-position: -1650px -750px
+}
+
+.naruto_hero_128 {
+    background-position: -1650px -900px
+}
+
+.naruto_hero_129 {
+    background-position: -1650px -1050px
+}
+
+.naruto_hero_130 {
+    background-position: -1650px -1200px
+}
+
+.naruto_hero_131 {
+    background-position: -1650px -1350px
+}
+
+.naruto_hero_132 {
+    background-position: -1650px -1500px
+}
+
+.naruto_hero_133 {
+    background-position: -1650px -1650px
+}
+
+.naruto_hero_134 {
+    background-position: -1500px -1650px
+}
+
+.naruto_hero_135 {
+    background-position: -1350px -1650px
+}
+
+.naruto_hero_136 {
+    background-position: -1200px -1650px
+}
+
+.naruto_hero_137 {
+    background-position: -1050px -1650px
+}
+
+.naruto_hero_138 {
+    background-position: -900px -1650px
+}
+
+.naruto_hero_139 {
+    background-position: -750px -1650px
+}
+
+.naruto_hero_140 {
+    background-position: -600px -1650px
+}
+
+.naruto_hero_141 {
+    background-position: -450px -1650px
+}
+
+.naruto_hero_142 {
+    background-position: -300px -1650px
+}
+
+.naruto_hero_143 {
+    background-position: -150px -1650px
+}
+
+.naruto_hero_144 {
+    background-position: -0px -1650px
+}
+
+.naruto_hero_145 {
+    background-position: -1800px -0px
+}
+
+.naruto_hero_146 {
+    background-position: -1800px -150px
+}
+
+.naruto_hero_147 {
+    background-position: -1800px -300px
+}
+
+.naruto_hero_148 {
+    background-position: -1800px -450px
+}
+
+.naruto_hero_149 {
+    background-position: -1800px -600px
+}
+
+.naruto_hero_150 {
+    background-position: -1800px -750px
+}
+
+.naruto_hero_151 {
+    background-position: -1800px -900px
+}
+
+.naruto_hero_152 {
+    background-position: -1800px -1050px
+}
+
+.naruto_hero_153 {
+    background-position: -1800px -1200px
+}
+
+.naruto_hero_154 {
+    background-position: -1800px -1350px
+}
+
+.naruto_hero_155 {
+    background-position: -1800px -1500px
+}
+
+.naruto_hero_156 {
+    background-position: -1800px -1650px
+}
+
+.naruto_hero_157 {
+    background-position: -1800px -1800px
+}
+
+.naruto_hero_158 {
+    background-position: -1650px -1800px
+}
+
+.naruto_hero_159 {
+    background-position: -1500px -1800px
+}
+
+.naruto_hero_160 {
+    background-position: -1350px -1800px
+}
+
+.naruto_hero_161 {
+    background-position: -1200px -1800px
+}
+
+.naruto_hero_162 {
+    background-position: -1050px -1800px
+}
+
+.naruto_hero_163 {
+    background-position: -900px -1800px
+}
+
+.naruto_hero_164 {
+    background-position: -750px -1800px
+}
+
+.naruto_hero_165 {
+    background-position: -600px -1800px
+}
+
+.naruto_hero_166 {
+    background-position: -450px -1800px
+}
+
+.naruto_hero_167 {
+    background-position: -300px -1800px
+}
+
+.naruto_hero_168 {
+    background-position: -150px -1800px
+}
+
+.naruto_hero_169 {
+    background-position: -0px -1800px
+}
+
+.naruto_hero_170 {
+    background-position: -1950px -0px
+}
+
+.naruto_hero_171 {
+    background-position: -1950px -150px
+}
+
+.naruto_hero_172 {
+    background-position: -1950px -300px
+}
+
+.naruto_hero_173 {
+    background-position: -1950px -450px
+}
+
+.naruto_hero_174 {
+    background-position: -1950px -600px
+}
+
+.naruto_hero_175 {
+    background-position: -1950px -750px
+}
+
+.naruto_hero_176 {
+    background-position: -1950px -900px
+}
+
+.naruto_hero_177 {
+    background-position: -1950px -1050px
+}
+
+.naruto_hero_178 {
+    background-position: -1950px -1200px
+}
+
+.naruto_hero_179 {
+    background-position: -1950px -1350px
+}
+
+.naruto_hero_180 {
+    background-position: -1950px -1500px
+}
+
+.naruto_hero_181 {
+    background-position: -1950px -1650px
+}
+
+.naruto_hero_182 {
+    background-position: -1950px -1800px
+}
+
+.naruto_hero_183 {
+    background-position: -1950px -1950px
+}
+
+.naruto_hero_184 {
+    background-position: -1800px -1950px
+}
+
+.naruto_hero_185 {
+    background-position: -1650px -1950px
+}
+
+.naruto_hero_186 {
+    background-position: -1500px -1950px
+}
+
+.naruto_hero_187 {
+    background-position: -1350px -1950px
+}
+
+.naruto_hero_188 {
+    background-position: -1200px -1950px
+}
+
+.naruto_hero_189 {
+    background-position: -1050px -1950px
+}
+
+.naruto_hero_190 {
+    background-position: -900px -1950px
+}
+
+.naruto_hero_191 {
+    background-position: -750px -1950px
+}
+
+.naruto_hero_192 {
+    background-position: -600px -1950px
+}
+
+.naruto_hero_193 {
+    background-position: -450px -1950px
+}
+
+.naruto_hero_194 {
+    background-position: -300px -1950px
+}
+
+.naruto_hero_195 {
+    background-position: -150px -1950px
+}
+
+.naruto_hero_196 {
+    background-position: -0px -1950px
+}
+
+.naruto_hero_197 {
+    background-position: -2100px -0px
+}
+
+.naruto_hero_198 {
+    background-position: -2100px -150px
+}
+
+.naruto_hero_199 {
+    background-position: -2100px -300px
+}
+
+.naruto_hero_200 {
+    background-position: -2100px -450px
+}
+
+.naruto_hero_201 {
+    background-position: -2100px -600px
+}
+
+.naruto_hero_202 {
+    background-position: -2100px -750px
+}
+
+.naruto_hero_203 {
+    background-position: -2100px -900px
+}
+
+.naruto_hero_204 {
+    background-position: -2100px -1050px
+}
+
+.naruto_hero_205 {
+    background-position: -2100px -1200px
+}
+
+.naruto_hero_206 {
+    background-position: -2100px -1350px
+}
+
+.naruto_hero_207 {
+    background-position: -2100px -1500px
+}
+
+.naruto_hero_208 {
+    background-position: -2100px -1650px
+}
+
+.naruto_hero_209 {
+    background-position: -2100px -1800px
+}
+
+.naruto_hero_210 {
+    background-position: -2100px -1950px
+}
+
+.naruto_hero_211 {
+    background-position: -2100px -2100px
+}
+
+.naruto_hero_212 {
+    background-position: -1950px -2100px
+}
+
+.naruto_hero_213 {
+    background-position: -1800px -2100px
+}
+
+.naruto_hero_214 {
+    background-position: -1650px -2100px
+}
+
+.naruto_hero_215 {
+    background-position: -1500px -2100px
+}
+
+.naruto_hero_216 {
+    background-position: -1350px -2100px
+}
+
+.naruto_hero_217 {
+    background-position: -1200px -2100px
+}
+
+.naruto_hero_218 {
+    background-position: -1050px -2100px
+}
+
+.naruto_hero_219 {
+    background-position: -900px -2100px
+}
+
+.naruto_hero_220 {
+    background-position: -750px -2100px
+}
+
+.naruto_hero_221 {
+    background-position: -600px -2100px
+}
+
+.naruto_hero_222 {
+    background-position: -450px -2100px
+}
+
+.naruto_hero_223 {
+    background-position: -300px -2100px
+}
+
+.naruto_hero_224 {
+    background-position: -150px -2100px
+}
+
+.naruto_hero_225 {
+    background-position: -0px -2100px
+}
+
+.naruto_hero_226 {
+    background-position: -2250px -0px
+}
+
+.naruto_hero_227 {
+    background-position: -2250px -150px
+}
+
+.naruto_hero_228 {
+    background-position: -2250px -300px
+}
+
+.naruto_hero_229 {
+    background-position: -2250px -450px
+}
+
+.naruto_hero_230 {
+    background-position: -2250px -600px
+}
+
+.naruto_hero_231 {
+    background-position: -2250px -750px
+}
+
+.naruto_hero_232 {
+    background-position: -2250px -900px
+}
+
+.naruto_hero_233 {
+    background-position: -2250px -1050px
+}
+
+.naruto_hero_234 {
+    background-position: -2250px -1200px
+}
+
+.naruto_hero_235 {
+    background-position: -2250px -1350px
+}
+
+.naruto_hero_236 {
+    background-position: -2250px -1500px
+}
+
+.naruto_hero_237 {
+    background-position: -2250px -1650px
+}
+
+.naruto_hero_238 {
+    background-position: -2250px -1800px
+}
+
+.naruto_hero_239 {
+    background-position: -2250px -1950px
+}
+
+.naruto_hero_240 {
+    background-position: -2250px -2100px
+}
+
+.naruto_hero_241 {
+    background-position: -2250px -2250px
+}
+
+.naruto_hero_242 {
+    background-position: -2100px -2250px
+}
+
+.naruto_hero_243 {
+    background-position: -1950px -2250px
+}
+
+.naruto_hero_244 {
+    background-position: -1800px -2250px
+}
+
+.naruto_hero_245 {
+    background-position: -1650px -2250px
+}
+
+.naruto_hero_246 {
+    background-position: -1500px -2250px
+}
+
+.naruto_hero_247 {
+    background-position: -1350px -2250px
+}
+
+.naruto_hero_248 {
+    background-position: -1200px -2250px
+}
+
+.naruto_hero_249 {
+    background-position: -1050px -2250px
+}
+
+.naruto_hero_250 {
+    background-position: -900px -2250px
+}
+
+.naruto_hero_251 {
+    background-position: -750px -2250px
+}
+
+.naruto_hero_252 {
+    background-position: -600px -2250px
+}
+
+.naruto_hero_253 {
+    background-position: -450px -2250px
+}
+
+.naruto_hero_254 {
+    background-position: -300px -2250px
+}
+
+.naruto_hero_255 {
+    background-position: -150px -2250px
+}
+
+.naruto_hero_256 {
+    background-position: -0px -2250px
+}
+
+.naruto_hero_257 {
+    background-position: -2400px -0px
+}
+
+.naruto_hero_258 {
+    background-position: -2400px -150px
+}
+
+.naruto_hero_259 {
+    background-position: -2400px -300px
+}
+
+.naruto_hero_260 {
+    background-position: -2400px -450px
+}
+
+.naruto_hero_261 {
+    background-position: -2400px -600px
+}
+
+.naruto_hero_262 {
+    background-position: -2400px -750px
+}
+
+.naruto_hero_263 {
+    background-position: -2400px -900px
+}
+
+.naruto_hero_264 {
+    background-position: -2400px -1050px
+}
+
+.naruto_hero_265 {
+    background-position: -2400px -1200px
+}
+
+.naruto_hero_266 {
+    background-position: -2400px -1350px
+}
+
+.naruto_hero_267 {
+    background-position: -2400px -1500px
+}
+
+.naruto_hero_268 {
+    background-position: -2400px -1650px
+}
+
+.naruto_hero_269 {
+    background-position: -2400px -1800px
+}
+
+.naruto_hero_270 {
+    background-position: -2400px -1950px
+}
+
+.naruto_hero_271 {
+    background-position: -2400px -2100px
+}
+
+.naruto_hero_272 {
+    background-position: -2400px -2250px
+}
+
+.naruto_hero_273 {
+    background-position: -2400px -2400px
+}
+
+.naruto_hero_274 {
+    background-position: -2250px -2400px
+}
+
+.naruto_hero_275 {
+    background-position: -2100px -2400px
+}
+
+.naruto_hero_276 {
+    background-position: -1950px -2400px
+}
+
+.naruto_hero_277 {
+    background-position: -1800px -2400px
+}
+
+.naruto_hero_278 {
+    background-position: -1650px -2400px
+}
+
+.naruto_hero_279 {
+    background-position: -1500px -2400px
+}
+
+.naruto_hero_280 {
+    background-position: -1350px -2400px
+}
+
+.naruto_hero_281 {
+    background-position: -1200px -2400px
+}
+
+.naruto_hero_282 {
+    background-position: -1050px -2400px
+}
+
+.naruto_hero_283 {
+    background-position: -900px -2400px
+}
+
+.naruto_hero_284 {
+    background-position: -750px -2400px
+}
+
+.naruto_hero_285 {
+    background-position: -600px -2400px
+}
+
+.naruto_hero_286 {
+    background-position: -450px -2400px
+}
+
+.naruto_hero_287 {
+    background-position: -300px -2400px
+}
+
+.naruto_hero_288 {
+    background-position: -150px -2400px
+}
+
+.naruto_hero_289 {
+    background-position: -0px -2400px
+}
+
+.naruto_hero_290 {
+    background-position: -2550px -0px
+}
+
+.naruto_hero_291 {
+    background-position: -2550px -150px
+}
+
+.naruto_hero_292 {
+    background-position: -2550px -300px
+}
+
+.naruto_hero_293 {
+    background-position: -2550px -450px
+}
+
+.naruto_hero_294 {
+    background-position: -2550px -600px
+}
+
+.naruto_hero_295 {
+    background-position: -2550px -750px
+}
+
+.naruto_hero_296 {
+    background-position: -2550px -900px
+}
+
+.naruto_hero_297 {
+    background-position: -2550px -1050px
+}
+
+.naruto_hero_298 {
+    background-position: -2550px -1200px
+}
+
+.naruto_hero_299 {
+    background-position: -2550px -1350px
+}
+
+.naruto_hero_300 {
+    background-position: -2550px -1500px
+}
+
+.naruto_hero_301 {
+    background-position: -2550px -1650px
+}
+
+.naruto_hero_302 {
+    background-position: -2550px -1800px
+}
+
+.naruto_hero_303 {
+    background-position: -2550px -1950px
+}
+
+.naruto_hero_304 {
+    background-position: -2550px -2100px
+}
+
+.naruto_hero_305 {
+    background-position: -2550px -2250px
+}
+
+.naruto_hero_306 {
+    background-position: -2550px -2400px
+}
+
+.naruto_hero_307 {
+    background-position: -2550px -2550px
+}
+
+.naruto_hero_308 {
+    background-position: -2400px -2550px
+}
+
+.naruto_hero_309 {
+    background-position: -2250px -2550px
+}
+
+.naruto_hero_310 {
+    background-position: -2100px -2550px
+}
+
+.naruto_hero_311 {
+    background-position: -1950px -2550px
+}
+
+.naruto_hero_312 {
+    background-position: -1800px -2550px
+}
+
+.naruto_hero_313 {
+    background-position: -1650px -2550px
+}
+
+.naruto_hero_314 {
+    background-position: -1500px -2550px
+}
+
+.naruto_hero_315 {
+    background-position: -1350px -2550px
+}
+
+.naruto_hero_316 {
+    background-position: -1200px -2550px
+}
+
+.naruto_hero_317 {
+    background-position: -1050px -2550px
+}
+
+.naruto_hero_318 {
+    background-position: -900px -2550px
+}
+
+.naruto_hero_319 {
+    background-position: -750px -2550px
+}
+
+.naruto_hero_320 {
+    background-position: -600px -2550px
+}
+
+.naruto_hero_321 {
+    background-position: -450px -2550px
+}
+
+.naruto_hero_322 {
+    background-position: -300px -2550px
+}
+
+.naruto_hero_323 {
+    background-position: -150px -2550px
+}
+
+.naruto_hero_324 {
+    background-position: -0px -2550px
+}
+
+.naruto_hero_325 {
+    background-position: -2700px -0px
+}
+
+.naruto_hero_326 {
+    background-position: -2700px -150px
+}
+
+.naruto_hero_327 {
+    background-position: -2700px -300px
+}
+
+.naruto_hero_328 {
+    background-position: -2700px -450px
+}
+
+.naruto_hero_329 {
+    background-position: -2700px -600px
+}
+
+.naruto_hero_330 {
+    background-position: -2700px -750px
+}
+
+.naruto_hero_331 {
+    background-position: -2700px -900px
+}
+
+.naruto_hero_332 {
+    background-position: -2700px -1050px
+}
+
+.naruto_hero_333 {
+    background-position: -2700px -1200px
+}
+
+.naruto_hero_334 {
+    background-position: -2700px -1350px
+}
+
+.naruto_hero_335 {
+    background-position: -2700px -1500px
+}
+
+.naruto_hero_336 {
+    background-position: -2700px -1650px
+}
+
+.naruto_hero_337 {
+    background-position: -2700px -1800px
+}
+
+.naruto_hero_338 {
+    background-position: -2700px -1950px
+}
+
+.naruto_hero_339 {
+    background-position: -2700px -2100px
+}
+
+.naruto_hero_341 {
+    background-position: -2700px -2250px
+}
+
+.naruto_hero_343 {
+    background-position: -2700px -2400px
+}
+
+.naruto_hero_344 {
+    background-position: -2700px -2550px
+}
+
+.naruto_hero_345 {
+    background-position: -2700px -2700px
+}
+
+.naruto_hero_346 {
+    background-position: -2550px -2700px
+}
+
+.naruto_hero_347 {
+    background-position: -2400px -2700px
+}
+
+.naruto_hero_348 {
+    background-position: -2250px -2700px
+}
+
+.naruto_hero_349 {
+    background-position: -2100px -2700px
+}
+
+.naruto_hero_350 {
+    background-position: -1950px -2700px
+}
+
+.naruto_hero_351 {
+    background-position: -1800px -2700px
+}
+
+.naruto_hero_352 {
+    background-position: -1650px -2700px
+}
+
+.naruto_hero_353 {
+    background-position: -1500px -2700px
+}
+
+.naruto_hero_354 {
+    background-position: -1350px -2700px
+}
+
+.naruto_hero_355 {
+    background-position: -1200px -2700px
+}
+
+.naruto_hero_356 {
+    background-position: -1050px -2700px
+}
+
+.naruto_hero_357 {
+    background-position: -900px -2700px
+}
+
+.naruto_hero_358 {
+    background-position: -750px -2700px
+}
+
+.naruto_hero_359 {
+    background-position: -600px -2700px
+}
+
+.naruto_hero_360 {
+    background-position: -450px -2700px
+}
+
+.naruto_hero_361 {
+    background-position: -300px -2700px
+}
+
+.naruto_hero_362 {
+    background-position: -150px -2700px
+}
+
+.naruto_hero_363 {
+    background-position: -0px -2700px
+}
+
+.naruto_hero_364 {
+    background-position: -2850px -0px
+}
+
+.naruto_hero_367 {
+    background-position: -2850px -150px
+}
+
+.naruto_hero_368 {
+    background-position: -2850px -300px
+}
+
+.naruto_hero_369 {
+    background-position: -2850px -450px
+}
+
+.naruto_hero_370 {
+    background-position: -2850px -600px
+}
+
+.naruto_hero_371 {
+    background-position: -2850px -750px
+}
+
+.naruto_hero_372 {
+    background-position: -2850px -900px
+}
+
+.naruto_hero_373 {
+    background-position: -2850px -1050px
+}
+
+.naruto_hero_374 {
+    background-position: -2850px -1200px
+}
+
+.naruto_hero_375 {
+    background-position: -2850px -1350px
+}
+
+.naruto_hero_376 {
+    background-position: -2850px -1500px
+}
+
+.naruto_hero_377 {
+    background-position: -2850px -1650px
+}
+
+.naruto_hero_378 {
+    background-position: -2850px -1800px
+}
+
+.naruto_hero_379 {
+    background-position: -2850px -1950px
+}
+
+.naruto_hero_380 {
+    background-position: -2850px -2100px
+}
+
+.naruto_hero_381 {
+    background-position: -2850px -2250px
+}
+
+.naruto_hero_382 {
+    background-position: -2850px -2400px
+}
+
+.naruto_hero_383 {
+    background-position: -2850px -2550px
+}
+
+.naruto_hero_384 {
+    background-position: -2850px -2700px
+}
+
+.naruto_hero_385 {
+    background-position: -2850px -2850px
+}
+
+.naruto_hero_386 {
+    background-position: -2700px -2850px
+}
+
+.naruto_hero_387 {
+    background-position: -2550px -2850px
+}
+
+.naruto_hero_388 {
+    background-position: -2400px -2850px
+}
+
+.naruto_hero_389 {
+    background-position: -2250px -2850px
+}
+
+.naruto_hero_390 {
+    background-position: -2100px -2850px
+}
+
+.naruto_hero_391 {
+    background-position: -1950px -2850px
+}
+
+.naruto_hero_392 {
+    background-position: -1800px -2850px
+}
+
+.naruto_hero_393 {
+    background-position: -1650px -2850px
+}
+
+.naruto_hero_394 {
+    background-position: -1500px -2850px
+}
+
+.naruto_hero_395 {
+    background-position: -1350px -2850px
+}
+
+.naruto_hero_396 {
+    background-position: -1200px -2850px
+}
+
+.naruto_hero_397 {
+    background-position: -1050px -2850px
+}
+
+.naruto_hero_398 {
+    background-position: -900px -2850px
+}
+
+.naruto_hero_399 {
+    background-position: -750px -2850px
+}
+
+.naruto_hero_400 {
+    background-position: -600px -2850px
+}
+
+.naruto_hero_401 {
+    background-position: -450px -2850px
+}
+
+.naruto_hero_402 {
+    background-position: -300px -2850px
+}
+
+.naruto_hero_403 {
+    background-position: -150px -2850px
+}
+
+.naruto_hero_404 {
+    background-position: -0px -2850px
+}
+
+.naruto_hero_405 {
+    background-position: -3000px -0px
+}
+
+.naruto_hero_406 {
+    background-position: -3000px -150px
+}
+
+.naruto_hero_407 {
+    background-position: -3000px -300px
+}
+
+.naruto_hero_408 {
+    background-position: -3000px -450px
+}
+
+.naruto_hero_409 {
+    background-position: -3000px -600px
+}
+
+.naruto_hero_410 {
+    background-position: -3000px -750px
+}
+
+.naruto_hero_411 {
+    background-position: -3000px -900px
+}
+
+.naruto_hero_412 {
+    background-position: -3000px -1050px
+}
+
+.naruto_hero_413 {
+    background-position: -3000px -1200px
+}
+
+.naruto_hero_414 {
+    background-position: -3000px -1350px
+}
+
+.naruto_hero_415 {
+    background-position: -3000px -1500px
+}
+
+.naruto_hero_416 {
+    background-position: -3000px -1650px
+}
+
+.naruto_hero_417 {
+    background-position: -3000px -1800px
+}
+
+.naruto_hero_418 {
+    background-position: -3000px -1950px
+}
+
+.naruto_hero_419 {
+    background-position: -3000px -2100px
+}
+
+.naruto_hero_420 {
+    background-position: -3000px -2250px
+}
+
+.naruto_hero_421 {
+    background-position: -3000px -2400px
+}
+
+.naruto_hero_422 {
+    background-position: -3000px -2550px
+}
+
+.naruto_hero_423 {
+    background-position: -3000px -2700px
+}
+
+.naruto_hero_424 {
+    background-position: -3000px -2850px
+}
+
+.naruto_hero_425 {
+    background-position: -3000px -3000px
+}
+
+.naruto_hero_426 {
+    background-position: -2850px -3000px
+}
+
+.naruto_hero_427 {
+    background-position: -2700px -3000px
+}
+
+.naruto_hero_428 {
+    background-position: -2550px -3000px
+}
+
+.naruto_hero_429 {
+    background-position: -2400px -3000px
+}
+
+.naruto_hero_430 {
+    background-position: -2250px -3000px
+}
+
+.naruto_hero_431 {
+    background-position: -2100px -3000px
+}
+
+.naruto_hero_432 {
+    background-position: -1950px -3000px
+}
+
+.naruto_hero_433 {
+    background-position: -1800px -3000px
+}
+
+.naruto_hero_434 {
+    background-position: -1650px -3000px
+}
+
+.naruto_hero_435 {
+    background-position: -1500px -3000px
+}
+
+.naruto_hero_436 {
+    background-position: -1350px -3000px
+}
+
+.naruto_hero_437 {
+    background-position: -1200px -3000px
+}
+
+.naruto_hero_438 {
+    background-position: -1050px -3000px
+}
+
+.naruto_hero_439 {
+    background-position: -900px -3000px
+}
+
+.naruto_hero_440 {
+    background-position: -750px -3000px
+}
+
+.naruto_hero_441 {
+    background-position: -600px -3000px
+}
+
+.naruto_hero_442 {
+    background-position: -450px -3000px
+}
+
+.naruto_hero_443 {
+    background-position: -300px -3000px
+}
+
+.naruto_hero_444 {
+    background-position: -150px -3000px
+}
+
+.naruto_hero_445 {
+    background-position: -0px -3000px
+}
+
+.naruto_hero_446 {
+    background-position: -3150px -0px
+}
+
+.naruto_hero_447 {
+    background-position: -3150px -150px
+}
+
+.naruto_hero_448 {
+    background-position: -3150px -300px
+}
+
+.naruto_hero_449 {
+    background-position: -3150px -450px
+}
+
+.naruto_hero_450 {
+    background-position: -3150px -600px
+}
+
+.naruto_hero_451 {
+    background-position: -3150px -750px
+}
+
+.naruto_hero_452 {
+    background-position: -3150px -900px
+}
+
+.naruto_hero_453 {
+    background-position: -3150px -1050px
+}
+
+.naruto_hero_454 {
+    background-position: -3150px -1200px
+}
+
+.naruto_hero_455 {
+    background-position: -3150px -1350px
+}
+
+.naruto_hero_456 {
+    background-position: -3150px -1500px
+}
+
+.naruto_hero_457 {
+    background-position: -3150px -1650px
+}
+
+.naruto_hero_458 {
+    background-position: -3150px -1800px
+}
+
+.naruto_hero_459 {
+    background-position: -3150px -1950px
+}
+
+.naruto_hero_460 {
+    background-position: -3150px -2100px
+}
+
+.naruto_hero_461 {
+    background-position: -3150px -2250px
+}
+
+.naruto_hero_462 {
+    background-position: -3150px -2400px
+}
+
+.naruto_hero_463 {
+    background-position: -3150px -2550px
+}
+
+.naruto_hero_464 {
+    background-position: -3150px -2700px
+}
+
+.naruto_hero_465 {
+    background-position: -3150px -2850px
+}
+
+.naruto_hero_466 {
+    background-position: -3150px -3000px
+}
+
+.naruto_hero_467 {
+    background-position: -3150px -3150px
+}
+
+.naruto_hero_468 {
+    background-position: -3000px -3150px
+}
+
+.naruto_hero_469 {
+    background-position: -2850px -3150px
+}
+
+.naruto_hero_470 {
+    background-position: -2700px -3150px
+}
+
+.naruto_hero_471 {
+    background-position: -2550px -3150px
+}
+
+.naruto_hero_472 {
+    background-position: -2400px -3150px
+}
+
+.naruto_hero_473 {
+    background-position: -2250px -3150px
+}
+
+.naruto_hero_474 {
+    background-position: -2100px -3150px
+}
+
+.naruto_hero_475 {
+    background-position: -1950px -3150px
+}
+
+.naruto_hero_477 {
+    background-position: -1800px -3150px
+}
+
+.naruto_hero_478 {
+    background-position: -1650px -3150px
+}
+
+.naruto_hero_479 {
+    background-position: -1500px -3150px
+}
+
+.naruto_hero_480 {
+    background-position: -1350px -3150px
+}
+
+.naruto_hero_481 {
+    background-position: -1200px -3150px
+}
+
+.naruto_hero_482 {
+    background-position: -1050px -3150px
+}
+
+.naruto_hero_483 {
+    background-position: -900px -3150px
+}
+
+.naruto_hero_484 {
+    background-position: -750px -3150px
+}
+
+.naruto_hero_485 {
+    background-position: -600px -3150px
+}
+
+.naruto_hero_486 {
+    background-position: -450px -3150px
+}
+
+.naruto_hero_487 {
+    background-position: -300px -3150px
+}
+
+.naruto_hero_488 {
+    background-position: -150px -3150px
+}
+
+.naruto_hero_489 {
+    background-position: -0px -3150px
+}
+
+.naruto_hero_490 {
+    background-position: -3300px -0px
+}
+
+.naruto_hero_491 {
+    background-position: -3300px -150px
+}
+
+.naruto_hero_492 {
+    background-position: -3300px -300px
+}
+
+.naruto_hero_493 {
+    background-position: -3300px -450px
+}
+
+.naruto_hero_494 {
+    background-position: -3300px -600px
+}
+
+.naruto_hero_495 {
+    background-position: -3300px -750px
+}
+
+.naruto_hero_496 {
+    background-position: -3300px -900px
+}
+
+.naruto_hero_497 {
+    background-position: -3300px -1050px
+}
+
+.naruto_hero_498 {
+    background-position: -3300px -1200px
+}
+
+.naruto_hero_499 {
+    background-position: -3300px -1350px
+}
+
+.naruto_hero_500 {
+    background-position: -3300px -1500px
+}
+
+.naruto_hero_501 {
+    background-position: -3300px -1650px
+}
+
+.naruto_hero_502 {
+    background-position: -3300px -1800px
+}
+
+.naruto_hero_503 {
+    background-position: -3300px -1950px
+}
+
+.naruto_hero_504 {
+    background-position: -3300px -2100px
+}
+
+.naruto_hero_505 {
+    background-position: -3300px -2250px
+}
+
+.naruto_hero_506 {
+    background-position: -3300px -2400px
+}
+
+.naruto_hero_507 {
+    background-position: -3300px -2550px
+}
+
+.naruto_hero_508 {
+    background-position: -3300px -2700px
+}
+
+.naruto_hero_509 {
+    background-position: -3300px -2850px
+}
+
+.naruto_hero_510 {
+    background-position: -3300px -3000px
+}
+
+.naruto_hero_511 {
+    background-position: -3300px -3150px
+}
+
+.naruto_hero_512 {
+    background-position: -3300px -3300px
+}
+
+.naruto_hero_513 {
+    background-position: -3150px -3300px
+}
+
+.naruto_hero_514 {
+    background-position: -3000px -3300px
+}
+
+.naruto_hero_515 {
+    background-position: -2850px -3300px
+}
+
+.naruto_hero_516 {
+    background-position: -2700px -3300px
+}
+
+.naruto_hero_517 {
+    background-position: -2550px -3300px
+}
+
+.naruto_hero_518 {
+    background-position: -2400px -3300px
+}
+
+.naruto_hero_519 {
+    background-position: -2250px -3300px
+}
+
+.naruto_hero_520 {
+    background-position: -2100px -3300px
+}

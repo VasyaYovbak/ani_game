@@ -61,6 +61,30 @@ def gameSearch():
         return str(game.game_id), 200
 
 
+@game_blueprint.route("/game/search-status", methods=['GET'])
+@jwt_required()
+def stopStatus():
+    session = Session(bind=engine)
+    user_id = get_jwt_identity()
+    user_in_queue = session.query(UserQueue).filter(UserQueue.user_id == user_id).first()
+    session.close()
+    if user_in_queue:
+        return jsonify(True), 200
+    else:
+        return jsonify(False), 200
+
+
+@game_blueprint.route("/game/search-stop", methods=['DELETE'])
+@jwt_required()
+def stopSearch():
+    session = Session(bind=engine)
+    user_id = get_jwt_identity()
+    session.query(UserQueue).filter(UserQueue.user_id == user_id).delete()
+    session.commit()
+    session.close()
+    return jsonify(1), 200
+
+
 @game_blueprint.route("/game/<int:game_id>", methods=['POST'])
 @jwt_required()
 def getCards(game_id):

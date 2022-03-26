@@ -90,8 +90,8 @@ def setup_socket(sio):
     def connect(massage, user_id):
         data = massage['data']
         room_id = data['game_id']
-        join_room(room_id)
         game = get_current_game(room_id)
+        join_room(room_id)
         if type(game) == str:
             if game == "sorry, this game is over":
                 session = Session(bind=engine)

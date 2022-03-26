@@ -92,6 +92,8 @@ def getCards(game_id):
     user_id = get_jwt_identity()
     game = session.query(Game).get(game_id)
     players = [game.winner_id, game.loser_id]
+    if user_id not in players:
+        return "It isn't your game !!!", 403
     opponent = 0
     for player in players:
         if player != user_id:
@@ -128,13 +130,13 @@ def gameStart(game_id):
     cards_id_2 = []
     while len(cards_id_1) != COUNT_OF_CARDS:
         number = int(random.random() * size)
-        if number not in cards_id_1:
+        if character_list[number].character_id not in cards_id_1:
             print(character_list[number].character_id)
             cards_id_1.append(character_list[number].character_id)
 
     while len(cards_id_2) != COUNT_OF_CARDS:
         number = int(random.random() * size)
-        if number not in cards_id_2:
+        if character_list[number].character_id not in cards_id_2:
             cards_id_2.append(character_list[number].character_id)
 
     selected_hero_1 = random.choice(cards_id_1)

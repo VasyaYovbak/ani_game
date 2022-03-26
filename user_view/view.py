@@ -10,6 +10,7 @@ from connection import session
 from user_view.models import User, Achievement, UserAchievement, TokenBlocklist
 from user_view.schema import register_schema, newAchievement, login_schema
 from marshmallow import ValidationError
+from sqlalchemy import desc
 
 ACCESS_EXPIRES = timedelta(hours=1)
 
@@ -238,6 +239,17 @@ def change():
             session.query(User).filter(User.id == user_id).update({"username": str(request.json["username"])})
     session.commit()
     return "All info changed successfully", 200
+
+
+@user_info.route('/leaderboard', methods=['GET'])
+def getLeaderboard():
+    users = session.query(User).order_by(desc(User.rating)).all()
+    result = []
+    for user in users:
+        user = user.__dict__
+        del user['email'], user['permission'], user['password'], user['_sa_instance_state']
+        result.append(user)
+    return jsonify(result), 200
 
 
 user_info.add_url_rule('/registration', view_func=RegisterApi.as_view("register"))

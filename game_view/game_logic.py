@@ -126,7 +126,12 @@ def setup_socket(sio):
             if suggested_cart.card_id == active_cards[0]['card_id']:
                 db_game = session.query(Game).filter(Game.game_id == game['id']).first()
                 db_game.winner_id = user_id
+                winner = session.query(User).filter(User.id == user_id).first()
+                winner.rating += 25
                 db_game.loser_id = opponent_id
+                loser = session.query(User).filter(User.id == opponent_id).first()
+                if loser.rating > 25:
+                    loser.rating -= 25
                 db_game.date = datetime.datetime.today()
                 session.commit()
                 winner = session.query(User).filter(User.id == db_game.winner_id).first()

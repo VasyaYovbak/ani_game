@@ -207,7 +207,7 @@ def get_profile(user_id):
                                           "username": user_info[1],
                                           "image": user_info[2]})
 
-        response.setdefault('user_achievements', games)
+        response.setdefault('games', games)
 
         return jsonify(response), 200
 

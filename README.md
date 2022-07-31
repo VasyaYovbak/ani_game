@@ -1,16 +1,15 @@
 # ani_game
 #### This project was invented by Vasyl Yovbak
-#### This is a game for two players with main idea guess the anime hero
-#### What we need to realize :
-##### Registration system :
+#### This is a game for two players with the main idea to guess the anime hero
+#### What we need to implement:
+##### Registration system:
      creation new user
-     check of created user
-##### Login system :
+##### Login system:
      block system 
-##### Opponent searching system
+##### Opponent searching system:
      put user in search queue
-     make connection with two user
-##### System for communication in game (chat for two people)
+     make connection between two users
+##### System for communication in game (chat for two people):
      send massage to opponent
 ##### Requests for game events
      startGame (create cards for game)

@@ -1,8 +1,5 @@
-import datetime
-
-from sqlalchemy import Table, Integer, String, \
-    Column, ForeignKey, Boolean, DateTime
-from sqlalchemy.orm import relationship
+from sqlalchemy import Integer, String, \
+    Column, DateTime
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
 from passlib.hash import bcrypt
@@ -34,25 +31,25 @@ class User(Base):
         return token
 
 
-class Achievement(Base):
-    __tablename__ = 'achievement'
-    id = Column(Integer(), primary_key=True, autoincrement=True)
-    name = Column(String(30), nullable=False)
-    experience = Column(Integer(), nullable=False)
-    description = Column(String(120), nullable=False)
-
-
-class UserAchievement(Base):
-    __tablename__ = 'user_achievement'
-    user_id = Column(Integer(), ForeignKey('user.id'), primary_key=True)
-    achievement_id = Column(Integer(), ForeignKey('achievement.id'), primary_key=True)
-
-    user = relationship("User")
-    achievement = relationship("Achievement")
-
-
 class TokenBlocklist(Base):
     __tablename__ = 'token_block_list'
     id = Column(Integer(), primary_key=True)
     jti = Column(String(36), nullable=False)
     created_at = Column(DateTime(), nullable=False)
+
+# User Achievements
+# class Achievement(Base):
+#     __tablename__ = 'achievement'
+#     id = Column(Integer(), primary_key=True, autoincrement=True)
+#     name = Column(String(30), nullable=False)
+#     experience = Column(Integer(), nullable=False)
+#     description = Column(String(120), nullable=False)
+#
+#
+# class UserAchievement(Base):
+#     __tablename__ = 'user_achievement'
+#     user_id = Column(Integer(), ForeignKey('user.id'), primary_key=True)
+#     achievement_id = Column(Integer(), ForeignKey('achievement.id'), primary_key=True)
+#
+#     user = relationship("User")
+#     achievement = relationship("Achievement")

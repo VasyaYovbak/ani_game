@@ -3,12 +3,6 @@ from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, 
 from connection import engine
 
 meta = MetaData()
-Table('achievement', meta,
-      Column('id', Integer(), autoincrement=True, nullable=False, primary_key=True),
-      Column('name', String(length=30), nullable=False),
-      Column('experience', Integer(), nullable=False),
-      Column('description', String(length=120), nullable=False),
-      )
 Table('character', meta,
       Column('character_id', Integer(), nullable=False, primary_key=True),
       Column('name', String(length=40), nullable=False),
@@ -35,18 +29,11 @@ Table('game', meta,
       Column('winner_id', Integer(), nullable=True),
       Column('loser_id', Integer(), nullable=True),
       Column('date', DateTime(), nullable=True),
-      Column('duration', Time(), nullable=True),
       Column('chat', String(length=1000), nullable=True),
       ForeignKeyConstraint(['guested_character_id'], ['character.character_id']),
       ForeignKeyConstraint(['loser_id'], ['user.id'], ),
       ForeignKeyConstraint(['unguested_character_id'], ['character.character_id'], ),
       ForeignKeyConstraint(['winner_id'], ['user.id'], ),
-      )
-Table('user_achievement', meta,
-      Column('user_id', Integer(), nullable=False, primary_key=True),
-      Column('achievement_id', Integer(), nullable=False, primary_key=True),
-      ForeignKeyConstraint(['achievement_id'], ['achievement.id'], ),
-      ForeignKeyConstraint(['user_id'], ['user.id'], ),
       )
 Table('user_queue', meta,
       Column('user_id', Integer(), nullable=False, primary_key=True),
@@ -65,3 +52,17 @@ Table('card', meta,
       ForeignKeyConstraint(['user_id'], ['user.id'], ),
       )
 meta.create_all(engine)
+
+# User Achievements
+# Table('achievement', meta,
+#       Column('id', Integer(), autoincrement=True, nullable=False, primary_key=True),
+#       Column('name', String(length=30), nullable=False),
+#       Column('experience', Integer(), nullable=False),
+#       Column('description', String(length=120), nullable=False),
+#       )
+# Table('user_achievement', meta,
+#       Column('user_id', Integer(), nullable=False, primary_key=True),
+#       Column('achievement_id', Integer(), nullable=False, primary_key=True),
+#       ForeignKeyConstraint(['achievement_id'], ['achievement.id'], ),
+#       ForeignKeyConstraint(['user_id'], ['user.id'], ),
+#       )

@@ -19,15 +19,15 @@ class LoginSchema(Schema):
         fields = ('email', 'password')
 
 
-class NewAchievement(Schema):
-    name = fields.Str(required=True)
-    experience = fields.Int(required=True)
-    description = fields.Str(required=True)
-
-    class Meta:
-        fields = ('name', 'experience', 'description')
-
-
 register_schema = RegisterSchema()
-newAchievement = NewAchievement()
 login_schema = LoginSchema()
+
+# User Achievements
+# class NewAchievement(Schema):
+#     name = fields.Str(required=True)
+#     experience = fields.Int(required=True)
+#     description = fields.Str(required=True)
+#
+#     class Meta:
+#         fields = ('name', 'experience', 'description')
+# newAchievement = NewAchievement()

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, ForeignKeyConstraint, DateTime, Time, \
+from sqlalchemy import MetaData, Table, Column, Integer, String, ForeignKeyConstraint, DateTime, Time, \
     Boolean
 from connection import engine
 

@@ -5,9 +5,11 @@ from flask_restful import Resource
 from passlib.hash import bcrypt
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 from connection import session
+from game_view.models import Game
 from user_view.models import User, TokenBlocklist
 from user_view.schema import register_schema, login_schema
 from marshmallow import ValidationError
+from sqlalchemy import desc
 
 ACCESS_EXPIRES = timedelta(hours=1)
 
@@ -83,12 +85,28 @@ class Logout(Resource):
 @user_info.route('/profile/<int:user_id>', methods=['GET'])
 def get_profile(user_id):
     try:
-        user_info = session.query(User.email, User.username).filter(User.id == user_id).first()
+        user_info = session.query(User.email, User.username, User.image).filter(User.id == user_id).first()
         if not user_info:
             raise Exception("404:User doesn't exist")
         response = dict()
+
+        previous_game_list = session.query(Game).filter(
+            ((Game.loser_id == user_id) | (Game.winner_id == user_id)) & (Game.date != None)) \
+            .order_by(desc(Game.game_id)).limit(5).all()
+
+        games = []
+        if previous_game_list:
+            for game in previous_game_list:
+                game = game.__dict__
+                game['winner'] = session.query(User).filter(User.id == game['winner_id']).first().username
+                game['loser'] = session.query(User).filter(User.id == game['loser_id']).first().username
+                del game['_sa_instance_state'], game['guested_character_id'], game['unguested_character_id'], \
+                    game['duration'], game['chat'], game['winner_id'], game['loser_id']
+                games.append(game)
+
         response.setdefault('user_info', {"email": user_info[0],
-                                          "username": user_info[1]})
+                                          "username": user_info[1],
+                                          "image": user_info[2]})
         # User Achievements
         # achievements_list = session.query(UserAchievement.achievement_id).filter(
         #     UserAchievement.user_id == user_id).all()
@@ -103,6 +121,8 @@ def get_profile(user_id):
         # else:
         #     achievements = []
         # response.setdefault('user_achievements', achievements)
+
+        response.setdefault('games', games)
 
         return jsonify(response), 200
 
@@ -136,6 +156,17 @@ def change():
             session.query(User).filter(User.id == user_id).update({"username": str(request.json["username"])})
     session.commit()
     return "All info changed successfully", 200
+
+
+@user_info.route('/leaderboard', methods=['GET'])
+def getLeaderboard():
+    users = session.query(User).order_by(desc(User.rating)).all()
+    result = []
+    for user in users:
+        user = user.__dict__
+        del user['email'], user['permission'], user['password'], user['_sa_instance_state']
+        result.append(user)
+    return jsonify(result), 200
 
 
 user_info.add_url_rule('/registration', view_func=RegisterApi.as_view("register"))

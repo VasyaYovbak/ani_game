@@ -1,23 +1,17 @@
 from datetime import timedelta, datetime, timezone
 import jwt as jwt1
 from flask import Blueprint, request, Response, redirect, jsonify
-import redis
-from flask_cors import cross_origin
+
 from flask_restful import Resource
 from passlib.hash import bcrypt
-from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt, create_access_token, create_refresh_token, set_access_cookies
-from http import HTTPStatus
+from flask_jwt_extended import jwt_required, get_jwt_identity
 
-# from app import handle_error
 from connection import session
-from user_view.models import User, Achievement, UserAchievement, TokenBlocklist
-from user_view.schema import register_schema, newAchievement, login_schema
+from user_view.models import User,  TokenBlocklist
+from user_view.schema import register_schema, login_schema
 from marshmallow import ValidationError
 from config import Config
 
-# jwt_redis_blocklist = redis.StrictRedis(
-#     host="localhost", port=6379, db=0, decode_responses=True
-# )
 
 JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)
 JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=15)
@@ -160,85 +154,85 @@ class Logout(Resource):
         return jsonify(msg=f"{token_type.capitalize()} token successfully revoked")
 
 
-class AchievementsBase(Resource):
-    def get(self):
-
-        result = []
-        achievements = session.query(Achievement).all()
-        if not achievements:
-            raise Exception(f'400:Got problem with taking Achievements (Achievement table is empty)')
-        for achievement in achievements:
-            achievement = achievement.__dict__
-            del achievement['_sa_instance_state']
-            result.append(achievement)
-        return jsonify(result), 200
-
-
-    @jwt_required()
-    def post(self):
-
-        permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
-        if permission[0] != 'admin':
-            raise Exception("403:You dont have permissions to make this operation")
-        achievements = request.json
-        for achievement in achievements:
-            table_achievement = Achievement(**newAchievement.load(achievement))
-            if not session.query(Achievement).filter(Achievement.name == table_achievement.name).all():
-                session.add(table_achievement)
-            else:
-                raise Exception(f'409:{table_achievement.name} already exists')
-        session.commit()
-        return "All Achievement successfully added ", 200
-
-
-class AchievementCRUD(Resource):
-    def get(self, achievement_id):
-
-        achievement = session.query(Achievement).get(achievement_id)
-        if not achievement:
-            raise Exception("400:Sorry , this Achievement doesn't exists")
-        achievement = achievement.__dict__
-        del achievement['_sa_instance_state']
-        return jsonify(achievement), 200
-
-
-    @jwt_required()
-    def put(self, achievement_id):
-
-        permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
-        if permission[0] != 'admin':
-            raise Exception("403:You dont have permissions to make this operation")
-        achievement = session.query(Achievement).get(achievement_id)
-        if not achievement:
-            raise Exception("404:Wrong Achievement id (Achievement doesn't exist)")
-        new_achievement = Achievement(**newAchievement.load(request.json))
-        achievement.name = new_achievement.name
-        achievement.description = new_achievement.description
-        achievement.experience = new_achievement.experience
-        session.commit()
-        return "Achievement successfully changed ", 200
-
-
-    @jwt_required()
-    def delete(self, achievement_id):
-
-        permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
-        if permission[0] != 'admin':
-            raise Exception("403:You dont have permissions to make this operation")
-        achievement = session.query(Achievement).get(achievement_id)
-        if not achievement:
-            raise Exception("404:Wrong Achievement id (Achievement doesn't exist)")
-
-        user_achievements = session.query(UserAchievement).filter(
-            UserAchievement.achievement_id == achievement_id).all()
-        for user_achievement in user_achievements:
-            session.delete(user_achievement)
-        session.commit()
-
-        session.query(Achievement).filter(Achievement.id == achievement_id).delete()
-        session.commit()
-        return "Achievement successfully deleted", 200
-
+# class AchievementsBase(Resource):
+#     def get(self):
+#
+#         result = []
+#         achievements = session.query(Achievement).all()
+#         if not achievements:
+#             raise Exception(f'400:Got problem with taking Achievements (Achievement table is empty)')
+#         for achievement in achievements:
+#             achievement = achievement.__dict__
+#             del achievement['_sa_instance_state']
+#             result.append(achievement)
+#         return jsonify(result), 200
+#
+#
+#     @jwt_required()
+#     def post(self):
+#
+#         permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
+#         if permission[0] != 'admin':
+#             raise Exception("403:You dont have permissions to make this operation")
+#         achievements = request.json
+#         for achievement in achievements:
+#             table_achievement = Achievement(**newAchievement.load(achievement))
+#             if not session.query(Achievement).filter(Achievement.name == table_achievement.name).all():
+#                 session.add(table_achievement)
+#             else:
+#                 raise Exception(f'409:{table_achievement.name} already exists')
+#         session.commit()
+#         return "All Achievement successfully added ", 200
+#
+#
+# class AchievementCRUD(Resource):
+#     def get(self, achievement_id):
+#
+#         achievement = session.query(Achievement).get(achievement_id)
+#         if not achievement:
+#             raise Exception("400:Sorry , this Achievement doesn't exists")
+#         achievement = achievement.__dict__
+#         del achievement['_sa_instance_state']
+#         return jsonify(achievement), 200
+#
+#
+#     @jwt_required()
+#     def put(self, achievement_id):
+#
+#         permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
+#         if permission[0] != 'admin':
+#             raise Exception("403:You dont have permissions to make this operation")
+#         achievement = session.query(Achievement).get(achievement_id)
+#         if not achievement:
+#             raise Exception("404:Wrong Achievement id (Achievement doesn't exist)")
+#         new_achievement = Achievement(**newAchievement.load(request.json))
+#         achievement.name = new_achievement.name
+#         achievement.description = new_achievement.description
+#         achievement.experience = new_achievement.experience
+#         session.commit()
+#         return "Achievement successfully changed ", 200
+#
+#
+#     @jwt_required()
+#     def delete(self, achievement_id):
+#
+#         permission = session.query(User.permission).filter(User.id == get_jwt_identity()).first()
+#         if permission[0] != 'admin':
+#             raise Exception("403:You dont have permissions to make this operation")
+#         achievement = session.query(Achievement).get(achievement_id)
+#         if not achievement:
+#             raise Exception("404:Wrong Achievement id (Achievement doesn't exist)")
+#
+#         user_achievements = session.query(UserAchievement).filter(
+#             UserAchievement.achievement_id == achievement_id).all()
+#         for user_achievement in user_achievements:
+#             session.delete(user_achievement)
+#         session.commit()
+#
+#         session.query(Achievement).filter(Achievement.id == achievement_id).delete()
+#         session.commit()
+#         return "Achievement successfully deleted", 200
+#
 
 @user_info.route('/profile/<int:user_id>', methods=['GET'])
 def get_profile(user_id):
@@ -248,24 +242,24 @@ def get_profile(user_id):
         raise Exception("404:User doesn't exist")
     response = dict()
 
-    achievements_list = session.query(UserAchievement.achievement_id).filter(
-        UserAchievement.user_id == user_id).all()
-
-    if achievements_list:
-        achievements = []
-        for achievement_id in achievements_list:
-            print("here")
-            achievement = session.query(Achievement).filter(Achievement.id == achievement_id).first()
-            achievement = achievement.__dict__
-            del achievement['_sa_instance_state']
-            achievements.append(achievement)
-    else:
-        achievements = []
+    # achievements_list = session.query(UserAchievement.achievement_id).filter(
+    #     UserAchievement.user_id == user_id).all()
+    #
+    # if achievements_list:
+    #     achievements = []
+    #     for achievement_id in achievements_list:
+    #         print("here")
+    #         achievement = session.query(Achievement).filter(Achievement.id == achievement_id).first()
+    #         achievement = achievement.__dict__
+    #         del achievement['_sa_instance_state']
+    #         achievements.append(achievement)
+    # else:
+    #     achievements = []
+    # response.setdefault('user_achievements', achievements)
 
     response.setdefault('user_info', {"email": user_info[0],
                                       "username": user_info[1]})
 
-    response.setdefault('user_achievements', achievements)
 
     return jsonify(response), 200
 
@@ -302,5 +296,5 @@ user_info.add_url_rule('/registration', view_func=RegisterApi.as_view("register"
 user_info.add_url_rule('/login', view_func=LoginApi.as_view("login"))
 user_info.add_url_rule('/logout', view_func=Logout.as_view("logout"))
 
-user_info.add_url_rule('/achievements', view_func=AchievementsBase.as_view("achievements_base"))
-user_info.add_url_rule('/achievement/<int:achievement_id>', view_func=AchievementCRUD.as_view("achievementCRUD"))
+# user_info.add_url_rule('/achievements', view_func=AchievementsBase.as_view("achievements_base"))
+# user_info.add_url_rule('/achievement/<int:achievement_id>', view_func=AchievementCRUD.as_view("achievementCRUD"))

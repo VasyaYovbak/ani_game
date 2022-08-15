@@ -1,0 +1,154 @@
+full_name,image
+Goku,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/790730-konachan.com___41666_dragonball_son_goku.png
+Vegeta,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5192096-vegeta_fukkatsu_no_f_2_by_bardocksonic-d9ik5c3.png
+Whis,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4859692-whis.jpg
+Beerus,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5352566-a3a.jpg
+Krillin,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732493-2944624772-4014b.png
+Piccolo,https://comicvine.gamespot.com/a/uploads/square_small/0/6130/151422-10016-piccolo.jpg
+Gohan,https://comicvine.gamespot.com/a/uploads/square_small/8/80111/3365648-gohan_by_feeh05051995-d5a712v.png
+Bulma Briefs,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/5119633-bulma%20-%20dragon%20ball%20super.jpg
+Master Roshi,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732451-8397948238-maste.png
+Elder Kai,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/918669-elder_kai.jpg
+Supreme Kai,https://comicvine.gamespot.com/a/uploads/square_small/0/5959/293386-78334-supreme-kai.jpg
+Android 18,https://comicvine.gamespot.com/a/uploads/square_small/0/7475/168490-8614-android-18.gif
+Tien,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732779-3127427154--Tien.jpg
+Goten,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5735888-7923614686-816f7.jpg
+Trunks,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/1064926-untitled_1.png
+Vados,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4859704-champa%20attendant.jpg
+Zeno,https://comicvine.gamespot.com/a/uploads/square_small/11128/111288213/5244164-1110103912-latest
+Chi Chi,https://comicvine.gamespot.com/a/uploads/square_small/2/22757/412220-ChiChiTalking2.jpg
+Champa,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5129198-champa_3_by_saodvd-d9vn78o.png
+Frieza,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5816339-3659887838-friez.png
+Grand Priest,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5596104-daishinkan.jpg
+Hercule,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/1065238-untitled_1.png
+Mai,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/5427389-mai%20-%20episode%2048.jpg
+Marron,https://comicvine.gamespot.com/a/uploads/square_small/6/62795/4598563-marron_dbz_battle_of_god.jpg
+Toppo,https://comicvine.gamespot.com/a/uploads/square_small/11131/111312232/6044924-toppo2.png
+Videl,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5826022-3206016898-movie.png
+Cabba,https://comicvine.gamespot.com/a/uploads/square_small/11130/111300050/5614338-kyabe.png
+Android 17,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/790748-main.jpg
+Shuu,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5729154-0841202549-agent.jpg
+Fuwa,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5826532-5880693112-latest
+Jiren,https://comicvine.gamespot.com/a/uploads/square_small/11131/111312232/6044923-jiren_101.jpg
+Pilaf,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732489-5303617731-emper.jpg
+Hit,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5153887-hit_profile.jpg
+Buu,https://comicvine.gamespot.com/a/uploads/square_small/0/5078/141684-187603-buu.jpg
+Oolong,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732484-3413010382-latest
+Dende,https://comicvine.gamespot.com/a/uploads/square_small/1/11433/599606-dende.jpg
+Jaco,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/4313120-jaco.jpg
+Dyspo,https://comicvine.gamespot.com/a/uploads/square_small/11131/111312232/6044928-dyspoo.png
+Belmod,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070127-u11%20god%20belmod.jpg
+Kai,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070139-u11%20kai%20kai.jpg
+Gowasu,https://comicvine.gamespot.com/a/uploads/square_small/11128/111288213/5441952-0138502139-Leopa.jpg
+Dr. Briefs,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/786130-folge124_02.gif
+Arack,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070063-u5%20god%20arack.jpg
+Yamcha,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732467-8001271270-50049.jpg
+Iwne,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6069993-u1%20god%20iwne.jpg
+Anato,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6069994-u1%20kai%20anato.jpg
+Kampari,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070008-u3%20angel%20kampari.jpg
+Ogma,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070074-u5%20kai%20ogma.jpg
+Future Trunks,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5248678-mirai_trunks_dbs_v2_by_saodvd-da4yfon.png
+Pan,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/915034-untitled_1.png
+Puar,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/5313759-dragon_ball_saga___puar_1_by_blaster85-d4w76lx.jpg
+Magetta,https://comicvine.gamespot.com/a/uploads/square_small/11130/111300050/5614332-auta_magetta_profile.jpg
+Caulifla,https://comicvine.gamespot.com/a/uploads/square_small/11133/111336082/6834930-cauliflo.png
+Awamo,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6069992-u1%20angel%20awamo.jpg
+Cucatail,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070058-u5%20angel%20cucatail.jpg
+Marcarita,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070122-u11%20angel%20marcarita.jpg
+King Kai,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/996676-king_kai.jpg
+Mrs. Briefs,https://comicvine.gamespot.com/a/uploads/square_small/0/6342/1451537-37a7d9d6257918a67a599e765d50435a1269794611_full.jpg
+Botamo,https://comicvine.gamespot.com/a/uploads/square_small/11130/111300050/5614329-winnie_the_pooh_beast_mode.png
+Kale,https://comicvine.gamespot.com/a/uploads/square_small/11133/111336082/6179406-2960133-kale_dragon_ball_super_2_by_urielalv-dbanb0u.png
+Sawar,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6069995-u2%20angel%20sawar.jpg
+Chao-Zu,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732783-5711857271-latest
+Bubbles,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/2177432-bubbles.jpg
+Heles,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070001-u2%20god%20heles.jpg
+Conic,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070039-u4%20angel%20conic.jpg
+Quitela,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070043-u4%20god%20quitela.jpg
+Ille,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070086-u8%20kai%20ille.jpg
+Geene,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070159-u12%20god%20geene.jpg
+Frost,https://comicvine.gamespot.com/a/uploads/square_small/11130/111300050/5613333-frostfinalform.jpg
+Zamasu,https://comicvine.gamespot.com/a/uploads/square_small/11128/111288213/5441748-4066382450-Zamas.jpg
+Pell,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070005-u2%20kai%20pell.jpg
+Mosco,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070015-u3%20god%20mosco.jpg
+Liquiir,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070081-u8%20god%20liquiir.jpg
+Agu,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070160-u12%20kai%20agu.jpg
+Eyre,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070024-u3%20kai%20eyre.jpg
+Kuru,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070050-u4%20kai%20kuru.jpg
+Yajirobe,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732837-8702688298-Yajir.png
+Ox King,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732447-8040829718-latest
+Black Goku,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/5330990-black%20goku.jpg
+Korun,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070079-u8%20angel%20korun.jpg
+Mohito,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070087-u9%20angel%20mohito.jpg
+Kusu,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070095-u10%20angel%20kusu.jpg
+Martinne,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070148-u12%20angel%20martinne.jpg
+Kibito,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5736020-3057636165-latest
+Turtle,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5813389-7787361325-latest
+Monaka,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/5209356-monaka%20-%20episode%2042.jpg
+Bee,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/2197086-bee.jpg
+Brianne de Chateau,https://comicvine.gamespot.com/a/uploads/square_small/11131/111312232/6051888-bdc.png
+Sidra,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070089-u9%20god%20sidra.jpg
+Roh,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070092-u9%20kai%20roh.jpg
+Rumsshi,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6070106-u10%20god%20rumsshi.jpg
+Kahseral,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6158923-kahseral.jpg
+Cocotte,https://comicvine.gamespot.com/a/uploads/square_small/11133/111336082/6292726-cocotte-0.png
+Kunshi,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6158926-kunshi.jpg
+Tupper,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6158949-tupper.jpg
+Sorbet,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4859697-sorbet.png
+Gregory,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4875741-gregory.jpg
+Sanka Ku,https://comicvine.gamespot.com/a/uploads/square_small/11131/111312232/6058933-sanka2.png
+Su Roas,https://comicvine.gamespot.com/a/uploads/square_small/11131/111312232/6058934-suunewpiic.png
+Vuon,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6158947-vuon.jpg
+Bergamo,https://comicvine.gamespot.com/a/uploads/square_small/11133/111336082/6314964-bergamo2.png
+Kibito Kai,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/2197867-kibito_kai.png
+Zoiray,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6158953-zoiray.jpg
+Mr. Popo,https://comicvine.gamespot.com/a/uploads/square_small/6/67602/2157716-2525368625_1.jpg
+Galactic King,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4959678-galactic%20king%20-%20dragon%20ball%20super%20ch%207.jpg
+Alien Announcer,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/5318098-alien%20announcer.jpg
+Bulla,https://comicvine.gamespot.com/a/uploads/square_small/8/82051/1503753-81861_buraevil.jpg
+Fortuneteller Baba,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/790469-brujaif1.jpg
+Tagoma,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4921241-tagoma%20-%20v%20jump%20april%202015.jpg
+Captain Ginyu,https://comicvine.gamespot.com/a/uploads/square_small/0/607/80596-162726-captain-ginyu.jpg
+Shenlong,https://comicvine.gamespot.com/a/uploads/square_small/0/77/4314314-shenglong_by_genzoman-d3j349f.jpg
+Korin,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732631-8726078316-latest
+Shisami,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4921263-shisami%20-%20v%20jump%20may%202015.jpg
+Gotenks,https://comicvine.gamespot.com/a/uploads/square_small/1/14037/424137-gotenks_ssj3.jpg
+Tights,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4923670-tights%20-%20dbs%20ch%206%20v%20jump%20jan%202016.jpg
+Zuno,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4968555-zunou%20-%20dragon%20ball%20super%20ch%207.jpg
+Super Shenron,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/5278697-super%20shenron.jpg
+Kefla,https://comicvine.gamespot.com/a/uploads/square_small/11133/111336082/6735001-kefla_01.jpg
+Cell,https://comicvine.gamespot.com/a/uploads/square_small/0/6342/151003-163934-cell.jpg
+Majin Buu,https://comicvine.gamespot.com/a/uploads/square_small/3/37889/1404911-266661_untitled___m____mnn.jpg
+Arale Norimaki,https://comicvine.gamespot.com/a/uploads/square_small/6/67622/1250436-arale.jpg
+Dodoria,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/951106-dodoria_2.jpg
+Porunga,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5216623-porunga_grants_a_wish_of_his_own____by_titanscorner-d6he9j9.jpg
+Android 8,https://comicvine.gamespot.com/a/uploads/square_small/10/100757/2136133-763px_angryandroid8_ptp_.png
+King Vegeta,https://comicvine.gamespot.com/a/uploads/square_small/11116/111160422/4734247-6699392354-15545.jpg
+Oracle Fish,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/4859877-oracle_fish_53895.jpg
+Kami,https://comicvine.gamespot.com/a/uploads/square_small/11116/111160422/7883673-1040170750-340.png
+Zarbon,https://comicvine.gamespot.com/a/uploads/square_small/0/3016/136158-18116-zarbon.jpg
+Vegito,https://comicvine.gamespot.com/a/uploads/square_small/11112/111122896/5686562-vegetto_super_saiyan_blue__wallpaper__by_frost_z-dauwzn5.png
+Babidi,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/915029-untitled_2.png
+Nail,https://comicvine.gamespot.com/a/uploads/square_small/3/39241/814357-07karendakikakuneirukansei.gif
+Dabura,https://comicvine.gamespot.com/a/uploads/square_small/10/100990/2439820-daburaevilsmile.png
+King Yemma,https://comicvine.gamespot.com/a/uploads/square_small/1/14431/5732892-1596510652-drago.jpg
+Senbei Norimaki,https://comicvine.gamespot.com/a/uploads/square_small/6/67622/1244987-senbei.jpg
+Gatchan,https://comicvine.gamespot.com/a/uploads/square_small/6/67622/1238515-gatchans.jpg
+Akane Kimidori,https://comicvine.gamespot.com/a/uploads/square_small/6/67622/1238795-akane.jpg
+Gala,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5538808-gala_dragonball.jpg
+Pagos,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5538810-pagos.jpg
+King Nikochan,https://comicvine.gamespot.com/a/uploads/square_small/6/67622/1240438-kingnikochan.jpg
+King Nikochan's Assistant,https://comicvine.gamespot.com/a/uploads/square_small/6/67622/1240439-nikochan2.jpg
+Turbo Norimaki,https://comicvine.gamespot.com/a/uploads/square_small/6/67622/1242158-turbonorimaki01.png
+Dr. Mashirito,https://comicvine.gamespot.com/a/uploads/square_small/11129/111296641/5568796-mashirito.png
+Future Gohan,https://comicvine.gamespot.com/a/uploads/square_small/11133/111336082/6312418-hr-future-gohan.jpg
+Lavender,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337919-u9%20lavender.jpg
+Basil,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337927-basil.jpg
+Comfrey,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337928-u9%20comfrey%20-%20ch%2033.jpg
+Hop,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337930-u9%20hop.jpg
+Roselle,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337934-roselle.jpg
+Oregano,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337937-oregano.jpg
+Sorrel,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337941-sorrel.jpg
+Hyssop,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337943-hyssop.jpg
+Chappil,https://comicvine.gamespot.com/a/uploads/square_small/3/38919/6337945-chappil.jpg
+Anilaza,https://comicvine.gamespot.com/a/uploads/square_small/11133/111336082/7646151-3rd_universe_fused_warrior.png

@@ -1,0 +1,193 @@
+id full_name image appearance
+0 "Monkey D. Luffy" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080202-1635462455-unkno.png 103
+1 "Roronoa Zoro" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080194-7382724028-unkno.png 98
+2 Usopp https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080203-3155899631-unkno.png 96
+3 Nami https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080201-7164581366-unkno.png 95
+4 "Vinsmoke Sanji" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2434111-473592_sanji_time_skip_1.png 90
+5 "Nico Robin" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2434105-render_nicorobin.png 87
+6 "Tony Tony Chopper" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2434113-chopper_time_skip_2.png 79
+7 Franky https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2434115-473629_untitled_2.png 66
+8 Brook https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2434117-473497_brook_timeskip1.png 50
+9 "Trafalgar Law" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2841730-law.jpg 36
+10 Shanks https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080205-0870339526-unkno.png 34
+11 Jimbei https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3056239-7978640494-Jinbe.png 30
+12 Kin'emon https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079191-0722026288-unkno.png 26
+13 "Big Mom" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078991-3720139327-unkno.png 24
+14 Carrot https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5871669-66fe3267-f7ee-405d-c083-9f3e6e5f00f9.png 24
+15 "Sir Crocodile" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079118-6306836166-Scree.jpg 23
+16 "Buggy the Clown" https://comicvine.gamespot.com/a/uploads/square_small/5/58245/1189311-buggy1.png 23
+17 "Nefertari Vivi" https://comicvine.gamespot.com/a/uploads/square_small/2/21622/814634-vivi.jpg 23
+18 "Portgaz D. Ace" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078671-9363995852-39fc3.jpg 22
+19 Smoker https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7097956-0655-008.jpg 22
+20 "Donquixote Doflamingo" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080204-8435747647-unkno.png 21
+21 "Kozuki Momonosuke" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7097941-volume_94%20%281%29%20-%20kopya.png 21
+22 Blackbeard https://comicvine.gamespot.com/a/uploads/square_small/4/46706/1152176-current_blackbeard.png 20
+23 "Eustass Kid" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5895735-c91f4ecc-6492-4212-c284-9cfaacff994a.jpg 20
+24 "Basil Hawkins" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2962263-594534-hawkin.png 20
+25 Tashigi https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7097959-0719212084-unkno.png 20
+26 "X. Drake" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7194078-8221700656-latest 18
+27 Hatchan https://comicvine.gamespot.com/a/uploads/square_small/7/70464/1310443-hatchan.png 18
+28 Jango https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044448-9302229284-Jango.png 18
+29 Kanjuro https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080125-2771706671-latest 18
+30 "Rob Lucci" https://comicvine.gamespot.com/a/uploads/square_small/1/15776/1153175-lucci.jpg 17
+31 Kuzan https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078592-4966747295-latest 17
+32 Karoo https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044498-1372017187-Carue.png 17
+33 "Daz Bones" https://comicvine.gamespot.com/a/uploads/square_small/0/3347/392825-19445-mr-1.png 16
+34 "Mr. 3" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080176-5738180563-latest 16
+35 "Monkey D. Garp" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080183-4615055614-unkno.png 16
+36 "Jesus Burgess" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079970-4195863248-unkno.png 16
+37 Killer https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080077-9559962303-Scree.jpg 16
+38 Kaido https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7097964-0795-016.png 16
+40 Kokoro https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044547-3342471155-Kokor.png 16
+41 Kalifa https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044486-cp9_infobox.png 15
+42 Kaku https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044479-9455687908-Kaku_.png 15
+43 "Bon Clay" https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5485416-bentham_anime_pre_timeskip_infobox.jpg 15
+44 "Capone Bege" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080570-9922457536-Scree.jpg 15
+45 "Scratchmen Apoo" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079988-1235599403-Scree.jpg 15
+46 Camie https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041589-2440057203-Keimi.png 15
+47 "Duke Dogstorm" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7199159-5270425006-tumbl.png 15
+48 "Cat Viper" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079108-2287361953-latest 15
+49 "Jack the Drought" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080143-0378825919-Scree.jpg 15
+50 "Dracule Mihawk" https://comicvine.gamespot.com/a/uploads/square_small/5/57216/1090020-61600.jpg 14
+51 "Bartholomew Kuma" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080039-1214617347-Scree.jpg 14
+52 Sengoku https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080075-4829135359-unkno.png 14
+54 "Nefertari Cobra" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3045740-2872997498-Manga.png 14
+55 Pappagu https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3047180-1666333980-Pappu.png 14
+57 Eneru https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5864158-8513793131-latest 13
+58 Koby https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080185-3598363858-Scree.jpg 13
+59 Whitebeard https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080094-3070464100-0551-.jpg 13
+60 Marco https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079389-7485116704-unkno.png 13
+61 Chimney https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041667-3913941877-62739.png 13
+66 "Charlotte Perospero" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079979-6343637487-unkno.png 13
+67 Spandam https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3051082-0620742547-Spand.png 12
+68 Blueno https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7081075-7447637840-latest 12
+69 Kizaru https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078589-6540662132-latest 12
+70 Akainu https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078660-5970374352-unkno.png 12
+71 Bepo https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2962323-599714-bepo.png 12
+72 "Baron Tamago" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079149-8610699048-x8.pn.jpg 12
+73 Cabaji https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041566-5238402830-13686.jpg 12
+74 Chaka https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041653-9554350847-63171.png 12
+75 "Kiwi Square" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044534-mozu_and_kiwi_manga_infobox.png 12
+76 "Mozu Square" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044540-mozu_and_kiwi_manga_infobox.png 12
+78 Pekoms https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079150-3893386989-x5.pn.jpg 12
+82 "Raizo of the Mist" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080266-7794794661-Scree.jpg 12
+83 Kikunojo https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7097951-1134821796-Volum.png 12
+84 "Ashura Doji" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/6773726-1986566896-latest 12
+85 Queen https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/6773880-4640434840-latest 12
+86 Kyoshiro https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/6788806-3543707651-latest 12
+87 Fukurokuju https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078923-0879963599-latest 12
+88 Hyogoro https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7081396-1013003011-unkno.png 12
+89 Shinobu https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7093001-1878429734-latest 12
+90 "Gecko Moria" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079931-4441927916-latest 11
+91 Jabra https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044443-7604010829-Jabra.png 11
+92 "Miss Doublefinger" https://comicvine.gamespot.com/a/uploads/square_small/1/19859/404025-166921-miss-doublefinger.jpg 11
+94 "Lady Alvida" https://comicvine.gamespot.com/a/uploads/square_small/5/58245/1189318-alvida.jpg 11
+95 "Boa Hancock" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5864178-ed7067e9-03ca-4a23-ca8d-b29bbee48b85.jpg 11
+96 Helmeppo https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080188-0498072452-Scree.jpg 11
+97 Hina https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7077604-tumblr_o9xbrx8d7p1r20q0do1_540.jpg 11
+98 "Caesar Clown" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079129-9360398512-unkno.jpg 11
+100 Pell https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3048066-7760117080-Pell_.png 11
+102 Pedro https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7111956-8910410819-unkno.png 11
+103 King https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/6773879-1872590195-latest 11
+104 "Kurozumi Orochi" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/6773883-0704661834-latest 11
+105 "Page One" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7518641-8702718913-latest.jpg 11
+106 "Kozuki Hiyori" https://comicvine.gamespot.com/a/uploads/square_small/6/67663/6825653-1537287273-latest 11
+107 Fukurou https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041968-2266031620-Fukur.png 10
+108 "Doc Q" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7098061-2648718209-unkno.png 10
+109 "Gol D. Roger" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/6766912-gol_d._roger_manga_infobox.png 10
+110 Bellamy https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079203-8320312688-Scree.jpg 10
+111 "Jean Bart" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044453-8441968950-Jean_.png 10
+112 Tsuru https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7098357-0599372519-unkno.png 10
+113 Kyros https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079250-1448239999-latest 10
+114 Wanda https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080144-6664162615-Scree.jpg 10
+115 Kawamatsu https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7063243-5875608161-latest 10
+116 "Miss Valentine" https://comicvine.gamespot.com/a/uploads/square_small/0/3347/394658-107050-miss-valentine.jpg 9
+117 "Mr. 5" https://comicvine.gamespot.com/a/uploads/square_small/0/3347/436023-200px_mr_5.jpg 9
+118 "Miss Merry Christmas" https://comicvine.gamespot.com/a/uploads/square_small/0/3347/508675-missmerrychristmas.jpg 9
+119 Jozu https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079388-0022428720-unkno.png 9
+120 "Van Auger" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7098062-9440946705-unkno.png 9
+121 Lafitte https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079974-9421031785-Scree.jpg 9
+122 Caribou https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080589-1754014187-unkno.png 9
+123 Diamante https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079322-8209326295-unkno.png 9
+124 Machvise https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079319-1529852537-Scree.jpg 9
+125 Cavendish https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078690-6843654058-unkno.png 9
+126 Hajrudin https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7101768-3772659062-latest 9
+127 "Riku Doldo III" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080186-9344060123-Scree.jpg 9
+128 Conis https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041695-3479568558-14693.jpg 9
+129 "Gan Fall" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3042507-4731899519-14694.jpg 9
+136 Sabo https://comicvine.gamespot.com/a/uploads/square_small/11117/111173561/5307627-2542054701-latest 9
+139 "Vinsmoke Yonji" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079956-9236897109-Scree.jpg 9
+141 Zeff https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3051842-7739595623-Zeff_.png 8
+142 Arlong https://comicvine.gamespot.com/a/uploads/square_small/1/19859/543452-exemplo.gif 8
+143 "Mr. 4" https://comicvine.gamespot.com/a/uploads/square_small/0/3347/508721-bw_mr4.jpg 8
+144 "Silvers Rayleigh" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5858927-one.piece.full.1358183.jpg 8
+145 "Emporio Ivankov" https://comicvine.gamespot.com/a/uploads/square_small/5/54851/1550987-20100226203434_emporio_ivankov_thumbnail.png 8
+147 Viola https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079284-0747016757-unkno.png 8
+149 Rebecca https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079969-5167194208-unkno.png 8
+152 "Elizabello II" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079350-3166662953-unkno.png 8
+153 Fujitora https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078714-8952344231-unkno.png 8
+154 Bartolomeo https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079176-1827043444-Scree.jpg 8
+155 Ideo https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079242-9165107712-latest 8
+157 Izo https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080091-0025228125-unkno.png 8
+158 Koala https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079259-8088056978-Scree.jpg 8
+160 Perona https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080686-9865490237-unkno.jpg 8
+163 Leo https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080616-3566753507-latest 8
+165 Sugar https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079268-6343524832-unkno.png 8
+166 "Charlotte Pudding" https://comicvine.gamespot.com/a/uploads/square_small/4/41116/5172484-pudding.jpg 8
+167 "Vinsmoke Reiju" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079954-4516814764-Scree.jpg 8
+168 "Charlotte Brûlée" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079419-0647945576-Scree.jpg 8
+169 "Charlotte Mont-d'Or" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079418-8783356347-Scree.jpg 8
+170 Otama https://comicvine.gamespot.com/a/uploads/square_small/4/41116/6515974-otama.jpg 8
+171 Daifugo https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7065471-7146599551-unkno.png 8
+173 Ulti https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7518684-6528986601-6a5db.png 8
+174 Kumadori https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044574-5171886395-Kumad.png 7
+175 Wapol https://comicvine.gamespot.com/a/uploads/square_small/7/72480/5218835-wapol.jpg 7
+176 "Monkey D. Dragon" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5856644-one.piece.full.751339.jpg 7
+177 Magellan https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079370-6069162749-x7.pn.jpg 7
+178 Shiryuu https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079975-7972711332-unkno.png 7
+179 "Jewelry Bonney" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078393-0751469520-latest 7
+181 "Señor Pink" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079266-2954976063-unkno.png 7
+186 Dalton https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041760-8562326592-14371.jpg 7
+187 "Doctor Kureha" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041813-2018767137-57453.png 7
+188 Duval https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041901-8367078684-Anime.png 7
+189 "Grandma Nyon" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3042540-2725606016-23212.jpg 7
+191 Laboon https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044592-1416854011-Laboo.png 7
+192 Makino https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3044620-8305327485-Makin.png 7
+195 Sentomaru https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3049043-4526835008-Sento.png 7
+199 Trebol https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079291-5453561456-unkno.png 7
+200 Giolla https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079306-7186896346-latest 7
+201 Pica https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079294-0686248486-unkno.png 7
+203 "Vinsmoke Judge" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079955-1184798297-Scree.jpg 7
+204 "Vinsmoke Niji" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079952-1988960778-latest 7
+205 "Charlotte Smoothie" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079414-8803789431-unkno.png 7
+206 Sasaki https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7518637-8088620994-latest.png 7
+207 "Black Maria" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7518638-3991502429-latest.jpg 7
+208 "Who's Who" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7518639-1884324626-latest.jpg 7
+209 "Ben Beckman" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079086-7985173465-unkno.png 6
+210 "Lucky Roux" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7083675-9752827400-latest 6
+213 Monet https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/6768111-2766760704-latest 6
+215 Dellinger https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079257-3409662865-Scree.jpg 6
+216 "Boa Marigold" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078526-4284811025-latest 6
+217 "Boa Sandersonia" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078527-6723587609-latest 6
+221 Nojiko https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3038761-8331724951-Nojik.jpg 6
+223 "Curly Dadan" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3041734-8297965126-31274.png 6
+229 Kaya https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080677-2773746916-latest 6
+236 Shakuyaku https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080078-7414580306-Scree.jpg 6
+244 Mancherie https://comicvine.gamespot.com/a/uploads/square_small/4/47703/4361126-untitled-1.jpg 6
+246 "Vinsmoke Ichiji" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079951-8082789736-latest 6
+247 "Charlotte Chiffon" https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5353070-chiffon.jpg 6
+248 "Charlotte Galette" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079417-8047658964-unkno.png 6
+250 Yamato https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7518649-4842108459-latest.jpg 6
+254 Belle-mère https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3038741-0906480079-Bell-.png 5
+258 Absalom https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079932-3086387670-0449-.jpg 5
+262 Shirahoshi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3040702-538314-onepiece_v_66t.png 5
+264 "King Neptune" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3040770-3940014505-46410.jpg 5
+267 Fukaboshi https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7078410-9683133860-latest 5
+274 Koshiro https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080076-6133372246-unkno.png 5
+303 "Ikaros Much" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7079231-6100646501-Scree.jpg 5
+330 "Napoleon The Bicorn Hat" https://comicvine.gamespot.com/a/uploads/square_small/4/41116/5688490-hat.jpg 5
+331 "Zeus The Stormcloud" https://comicvine.gamespot.com/a/uploads/square_small/4/41116/5688485-cloud.jpg 5
+332 "Prometheus The Sun" https://comicvine.gamespot.com/a/uploads/square_small/4/41116/5688492-sun.jpg 5
+333 "Charlotte Katakuri" https://comicvine.gamespot.com/a/uploads/square_small/4/41116/5772168-dog.jpg 5
+334 "Charlotte Daifuku" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7080246-6393177305-latest 5
+335 Toko https://comicvine.gamespot.com/a/uploads/square_small/6/67663/6825657-7733441022-latest 5

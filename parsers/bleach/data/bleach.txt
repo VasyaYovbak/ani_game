@@ -1,0 +1,56 @@
+full_name,image
+Aaroniero Arruruerie,https://www.giantbomb.com/a/uploads/square_small/0/2646/845049-290px_aaroniero_arruruerie.png
+Barragan Luisenbarn,https://www.giantbomb.com/a/uploads/square_small/0/2646/845044-300px_barragan_luisenbarn.jpg
+Byakuya Kuchiki,https://www.giantbomb.com/a/uploads/square_small/0/5756/219141-byakuya_kuchiki.jpg
+Don Kan'onji,https://www.giantbomb.com/a/uploads/square_small/0/3715/777474-203486080509020115.jpeg
+Ganju Shiba,https://www.giantbomb.com/a/uploads/square_small/0/5756/216737-ganju_shiba.jpeg
+Gin Ichimaru,https://www.giantbomb.com/a/uploads/square_small/15/154387/2240692-ichimaru_gin_by_lemutaliskfou.jpg
+Grand Fisher,https://www.giantbomb.com/a/uploads/square_small/0/5756/340726-grand_fisher.jpg
+Grimmjow Jaegerjaques,https://www.giantbomb.com/a/uploads/square_small/0/5756/387278-grimmjow_jeagerjaques3.jpg
+Halibel,https://www.giantbomb.com/a/uploads/square_small/0/2646/845045-300px_halibel.jpg
+Hanataro Yamada,https://www.giantbomb.com/a/uploads/square_small/0/5756/340728-hanataro_yamada.jpg
+Hinamori Momo,https://www.giantbomb.com/a/uploads/square_small/0/5756/216435-hinamori_momo.jpg
+Hiyori Sarugaki,https://www.giantbomb.com/a/uploads/square_small/0/5756/386912-hiyori_sarugaki.jpg
+Ichigo Kurosaki,https://www.giantbomb.com/a/uploads/square_small/0/3715/728864-b00vwi004.jpg
+Ikkaku Madarame,https://www.giantbomb.com/a/uploads/square_small/0/9536/337119-ikkaku01.jpg
+Izuru Kira,https://www.giantbomb.com/a/uploads/square_small/0/5756/340747-izuru_kira.jpg
+Jushiro Ukitake,https://www.giantbomb.com/a/uploads/square_small/0/5756/225837-jushiro_ukitake.jpg
+Kaname Tosen,https://www.giantbomb.com/a/uploads/square_small/0/5756/226605-kaname_tosen.jpg
+Karin Kurosaki,https://www.giantbomb.com/a/uploads/square_small/0/479/269559-karin.jpg
+Kenpachi Zaraki,https://www.giantbomb.com/a/uploads/square_small/1/14220/639070-lll.png
+Kensei Muguruma,https://www.giantbomb.com/a/uploads/square_small/0/7094/570326-muguruma_kensei.jpg
+Kisuke Urahara,https://www.giantbomb.com/a/uploads/square_small/0/5756/331653-kisuke_urahara.jpg
+Kon,https://www.giantbomb.com/a/uploads/square_small/0/5756/230130-kon.png
+Kuukaku Shiba,https://www.giantbomb.com/a/uploads/square_small/0/5756/340748-kuukaku_shiba.jpg
+Luppi,https://www.giantbomb.com/a/uploads/square_small/0/5756/387334-luppi.jpg
+Mayuri Kurotsuchi,https://www.giantbomb.com/a/uploads/square_small/0/5756/227471-mayuri_kurotsuchi.jpg
+Menos Grande,https://www.giantbomb.com/a/uploads/square_small/0/5756/340749-menos_grande.jpg
+Neliel Tu Oderschvank,https://www.giantbomb.com/a/uploads/square_small/9/94709/1757663-nel_revealed_1.png
+Nemu Kurotsuchi,https://www.giantbomb.com/a/uploads/square_small/0/5756/230536-nemu_kurotsuchi.jpg
+Nnoitra Jiruga,https://www.giantbomb.com/a/uploads/square_small/0/2646/845046-300px_nnoitra.jpg
+Orihime Inoue,https://www.giantbomb.com/a/uploads/square_small/0/5756/217111-orihime_inoue.jpg
+Rangiku Matsumoto,https://www.giantbomb.com/a/uploads/square_small/0/5756/340375-rangiku_matsumoto.jpg
+Renji Abarai,https://www.giantbomb.com/a/uploads/square_small/0/5756/216337-renji_abarai.jpg
+Retsu Unohana,https://www.giantbomb.com/a/uploads/square_small/0/2646/840608-bleach_unohana0002.jpg
+Rukia Kuchiki,https://www.giantbomb.com/a/uploads/square_small/0/5756/219496-rukia_kuchiki.jpg
+Sajin Komamura,https://www.giantbomb.com/a/uploads/square_small/0/5756/226194-sajin_komamura.jpg
+Shigekuni Yamamoto-Genryusai,https://www.giantbomb.com/a/uploads/square_small/1/14220/639114-vlcsnap_984527.png
+Shinji Hirako,https://www.giantbomb.com/a/uploads/square_small/0/5756/387311-shinji_hirako3.jpg
+Shuhei Hisagi,https://www.giantbomb.com/a/uploads/square_small/0/5756/340753-shuhei_hisagi.jpg
+Shunsui Kyoraku,https://www.giantbomb.com/a/uploads/square_small/0/5756/221267-shunsuikyoraku.jpg
+Soi-Fon,https://www.giantbomb.com/a/uploads/square_small/0/5756/220128-soifon.jpg
+Sosuke Aizen,https://www.giantbomb.com/a/uploads/square_small/0/5756/228036-sosuke_aizen.jpg
+Stark,https://www.giantbomb.com/a/uploads/square_small/2/20579/1144638-800px_starkdraw.png
+Szayzel Aporro Granz,https://www.giantbomb.com/a/uploads/square_small/0/2646/845048-300px_szayel_aporro_granz.jpg
+Tatsuki Arisawa,https://www.giantbomb.com/a/uploads/square_small/0/5756/230911-tatsuki_arisawa.jpg
+Tia Harribel,https://www.giantbomb.com/a/uploads/square_small/0/4389/1780544-tia_harribel.jpg
+Toshirou Hitsugaya,https://www.giantbomb.com/a/uploads/square_small/0/5756/226705-toushirou_hitsugaya.jpg
+Ulquiorra Schiffer,https://www.giantbomb.com/a/uploads/square_small/0/5756/387322-ulquiorra4.jpg
+Ururu Tsumugiya,https://www.giantbomb.com/a/uploads/square_small/0/5756/340744-ururu_tsumugiya.png
+Uryu Ishida,https://www.giantbomb.com/a/uploads/square_small/0/5756/218256-uryu_ishida.jpg
+Yachiru Kusajishi,https://www.giantbomb.com/a/uploads/square_small/0/5756/229693-yachiru_kusajishi.jpg
+Yammy,https://www.giantbomb.com/a/uploads/square_small/0/5756/387325-yammy.jpg
+Yasutora Sado,https://www.giantbomb.com/a/uploads/square_small/0/5756/218564-yasutora_sado.jpg
+Yoruichi Shihouin,https://www.giantbomb.com/a/uploads/square_small/0/5756/220689-yoruichi2.jpg
+Yumichika Ayasegawa,https://www.giantbomb.com/a/uploads/square_small/0/5756/387327-yumichika_ayasegawa.jpg
+Zemmori Lerouz,https://www.giantbomb.com/a/uploads/square_small/0/2646/845047-300px_zommari_leroux.jpg

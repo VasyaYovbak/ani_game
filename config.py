@@ -1,7 +1,7 @@
 USERNAME = 'root'
-PASSWORD = 'root'
-SERVER = '127.0.0.1:3306'
-DB = "narutodatabase"
+PASSWORD = 'MyZno26112003'
+SERVER = 'localhost:3306'
+DB = "anigame"
 
 
 class Config:

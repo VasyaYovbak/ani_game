@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_restful import Api
 from flask_socketio import SocketIO, emit, send
+from marshmallow import ValidationError
 
 from connection import session
 from flask_jwt_extended import JWTManager
@@ -39,9 +40,21 @@ from game_view.view import game_blueprint
 # app.register_blueprint(database_test)
 
 
+@app.errorhandler(Exception)
+def handle_error(e):
+    code = 500
+    if isinstance(e, ValidationError):
+        return jsonify(error=str(e)), 400
+    if isinstance(e, Exception):
+        return jsonify(error=str(e)), 400
+
+    return jsonify(error=str(e)), code
+
+
 app.register_blueprint(user_info)
 app.register_blueprint(character_blueprint)
 app.register_blueprint(game_blueprint)
+
 
 if __name__ == '__main__':
     sio.run(app, debug=True, port=2012)

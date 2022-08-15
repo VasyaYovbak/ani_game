@@ -13,7 +13,6 @@ class Game(Base):
     winner_id = Column(Integer, ForeignKey('user.id'))
     loser_id = Column(Integer, ForeignKey('user.id'))
     date = Column(DateTime)
-    duration = Column(Time)
     chat = Column(String(1000))
 
     guested_relation = relationship("Character", primaryjoin="Game.guested_character_id==Character.character_id")

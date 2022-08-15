@@ -50,26 +50,6 @@ class User(Base):
         return {'access_token': access, 'refresh_token': refresh}
 
 
-class Achievement(Base):
-
-    __tablename__ = 'achievement'
-
-    id = Column(Integer(), primary_key=True, autoincrement=True)
-    name = Column(String(30), nullable=False)
-    experience = Column(Integer(), nullable=False)
-    description = Column(String(120), nullable=False)
-
-
-class UserAchievement(Base):
-
-    __tablename__ = 'user_achievement'
-
-    user_id = Column(Integer(), ForeignKey('user.id'), primary_key=True)
-    achievement_id = Column(Integer(), ForeignKey('achievement.id'), primary_key=True)
-    user = relationship("User")
-    achievement = relationship("Achievement")
-
-
 class TokenBlocklist(Base):
 
     __tablename__ = 'token_block_list'
@@ -78,6 +58,23 @@ class TokenBlocklist(Base):
     jti = Column(String(36), nullable=False)
     type = Column(String(16), nullable=False)
     created_at = Column(DateTime(), nullable=False)
+
+# User Achievements
+# class Achievement(Base):
+#     __tablename__ = 'achievement'
+#     id = Column(Integer(), primary_key=True, autoincrement=True)
+#     name = Column(String(30), nullable=False)
+#     experience = Column(Integer(), nullable=False)
+#     description = Column(String(120), nullable=False)
+#
+#
+# class UserAchievement(Base):
+#     __tablename__ = 'user_achievement'
+#     user_id = Column(Integer(), ForeignKey('user.id'), primary_key=True)
+#     achievement_id = Column(Integer(), ForeignKey('achievement.id'), primary_key=True)
+#
+#     user = relationship("User")
+#     achievement = relationship("Achievement")
 
 
 session_maker = sessionmaker(bind=create_engine('mysql+mysqldb://root:MyZno26112003@localhost/anigame'))

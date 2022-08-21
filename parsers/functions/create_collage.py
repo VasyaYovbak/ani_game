@@ -1,5 +1,11 @@
+from typing import List
+
 import requests
 from PIL import Image
+
+
+def get_one_row_image_coordinates(number_of_img: int, one_image_size_usual: int) -> List[str]:
+    return [f'-{str(x)}px 0' for x in range(0, number_of_img * one_image_size_usual + 1, one_image_size_usual)]
 
 
 def create_one_row_collage(df, one_img_size: int = 150):

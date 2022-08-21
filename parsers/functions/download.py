@@ -15,7 +15,7 @@ def download_characters(session, df):
     for i, row in df.iterrows():
         character = Character(**row)
         session.add(character)
-        session.commit()
+    session.commit()
 
     # # Read data you added to database
     # # print([q.__dict__ for q in session.query(Character).all()])

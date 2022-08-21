@@ -73,6 +73,7 @@ def get_rooms_info(rooms):
             room['second_user'] = users_dict[room['second_user_id']]
         del room['creator_user_id'], room['second_user_id']
 
+    session.close()
     return rooms
 
 
@@ -118,10 +119,12 @@ def setup_rooms_logic(sio):
              {'event': 'create', 'data': {'room': get_rooms_info([get_clear_object_from_db(new_game_room)])[0]}})
         sio.emit('rooms',
                  {'add': get_rooms_info([get_clear_object_from_db(new_game_room)]), 'remove': [], 'update': []})
+        session.close()
+
 
     @sio.on('room-update')
     @login_required
-    def update(message):
+    def update(message, user_id):
         data = message['data']
         session = Session(bind=engine)
         room = session.query(GameRoom).filter(GameRoom.room_id == data['room_id']).first()
@@ -138,7 +141,10 @@ def setup_rooms_logic(sio):
             room.name = data['name']
             session.commit()
 
+        emit('room-info',
+             {'event': 'update', 'data': {'room': get_rooms_info([get_clear_object_from_db(room)])[0]}})
         sio.emit('rooms', {'add': [], 'remove': [], 'update': get_rooms_info([get_clear_object_from_db(room)])}, )
+        session.close()
 
     @sio.on('room-join')
     @login_required
@@ -147,6 +153,7 @@ def setup_rooms_logic(sio):
         session = Session(bind=engine)
         room = session.query(GameRoom).filter(GameRoom.room_id == data['room_id']).first()
         if room.creator_user_id == user_id or room.second_user_id == user_id:
+            emit('room-info', {'event': 'join', 'data': {'room': get_rooms_info([get_clear_object_from_db(room)])[0]}})
             return
 
         if room.second_user_id:
@@ -156,10 +163,30 @@ def setup_rooms_logic(sio):
         room.second_user_id = user_id
         session.commit()
 
-        emit('room-info', {'event': 'join', 'data': {'room': get_rooms_info([get_clear_object_from_db(room)])[0]}},
-             room=f'room{data["room_id"]}')
-        sio.emit('rooms', {'add': [], 'remove': [], 'update': get_rooms_info([get_clear_object_from_db(room)])}, )
-        join_room(f'room{data["room_id"]}')
+        game = Game(loser_id=room.second_user_id, winner_id=room.creator_user_id, chat='[]')
+        session.add(game)
+        session.commit()
+        game = session.query(Game).order_by(sqlalchemy.desc(Game.game_id)).first()
+
+        anime_list_db = session.query(RoomsAnimeList).filter(RoomsAnimeList.room_id == data['room_id']).all()
+        anime_ids = []
+        for anime in anime_list_db:
+            anime_ids.append(anime.anime_id)
+
+        gameStart(game.game_id, anime_ids)
+
+        room.is_game_started = True
+        sio.emit('rooms', {'add': [], 'remove': [get_clear_object_from_db(room)], 'update': []}, )
+        session.query(RoomsAnimeList).filter(RoomsAnimeList.room_id == data['room_id']).delete()
+        session.delete(room)
+        session.commit()
+        emit('room-info', {'event': 'gameStart', 'data': {'game_id': game.game_id}}, room=f'room{data["room_id"]}')
+
+        # emit('room-info', {'event': 'join', 'data': {'room': get_rooms_info([get_clear_object_from_db(room)])[0]}},
+        #      room=f'room{data["room_id"]}')
+        # sio.emit('rooms', {'add': [], 'remove': [], 'update': get_rooms_info([get_clear_object_from_db(room)])}, )
+        # join_room(f'room{data["room_id"]}')
+        session.close()
 
     @sio.on('room-leave')
     @login_required
@@ -188,9 +215,10 @@ def setup_rooms_logic(sio):
 
         session.commit()
 
-        emit('room-info', {'event': 'leave', 'data': {'room': get_rooms_info(get_clear_object_from_db(room))[0]}},
+        emit('room-info', {'event': 'leave', 'data': {'room': get_rooms_info([get_clear_object_from_db(room)])[0]}},
              room=f'room{data["room_id"]}')
         leave_room(f'room{data["room_id"]}')
+        session.close()
 
     @sio.on('room-start')
     @login_required
@@ -221,6 +249,7 @@ def setup_rooms_logic(sio):
         session.delete(room)
         session.commit()
         emit('room-info', {'event': 'gameStart', 'data': {'game_id': game.game_id}}, room=f'room{data["room_id"]}')
+        session.close()
 
     @sio.on('rooms-get')
     @login_required
@@ -233,3 +262,4 @@ def setup_rooms_logic(sio):
             res.append(get_clear_object_from_db(room))
 
         emit('rooms', {'add': get_rooms_info(res), 'remove': [], 'update': []})
+        session.close()

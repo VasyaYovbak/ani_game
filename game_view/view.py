@@ -120,7 +120,7 @@ def getCards(game_id):
 
 def gameStart(game_id, anime_ids):
     session = Session(bind=engine)
-    COUNT_OF_CARDS = 23
+    COUNT_OF_CARDS = 28
     game = session.query(Game).get(game_id)
     character_list = session.query(Character).filter(Character.anime_id.in_(anime_ids)).all()
     size = len(character_list)
@@ -129,7 +129,6 @@ def gameStart(game_id, anime_ids):
     while len(cards_id_1) != COUNT_OF_CARDS:
         number = int(random.random() * size)
         if character_list[number].character_id not in cards_id_1:
-            print(character_list[number].character_id)
             cards_id_1.append(character_list[number].character_id)
 
     while len(cards_id_2) != COUNT_OF_CARDS:
@@ -139,10 +138,7 @@ def gameStart(game_id, anime_ids):
 
     selected_hero_1 = random.choice(cards_id_1)
     selected_hero_2 = random.choice(cards_id_2)
-    print(cards_id_1)
-    print(selected_hero_1)
-    print(cards_id_2)
-    print(selected_hero_2)
+
 
     for i in range(COUNT_OF_CARDS):
         if cards_id_1[i] == selected_hero_1:

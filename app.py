@@ -2,8 +2,9 @@ from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
 from flask_socketio import SocketIO, emit, send
+from sqlalchemy.orm import Session
 
-from connection import session
+from connection import engine
 from flask_jwt_extended import JWTManager
 from config import Config
 from game_view.game_logic import setup_socket_game_logic
@@ -25,8 +26,10 @@ setup_rooms_logic(sio)
 @jwt.token_in_blocklist_loader
 def check_if_token_revoked(jwt_header, jwt_payload):
     jti = jwt_payload["jti"]
+    session = Session(bind=engine)
     session.commit()
     token = session.query(TokenBlocklist.id).filter_by(jti=jti).scalar()
+    session.close()
     return token is not None
 
 

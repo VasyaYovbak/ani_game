@@ -1,3 +1,5 @@
+from typing import List, Dict
+
 import pandas as pd
 from io import BytesIO
 
@@ -18,3 +20,15 @@ def convert_img_to_format(im, desired_format):
     with BytesIO() as f:
         im.save(f, format=desired_format)
         return f.getvalue()
+
+
+def prepare_characters_dataframe(df, columns_to_drop: List[str], anime_foreign_key: int,
+                                 columns_rename_mapper: Dict[str, str]):
+    """Rename drop and assign column in the same time.
+    :return DateFrame
+    """
+
+    df = df.drop(columns=columns_to_drop)
+    df = df.rename(columns=columns_rename_mapper)
+    df = df.assign(anime_id=lambda x: anime_foreign_key)
+    return df

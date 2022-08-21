@@ -6,7 +6,8 @@ from flask_socketio import SocketIO, emit, send
 from connection import session
 from flask_jwt_extended import JWTManager
 from config import Config
-from game_view.game_logic import setup_socket
+from game_view.game_logic import setup_socket_game_logic
+from game_view.rooms_logic import rooms_blueprint, setup_rooms_logic
 from user_view.models import TokenBlocklist
 
 app = Flask(__name__)
@@ -17,7 +18,8 @@ api = Api(app)
 
 jwt = JWTManager(app)
 
-setup_socket(sio)
+setup_socket_game_logic(sio)
+setup_rooms_logic(sio)
 
 
 @jwt.token_in_blocklist_loader
@@ -34,6 +36,7 @@ from user_view.view import user_info
 
 from character_view.view import character_blueprint
 from game_view.view import game_blueprint
+from game_view.anime import anime_blueprint
 
 # from database_test import database_test, session
 # app.register_blueprint(database_test)
@@ -42,6 +45,8 @@ from game_view.view import game_blueprint
 app.register_blueprint(user_info)
 app.register_blueprint(character_blueprint)
 app.register_blueprint(game_blueprint)
+app.register_blueprint(rooms_blueprint)
+app.register_blueprint(anime_blueprint)
 
 if __name__ == '__main__':
     sio.run(app, debug=True, port=2012)

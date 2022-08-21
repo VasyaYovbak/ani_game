@@ -75,7 +75,7 @@ def get_active_cards(cards):
     return active
 
 
-def setup_socket(sio):
+def setup_socket_game_logic(sio):
     @sio.on('connect')
     def handle_connect(massage):
         print(flask.request.sid)

@@ -8,6 +8,7 @@ anime_character_foreign_keys = {
     "demon_slayer": 7,
     "attack_on_titan": 8,
     "my_hero_academia": 9,
+    "fairy_tail": 10
 }
 
 one_image_size_usual = 150

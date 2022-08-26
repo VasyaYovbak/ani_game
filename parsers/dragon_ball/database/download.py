@@ -17,7 +17,7 @@ dragon_ball_characters_df = df.assign(
 
 def download_dragon_ball_data(session):
     download_anime(session=session, name='dragon_ball',
-                   image_url="https://animespoil.com/wp-content/uploads/2022/07/Dragon-Ball-Super-Chapter-86-Spoilers-Summary-Spoilers-Goku-Vs.jpg")
+                   image_url="https://www.pngall.com/wp-content/uploads/12/Dragon-Ball-Z-Series-PNG-Images.png")
     download_characters(session=session, df=dragon_ball_characters_df)
 
 # # download only dragon ball data

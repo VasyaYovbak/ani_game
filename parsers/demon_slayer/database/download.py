@@ -15,14 +15,14 @@ df = prepare_characters_dataframe(df=df, columns_to_drop=['image'], columns_rena
 dragon_ball_characters_df = df.assign(
     image=get_one_row_image_coordinates(number_of_img, one_image_size_usual))
 
+
 # print(dragon_ball_characters_df)
 
 
 def download_demon_slayer_data(session):
     download_anime(session=session, name='demon_slayer',
-                   image_url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo-36mk32WPaZlQzlMMSFrV51BBOJMyPx0sQ&usqp=CAU")
+                   image_url="https://assets.stickpng.com/images/5ede49f9b760540004f2c5e7.png")
     download_characters(session=session, df=dragon_ball_characters_df)
-
 
 # # download only demon slayer data
 # download_demon_slayer_data(session=session)

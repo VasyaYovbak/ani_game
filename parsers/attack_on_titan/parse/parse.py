@@ -48,13 +48,13 @@ def parse_attack_on_titan(url: str):
     # # print(content)
 
 
-attack_on_titan_url = 'https://comicvine.gamespot.com/attack-on-titan/4075-345/characters/'
+attack_on_titan_url = 'https://comicvine.gamespot.com/attack-on-titan/4075-345/characters?page='
 start_page = 1
 end_page = 3
 list_of_dicts = list()
 
 for i in range(start_page, end_page + 1):
-    attack_on_titan_data = parse_attack_on_titan(attack_on_titan_url)
+    attack_on_titan_data = parse_attack_on_titan(attack_on_titan_url + str(i))
     list_of_dicts.append(attack_on_titan_data)
 
 keys = ['full_name', 'image', 'appearance']

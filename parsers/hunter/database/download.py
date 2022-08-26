@@ -16,7 +16,7 @@ hunter_characters_df = df.assign(
 
 def download_hunter_data(session):
     download_anime(session=session, name='hunter',
-                   image_url="https://i.pinimg.com/736x/9f/8f/3b/9f8f3bcf72f4150178f435a9712aa8a6.jpg")
+                   image_url="https://toppng.com/public/uploads/thumbnail/in-a-fight-between-luffy-and-gon-gon-hunter-x-hunter-profile-11563215288pyzx8ubkyr.png")
     download_characters(session=session, df=hunter_characters_df)
 
 

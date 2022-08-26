@@ -5,23 +5,26 @@ from parsers.functions.download import download_anime, download_characters, prin
 from parsers.functions.mapper import anime_character_foreign_keys, one_image_size_usual
 from parsers.functions.setup import *
 
-df = pd.read_csv('../data/filtered_by_hand.txt')
+df = pd.read_csv('../data/fairy_tail.txt')
 number_of_img = len(df.index) - 1
 
 df = prepare_characters_dataframe(df=df, columns_to_drop=['image'], columns_rename_mapper={
     'full_name': 'name'},
-                                  anime_foreign_key=anime_character_foreign_keys['my_hero_academia'])
+                                  anime_foreign_key=anime_character_foreign_keys['fairy_tail'])
 
-my_hero_academia_characters_df = df.assign(
+fairy_tail_df = df.assign(
     image=get_one_row_image_coordinates(number_of_img, one_image_size_usual))
 
+# print(fairy_tail_df)
 
-def download_my_hero_academia_data(session):
-    download_anime(session=session, name='my_hero_academia',
-                   image_url="https://www.pngmart.com/files/13/My-Hero-Academia-PNG-HD.png")
-    download_characters(session=session, df=my_hero_academia_characters_df)
 
-# # download only my hero academia data
-# download_my_hero_academia_data(session=session)
+def download_fairy_tail_data(session):
+    download_anime(session=session, name='fairy_tail',
+                   image_url="https://freepikpsd.com/file/2019/10/happy-fairy-tail-png-7-Transparent-Images.png")
+    download_characters(session=session, df=fairy_tail_df)
 
-# print_particular_anime_characters(anime_character_foreign_keys['my_hero_academia'])
+
+# # download only demon slayer data
+# download_demon_slayer_data(session=session)
+
+# print_particular_anime_characters(anime_character_foreign_keys['demon_slayer'])

@@ -18,9 +18,8 @@ attack_on_titan_characters_df = df.assign(
 
 def download_attack_on_titan_data(session):
     download_anime(session=session, name='attack_on_titan',
-                   image_url="https://as01.epimg.net/meristation_en/imagenes/2022/02/04/news/1643951848_207210_1643951977_noticia_normal.jpg")
+                   image_url="https://i.pinimg.com/originals/1b/a1/f8/1ba1f8cb3a8c9eafac73d5a47fc5b5f9.png")
     download_characters(session=session, df=attack_on_titan_characters_df)
-
 
 # # download only attack on titan data
 # download_attack_on_titan_data(session=session)

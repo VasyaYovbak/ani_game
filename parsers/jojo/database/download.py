@@ -16,7 +16,7 @@ jojo_characters_df = df.assign(
 
 def download_jojo_data(session):
     download_anime(session=session, name='jojo',
-                   image_url="https://cdn.mos.cms.futurecdn.net/4T7dXG2Btv4QMeAdqxrzXK.jpg")
+                   image_url="https://www.pngmart.com/files/13/JoJos-Bizarre-Adventure-Jojo-PNG-HD.png")
     download_characters(session=session, df=jojo_characters_df)
 
 

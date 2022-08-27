@@ -5,7 +5,9 @@ from parsers.functions.download import download_anime, download_characters, prin
 from parsers.functions.mapper import anime_character_foreign_keys, one_image_size_usual
 from parsers.functions.setup import *
 
-df = pd.read_csv('../data/filtered_by_hand.txt')
+import os
+
+df = pd.read_csv(os.path.dirname(__file__) + '\\..\data\\filtered_by_hand.txt')
 number_of_img = len(df.index) - 1
 
 df = prepare_characters_dataframe(df=df, columns_to_drop=['image'], columns_rename_mapper={

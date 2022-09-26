@@ -104,6 +104,3 @@ class TokenBlocklist(Base):
 #
 #     user = relationship("User")
 #     achievement = relationship("Achievement")
-
-
-session_maker = sessionmaker(bind=create_engine('mysql+pymysql://root:MyZno26112003@localhost/anigame'))

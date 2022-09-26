@@ -14,8 +14,9 @@ from itsdangerous import URLSafeTimedSerializer
 import sendgrid
 from sendgrid.helpers.mail import Mail
 from connection import session
-from user_view.email_token import generate_email_confirmation_token, confirm_email_verification_token, generate_password_reset_token, reset_password_token
-from user_view.models import User,  TokenBlocklist
+from user_view.email_token import generate_email_confirmation_token, confirm_email_verification_token, \
+    generate_password_reset_token, reset_password_token
+from user_view.models import User, TokenBlocklist
 from user_view.validation import registration_schema, login_schema, reset_schema
 from marshmallow import ValidationError
 from config import Config
@@ -32,12 +33,10 @@ jwt_redis_blacklist = redis.Redis(
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
 
-
 API_KEY = "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"
 
 
 def send_email(message):
-
     try:
         sg = sendgrid.SendGridAPIClient(API_KEY)
         response = sg.send(message)
@@ -52,7 +51,6 @@ def send_email(message):
 
 
 def revoke_refresh_token(decoded_refresh):
-
     jti_refresh = decoded_refresh["jti"]
 
     refresh_token_type = decoded_refresh["type"]
@@ -63,9 +61,8 @@ def revoke_refresh_token(decoded_refresh):
     session.commit()
 
 
-#This method is responsible for checking if refresh token is revoked or not
+# This method is responsible for checking if refresh token is revoked or not
 def is_refresh_revoked(jwt_payload: dict):
-
     jti = jwt_payload["jti"]
     token_type = jwt_payload["type"]
     expired = jwt_payload["exp"]
@@ -82,9 +79,8 @@ def is_refresh_revoked(jwt_payload: dict):
         raise ValidationError("Refresh token is invalid")
 
 
-#This method is responsible for checking if access token is revoked or not
+# This method is responsible for checking if access token is revoked or not
 def is_access_revoked(jwt_payload: dict):
-
     jti_access = jwt_payload["jti"]
     token_type = jwt_payload["type"]
 
@@ -97,7 +93,7 @@ def is_access_revoked(jwt_payload: dict):
         raise ValidationError("Access token is invalid")
 
 
-#This method made for refreshing rokens
+# This method made for refreshing rokens
 class TokenRefresh(Resource):
 
     def post(self):
@@ -121,7 +117,7 @@ class TokenRefresh(Resource):
         return tokens
 
 
-#This is registration method
+# This is registration method
 class RegisterApi(Resource):
 
     def post(self):
@@ -144,7 +140,7 @@ class RegisterApi(Resource):
         return jsonify(tokens), 201
 
 
-#This is login method
+# This is login method
 class LoginApi(Resource):
 
     def post(self):
@@ -169,11 +165,10 @@ class LoginApi(Resource):
         return jsonify(tokens), 200
 
 
-#This method is intended for user validation his email, it is generating special confirmation link and sending this link to you email with special template
+# This method is intended for user validation his email, it is generating special confirmation link and sending this link to you email with special template
 class EmailVerification(Resource):
 
     def post(self):
-
         email = request.json.get("email")
 
         user = session.query(User).filter(User.email == email).first()
@@ -197,10 +192,9 @@ class EmailVerification(Resource):
         return jsonify(str(send_email(message).status_code))
 
 
-#This method cheking if you clicked on special link from method above, if yes then youre confirmed
+# This method cheking if you clicked on special link from method above, if yes then youre confirmed
 @user_info.route('/confirm/<token>')
 def confirm_email(token):
-
     try:
         decoded_verify = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
         user = session.query(User).filter(User.id == f'{decoded_verify["sub"]}').first()
@@ -224,11 +218,10 @@ def confirm_email(token):
     return jsonify(response)
 
 
-#This method responsible for sending password reset messages
+# This method responsible for sending password reset messages
 class ResetPassword(Resource):
 
     def post(self):
-
         email = request.json.get("email")
 
         user = session.query(User).filter(User.email == email).first()
@@ -252,10 +245,9 @@ class ResetPassword(Resource):
         return jsonify(str(send_email(message).status_code))
 
 
-#This Method responsible for reseting password
+# This Method responsible for reseting password
 @user_info.route('/reset/<token>', methods=['POST'])
 def reset_password(token):
-
     try:
         decoded_reset = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
         user = session.query(User).filter(User.id == f'{decoded_reset["sub"]}').first()
@@ -276,18 +268,18 @@ def reset_password(token):
     revoke_refresh_token(decoded_reset)
 
     new_password.new_password = request.json["password"]
-    session.query(User).filter(User.id == user.id).update({"password": str(argon2.using(rounds=5).hash(new_password.new_password))})
+    session.query(User).filter(User.id == user.id).update(
+        {"password": str(argon2.using(rounds=5).hash(new_password.new_password))})
     session.commit()
 
     return jsonify({"msg": "Password successfully changed"}), 200
 
 
-#This method responsible for logout
+# This method responsible for logout
 class Logout(Resource):
 
     @jwt_required()
     def post(self):
-
         refresh_token = request.json.get("refresh_token")
         access_token = get_jwt()
 
@@ -304,7 +296,9 @@ class Logout(Resource):
         jwt_redis_blacklist.set(name=jti_access, value=jti_access, ex=ACCESS_EXPIRES)
         jwt_redis_blacklist.close()
 
-        return jsonify(msg=f"Refresh token and {access_token_type} token were successfully revoked, you are logged out!")
+        return jsonify(
+            msg=f"Refresh token and {access_token_type} token were successfully revoked, you are logged out!")
+
 
 # class AchievementsBase(Resource):
 #     def get(self):
@@ -386,35 +380,19 @@ class Logout(Resource):
 #         return "Achievement successfully deleted", 200
 #
 #
-# @user_info.route('/profile/<int:user_id>', methods=['GET'])
-# def get_profile(user_id):
-#
-#     user_info = session.query(User.email, User.username).filter(User.id == user_id).first()
-#     if not user_info:
-#         raise Exception("404:User doesn't exist")
-#     response = dict()
-#
-#     achievements_list = session.query(UserAchievement.achievement_id).filter(
-#         UserAchievement.user_id == user_id).all()
-#
-#     if achievements_list:
-#         achievements = []
-#         for achievement_id in achievements_list:
-#             print("here")
-#             achievement = session.query(Achievement).filter(Achievement.id == achievement_id).first()
-#             achievement = achievement.__dict__
-#             del achievement['_sa_instance_state']
-#             achievements.append(achievement)
-#     else:
-#         achievements = []
-#     response.setdefault('user_achievements', achievements)
-#
-#     response.setdefault('user_info', {"email": user_info[0],
-#                                       "username": user_info[1]})
-#
-#     return jsonify(response), 200
-#
-#
+@user_info.route('/profile/<int:user_id>', methods=['GET'])
+def get_profile(user_id):
+    user_info = session.query(User.email, User.username).filter(User.id == user_id).first()
+    if not user_info:
+        raise Exception("404:User doesn't exist")
+    response = dict()
+
+    response.setdefault('user_info', {"email": user_info[0],
+                                      "username": user_info[1]})
+
+    return jsonify(response), 200
+
+
 # @user_info.route('/profile/change/password', methods=['PUT'])
 # @jwt_required()
 # def change_password():  # check old_password
@@ -428,17 +406,17 @@ class Logout(Resource):
 #     return jsonify({"msg": "Password successfully changed"}), 200
 #
 #
-# @user_info.route('/profile/change', methods=['PUT'])
-# @jwt_required()
-# def change():
-#     user_id = get_jwt_identity()
-#     for data in request.json:
-#         if data == "image":
-#             session.query(User).filter(User.id == user_id).update({"image": str(request.json["image"])})
-#         if data == "username":
-#             session.query(User).filter(User.id == user_id).update({"username": str(request.json["username"])})
-#     session.commit()
-#     return "All info changed successfully", 200
+@user_info.route('/profile/change', methods=['PUT'])
+@jwt_required()
+def change():
+    user_id = get_jwt_identity()
+    for data in request.json:
+        if data == "image":
+            session.query(User).filter(User.id == user_id).update({"image": str(request.json["image"])})
+        if data == "username":
+            session.query(User).filter(User.id == user_id).update({"username": str(request.json["username"])})
+    session.commit()
+    return "All info changed successfully", 200
 
 
 user_info.add_url_rule('/refresh_tokens', view_func=TokenRefresh.as_view("refresh_tokens"))
@@ -447,7 +425,6 @@ user_info.add_url_rule('/login', view_func=LoginApi.as_view("login"))
 user_info.add_url_rule('/logout', view_func=Logout.as_view("logout"))
 user_info.add_url_rule('/verify_email', view_func=EmailVerification.as_view("verify_email"))
 user_info.add_url_rule('/send_reset_list', view_func=ResetPassword.as_view("send_reset_list"))
-
 
 # user_info.add_url_rule('/achievements', view_func=AchievementsBase.as_view("achievements_base"))
 # user_info.add_url_rule('/achievement/<int:achievement_id>', view_func=AchievementCRUD.as_view("achievementCRUD"))

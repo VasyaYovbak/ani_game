@@ -11,17 +11,21 @@ Table('character', meta,
 Table('token_block_list', meta,
       Column('id', Integer(), nullable=False, primary_key=True),
       Column('jti', String(length=36), nullable=False),
-      Column('created_at', DateTime(), nullable=False),
+      Column('type', String(length=16), nullable=False),
+      Column('created_at', DateTime(), nullable=False)
       )
 Table('user', meta,
       Column('id', Integer(), nullable=False, primary_key=True),
       Column('username', String(length=50), nullable=False),
       Column('email', String(length=200), nullable=False),
       Column('permission', String(length=30), nullable=True),
-      Column('rating', Integer(), nullable=False),
+      Column('rating', Integer(), nullable=True),
       Column('password', String(length=100), nullable=False),
+      Column('confirmed', Boolean, nullable=True, default=False),
+      Column('confirmed_on', DateTime, nullable=True),
       Column('image', String(length=200), nullable=True),
       )
+
 Table('game', meta,
       Column('game_id', Integer(), nullable=False, primary_key=True),
       Column('guested_character_id', Integer(), nullable=True),

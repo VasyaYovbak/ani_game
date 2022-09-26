@@ -3,7 +3,7 @@ import random
 from time import sleep
 
 import sqlalchemy
-from flask import Blueprint, request, redirect, jsonify
+from flask import Blueprint, request, jsonify
 
 from character_view.models import Character
 from connection import engine
@@ -22,8 +22,8 @@ game_blueprint = Blueprint("game", __name__)
 def gameSearch():
     session = Session(bind=engine)
     user_id = get_jwt_identity()
-    print('here')
     user = session.query(User).get(user_id)
+    anime_id = request.json['anime_id']
 
     available_user = session.query(UserQueue).filter(
         (user.rating + 300 >= UserQueue.rating) & (UserQueue.rating >= user.rating - 300)).first()
@@ -42,7 +42,6 @@ def gameSearch():
             sleep(1)
         game = session.query(Game).order_by(sqlalchemy.desc(Game.game_id)).first()
         session.commit()
-        print(game.game_id)
         session.close()
         return str(game.game_id), 200
     else:
@@ -51,8 +50,7 @@ def gameSearch():
         session.add(game)
         session.commit()
         game = session.query(Game).order_by(sqlalchemy.desc(Game.game_id)).first()
-        gameStart(game.game_id)
-        print("WE ARE HERE")
+        gameStart(game.game_id, [anime_id])
         create_game({
             "id": game.game_id,
             "users": [game.loser_id, game.winner_id]
@@ -120,18 +118,17 @@ def getCards(game_id):
     return jsonify({"cards": result, "selected_character": selected_character})
 
 
-def gameStart(game_id):
+def gameStart(game_id, anime_ids):
     session = Session(bind=engine)
-    COUNT_OF_CARDS = 23
+    COUNT_OF_CARDS = 28
     game = session.query(Game).get(game_id)
-    character_list = session.query(Character).all()
+    character_list = session.query(Character).filter(Character.anime_id.in_(anime_ids)).all()
     size = len(character_list)
     cards_id_1 = []
     cards_id_2 = []
     while len(cards_id_1) != COUNT_OF_CARDS:
         number = int(random.random() * size)
         if character_list[number].character_id not in cards_id_1:
-            print(character_list[number].character_id)
             cards_id_1.append(character_list[number].character_id)
 
     while len(cards_id_2) != COUNT_OF_CARDS:
@@ -141,10 +138,7 @@ def gameStart(game_id):
 
     selected_hero_1 = random.choice(cards_id_1)
     selected_hero_2 = random.choice(cards_id_2)
-    print(cards_id_1)
-    print(selected_hero_1)
-    print(cards_id_2)
-    print(selected_hero_2)
+
 
     for i in range(COUNT_OF_CARDS):
         if cards_id_1[i] == selected_hero_1:

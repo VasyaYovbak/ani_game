@@ -1,12 +1,19 @@
 from sqlalchemy import MetaData, Table, Column, Integer, String, ForeignKeyConstraint, DateTime, Time, \
-    Boolean
+    Boolean, PrimaryKeyConstraint
 from connection import engine
 
 meta = MetaData()
+Table('anime', meta,
+      Column('anime_id', Integer(), nullable=False, primary_key=True),
+      Column('name', String(length=40), nullable=False),
+      Column('image', String(length=250), nullable=False),
+      )
 Table('character', meta,
       Column('character_id', Integer(), nullable=False, primary_key=True),
       Column('name', String(length=40), nullable=False),
       Column('image', String(length=250), nullable=False),
+      Column('anime_id', Integer(), nullable=True),
+      ForeignKeyConstraint(['anime_id'], ['anime.anime_id'], ),
       )
 Table('token_block_list', meta,
       Column('id', Integer(), nullable=False, primary_key=True),
@@ -54,6 +61,32 @@ Table('card', meta,
       ForeignKeyConstraint(['character_id'], ['character.character_id'], ),
       ForeignKeyConstraint(['game_id'], ['game.game_id'], ),
       ForeignKeyConstraint(['user_id'], ['user.id'], ),
+      )
+Table('game_room', meta,
+      Column('room_id', Integer(), nullable=False, primary_key=True),
+      Column('name', String(length=40), nullable=False),
+      Column('creator_user_id', Integer(), nullable=True),
+      Column('second_user_id', Integer(), nullable=True),
+      Column('is_game_started', Boolean(), nullable=False),
+
+      ForeignKeyConstraint(['creator_user_id'], ['user.id'], ),
+      ForeignKeyConstraint(['second_user_id'], ['user.id'], ),
+      )
+Table('games_anime_list', meta,
+      Column('game_id', Integer()),
+      Column('anime_id', Integer()),
+
+      ForeignKeyConstraint(['game_id'], ['game.game_id'], ),
+      ForeignKeyConstraint(['anime_id'], ['anime.anime_id'], ),
+      PrimaryKeyConstraint('game_id', 'anime_id', name='pk_id')
+      )
+Table('rooms_anime_list', meta,
+      Column('room_id', Integer()),
+      Column('anime_id', Integer()),
+
+      ForeignKeyConstraint(['room_id'], ['game_room.room_id'], ),
+      ForeignKeyConstraint(['anime_id'], ['anime.anime_id'], ),
+      PrimaryKeyConstraint('room_id', 'anime_id', name='pk_id')
       )
 meta.create_all(engine)
 

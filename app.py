@@ -1,17 +1,24 @@
-from flask import Flask
+import logging
+
+from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_restful import Api
 from flask_socketio import SocketIO, emit, send
+
+from marshmallow import ValidationError
+
 from sqlalchemy.orm import Session
 
 from connection import engine
 from flask_jwt_extended import JWTManager
 from config import Config
+
 from game_view.game_logic import setup_socket_game_logic
 from game_view.rooms_logic import rooms_blueprint, setup_rooms_logic
 from user_view.models import TokenBlocklist
 
 app = Flask(__name__)
+
 CORS(app, resources='*')
 sio = SocketIO(app, logger=True, cors_allowed_origins='*', async_mode="threading")
 
@@ -41,8 +48,20 @@ from character_view.view import character_blueprint
 from game_view.view import game_blueprint
 from game_view.anime import anime_blueprint
 
+
 # from database_test import database_test, session
 # app.register_blueprint(database_test)
+
+
+@app.errorhandler(Exception)
+def handle_error(e):
+    code = 500
+    if isinstance(e, ValidationError):
+        return jsonify(error=str(e)), 400
+    if isinstance(e, Exception):
+        return jsonify(error=str(e)), 400
+
+    return jsonify(error=str(e)), code
 
 
 app.register_blueprint(user_info)

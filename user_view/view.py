@@ -33,7 +33,7 @@ jwt_redis_blacklist = redis.Redis(
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
 
-API_KEY = "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"
+API_KEY = ""
 
 
 def send_email(message):

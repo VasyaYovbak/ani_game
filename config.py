@@ -1,7 +1,7 @@
 from sendgrid import SendGridAPIClient
 
 USERNAME = 'root'
-PASSWORD = 'MyZno26112003'
+PASSWORD = ''
 SERVER = 'localhost'
 DB = "anigame"
 

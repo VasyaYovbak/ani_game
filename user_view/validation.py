@@ -1,51 +1,53 @@
-from marshmallow import Schema, fields, validate
 from marshmallow.validate import *
 
 
-class RegisterSchema(Schema):
+def password_check(password):
 
-    username = fields.String(required=True, validate=Length(min=3, max=15))
-    email = fields.Email(required=True, validate=Length(min=8, max=345))
-    password = fields.String(required=True, validate=[validate.Length(min=6, max=36)], load_only=True)
+    Special_Symbols = ['$', '@', '#', '%', '/']
+
+    if len(password) <=5 or len(password) >= 37:
+        raise ValidationError('Password length should be between 6 and 36 digits')
+
+    if not any(char.isdigit() for char in password):
+        raise ValidationError('Password should have at least one numeral')
+
+    if not any(char.isupper() for char in password):
+        raise ValidationError('Password should have at least one uppercase letter')
+
+    if not any(char.islower() for char in password):
+        raise ValidationError('Password should have at least one lowercase letter')
+
+    if not any(char in Special_Symbols for char in password):
+        raise ValidationError('Password should have at least one of the symbols: $, @, #, %, /')
 
 
-class LoginSchema(Schema):
+#check if usernmae have digits
+def username_check(username):
 
-    email = fields.Email(required=True, validate=Length(min=8, max=345))
-    password = fields.String(required=True, validate=[validate.Length(min=6, max=36)], load_only=True)
+    Special_Symbols = ['$', '@', '#', '%', '/', '^', '~', ]
+
+    ans = any(char.isdigit() for char in username)
+
+    if len(username) <=2 or len(username) >= 33:
+        raise ValidationError('Username length should be between 3 and 32 digits')
+
+    if ans == True:
+        raise ValidationError("Username should have only letters, digits are not allowed.")
+
+    if any(char in Special_Symbols for char in username):
+        raise ValidationError('This symbols are not allowed.')
 
 
-class ResetSchema(Schema):
-    password = fields.String(required=True, validate=[validate.Length(min=6, max=36)], load_only=True)
+def email_check(email):
 
+    Special_Symbols = ['@', '.']
 
-class PasswordValidation():
+    if len(email) <=7 or len(email) >= 346:
+        raise ValidationError('Email length should be between 8 and 345 digits')
 
-    @staticmethod
-    def password_check(self):
-        SpecialSym = ['$', '@', '#', '%', '/']
-        val = True
+    if not any(char in Special_Symbols[0] for char in email) or not any(char in Special_Symbols[1] for char in email):
+        raise ValidationError('Email is not valid')
 
-        if not any(char.isdigit() for char in self):
-            print('Password should have at least one numeral')
-            val = False
-
-        if not any(char.isupper() for char in self):
-            print('Password should have at least one uppercase letter')
-            val = False
-
-        if not any(char.islower() for char in self):
-            print('Password should have at least one lowercase letter')
-            val = False
-
-        if not any(char in SpecialSym for char in self):
-            print('Password should have at least one of the symbols $@#')
-            val = False
-
-        if not val:
-            print("Your password is shit like my python knowledge")
-
-        return val
 
 # class AchievementSchema(Schema):
 #
@@ -63,9 +65,4 @@ class PasswordValidation():
 #         fields = ('name', 'experience', 'description')
 # newAchievement = NewAchievement()
 
-
-
-registration_schema = RegisterSchema()
-login_schema = LoginSchema()
-reset_schema = ResetSchema()
 

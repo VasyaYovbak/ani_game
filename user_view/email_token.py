@@ -1,4 +1,5 @@
 from itsdangerous import URLSafeTimedSerializer
+from functools import reduce
 
 SECRET_KEY_CONFIRMATION = 'rV2426fsxwNSem15019LaB1ss30mayCddmsg999'
 SECRET_KEY_RESET = 'hf7mN6123Gbz08Ghnsfdh67G34Fdvvasj90a112'
@@ -34,6 +35,3 @@ def reset_password_token(token, expiration=3600):
     except:
         raise Exception("There is a problem with entered token or smth else i dont know)")
     return email
-
-
-

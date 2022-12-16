@@ -1,8 +1,7 @@
-import pytest
 import requests
 
 from character_view.models import Character
-from test_user import login_as_admin, login_as_user
+from tests.test_user.test_user import login_as_admin, login_as_user
 from connection import session
 
 url = 'http://127.0.0.1:2012'

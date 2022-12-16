@@ -1,9 +1,9 @@
-# import redis
+import redis
 # from datetime import timedelta, datetime, timezone
 #
-# jwt_redis_blacklist = redis.Redis(
-#     host="localhost", port=6379, db=0, decode_responses=True
-# )
+jwt_redis_blacklist = redis.Redis(
+    host="localhost", port=6379, db=0, decode_responses=True
+)
 # jti = 'sdawdasdawdasdawd'
 # ACCESS_EXPIRES = timedelta(days=1)
 #

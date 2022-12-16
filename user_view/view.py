@@ -1,44 +1,33 @@
 from datetime import timedelta, datetime, timezone
 import jwt as jwt1
-from flask import Blueprint, request, Response, redirect, jsonify, url_for
+from flask import Blueprint, request, jsonify, url_for
 from app import app
 from passlib.hash import argon2
-
 from flask_restful import Resource
-from passlib.hash import bcrypt
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
-
-import redis
 from flask_mail import Mail
 from itsdangerous import URLSafeTimedSerializer
 import sendgrid
 from sendgrid.helpers.mail import Mail
 from connection import session
-from user_view.email_token import generate_email_confirmation_token, confirm_email_verification_token, \
-    generate_password_reset_token, reset_password_token
 from user_view.models import User, TokenBlocklist
-from user_view.validation import registration_schema, login_schema, reset_schema
+from user_view.validation import password_check, username_check, email_check
 from marshmallow import ValidationError
-from config import Config
+from config import Config, SendGridApi_key
+from user_view.redis_connection import jwt_redis_blacklist
+
 
 ACCESS_EXPIRES = timedelta(minutes=3)
-EXPIRE = timedelta(days=1)
+
 
 user_info = Blueprint('user_info', __name__)
-
-jwt_redis_blacklist = redis.Redis(
-    host="localhost", port=6379, db=0, decode_responses=True
-)
 
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
 
-API_KEY = ""
-
-
 def send_email(message):
     try:
-        sg = sendgrid.SendGridAPIClient(API_KEY)
+        sg = sendgrid.SendGridAPIClient(SendGridApi_key.API_KEY)
         response = sg.send(message)
         code, body, headers = response.status_code, response.body, response.headers
         print(f"Response code: {code}")
@@ -52,9 +41,7 @@ def send_email(message):
 
 def revoke_refresh_token(decoded_refresh):
     jti_refresh = decoded_refresh["jti"]
-
     refresh_token_type = decoded_refresh["type"]
-
     now = datetime.now(timezone.utc)
 
     session.add(TokenBlocklist(jti=jti_refresh, type=refresh_token_type, created_at=now))
@@ -62,38 +49,46 @@ def revoke_refresh_token(decoded_refresh):
 
 
 # This method is responsible for checking if refresh token is revoked or not
-def is_refresh_revoked(jwt_payload: dict):
+def is_refresh_valid(jwt_payload: dict):
     jti = jwt_payload["jti"]
     token_type = jwt_payload["type"]
     expired = jwt_payload["exp"]
 
     if token_type != "refresh":
-        raise ValidationError("Invalid token type, this method needs refresh token")
+        raise Exception("Invalid token type, this method needs refresh token")
 
     if expired == 0:
-        raise ValidationError("Token already expired, enter valid one")
+        raise Exception("Token already expired, enter valid one")
 
     token = session.query(TokenBlocklist.id).filter_by(jti=jti).scalar()
 
     if token is not None:
-        raise ValidationError("Refresh token is invalid")
+        raise Exception("Refresh token already revoked")
+
+    return True
 
 
 # This method is responsible for checking if access token is revoked or not
-def is_access_revoked(jwt_payload: dict):
+def is_access_valid(jwt_payload: dict):
     jti_access = jwt_payload["jti"]
     token_type = jwt_payload["type"]
+    expired = jwt_payload["exp"]
 
     if token_type != "access":
         raise ValidationError("Invalid token type, this method needs access token")
 
+    if expired == 0:
+        raise Exception("Token already expired, enter valid one")
+
     token = jwt_redis_blacklist.get(name=jti_access)
 
     if token is not None:
-        raise ValidationError("Access token is invalid")
+        raise Exception("Access token already revoked")
+
+    return True
 
 
-# This method made for refreshing rokens
+# This method made for refreshing tokens
 class TokenRefresh(Resource):
 
     def post(self):
@@ -104,7 +99,7 @@ class TokenRefresh(Resource):
 
         decoded_refresh = jwt1.decode(refresh_token, Config.SECRET_KEY, algorithms=["HS256"])
 
-        is_refresh_revoked(decoded_refresh)
+        is_refresh_valid(decoded_refresh)
         user = session.query(User).filter(User.id == f'{decoded_refresh["sub"]}').first()
 
         tokens = user.get_tokens()
@@ -124,7 +119,16 @@ class RegisterApi(Resource):
 
         if "Authorization" in request.headers.keys():
             raise Exception("405:Sorry, you can't register now. Please first logout")
-        user = User(**registration_schema.load(request.json))
+
+        username = request.json.get('username')
+        email = request.json.get('email')
+        password = request.json.get('password')
+
+        username_check(username)
+        email_check(email)
+        password_check(password)
+
+        user = User(username=username, email=email, password=password)
 
         if session.query(User).filter(User.email == f'{user.email}').count() or \
                 session.query(User).filter(User.username == f'{user.username}').count():
@@ -137,6 +141,7 @@ class RegisterApi(Resource):
         user = user.__dict__
         del user['password'], user['_sa_instance_state'], user['permission']
         tokens['user'] = user
+
         return jsonify(tokens), 201
 
 
@@ -148,15 +153,18 @@ class LoginApi(Resource):
         if "Authorization" in request.headers.keys():
             raise Exception("405:Sorry, you can't login now. Please first logout")
 
-        login_data = User(**login_schema.load(request.json))
-        login_data.password = request.json["password"]
+        email = request.json.get('email')
+        password = request.json.get('password')
+        username = request.json.get('username')
+
+        login_data = User(username=username, email=email, password=password)
 
         user = session.query(User).filter(User.email == login_data.email).first()
 
         if not user:
-            raise Exception('403:Wrong user email')
-        if not argon2.verify(login_data.password, user.password):
-            raise Exception('403:Wrong user password')
+            raise Exception('Wrong user email')
+        if not argon2.verify(password, user.password):
+            raise Exception('Wrong user password')
 
         tokens = user.get_tokens()
         user = user.__dict__
@@ -176,7 +184,6 @@ class EmailVerification(Resource):
             raise Exception("User with this email is not registered")
 
         token = user.get_verify_token()
-
         confirm_url = url_for('user_info.confirm_email', token=token, _external=True)
 
         template_id = "d-9b6742a4eab545d5819cf658be051f61"
@@ -189,20 +196,20 @@ class EmailVerification(Resource):
         }
         message.template_id = template_id
 
-        return jsonify(str(send_email(message).status_code))
+        return jsonify({"Message": str(send_email(message).status_code), "url": confirm_url}), 202
 
 
 # This method cheking if you clicked on special link from method above, if yes then youre confirmed
 @user_info.route('/confirm/<token>')
 def confirm_email(token):
-    try:
-        decoded_verify = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
-        user = session.query(User).filter(User.id == f'{decoded_verify["sub"]}').first()
-    except:
-        raise Exception('The confirmation link is invalid or has expired.')
+
+    decoded_verify = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
+    user = session.query(User).filter(User.id == f'{decoded_verify["sub"]}').first()
 
     if user.confirmed:
         raise Exception('Account already confirmed. Please login.')
+
+    is_refresh_valid(decoded_verify)
 
     now = datetime.now(timezone.utc)
 
@@ -214,8 +221,8 @@ def confirm_email(token):
     session.add(user)
     session.commit()
 
-    response = 'You have confirmed your account. Thanks!'
-    return jsonify(response)
+    response = {'Message': 'You have confirmed your account. Thanks!'}
+    return jsonify(response), 200
 
 
 # This method responsible for sending password reset messages
@@ -242,37 +249,29 @@ class ResetPassword(Resource):
         }
         message.template_id = template_id
 
-        return jsonify(str(send_email(message).status_code))
+        return jsonify({"Message": str(send_email(message).status_code), "url": reset_url}), 202
 
 
 # This Method responsible for reseting password
 @user_info.route('/reset/<token>', methods=['POST'])
 def reset_password(token):
-    try:
-        decoded_reset = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
-        user = session.query(User).filter(User.id == f'{decoded_reset["sub"]}').first()
-    except:
-        raise Exception('The confirmation link is invalid or has expired.')
 
-    if is_refresh_revoked(decoded_reset):
-        raise Exception('This link is no longer valid, send another request please.')
+    decoded_reset = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
+    user = session.query(User).filter(User.id == f'{decoded_reset["sub"]}').first()
 
-    if user.confirmed:
-        raise Exception('Account already confirmed. Please login.')
+    is_refresh_valid(decoded_reset)
 
-    new_password = User(**reset_schema.load(request.json))
+    new_password = request.json["password"]
+    password_check(new_password)
 
-    if user.confirmed == 1:
-        raise Exception('Account already confirmed. Please login.')
+    session.query(User).filter(User.id == user.id).update(
+        {"password": str(argon2.using(rounds=5).hash(new_password))})
+    session.commit()
 
     revoke_refresh_token(decoded_reset)
 
-    new_password.new_password = request.json["password"]
-    session.query(User).filter(User.id == user.id).update(
-        {"password": str(argon2.using(rounds=5).hash(new_password.new_password))})
-    session.commit()
-
-    return jsonify({"msg": "Password successfully changed"}), 200
+    response = {"Message": "Password successfully changed"}
+    return jsonify(response), 200
 
 
 # This method responsible for logout
@@ -280,13 +279,17 @@ class Logout(Resource):
 
     @jwt_required()
     def post(self):
+
         refresh_token = request.json.get("refresh_token")
+        if refresh_token == '':
+            raise Exception("Refresh token is required")
+
         access_token = get_jwt()
 
         decoded_refresh = jwt1.decode(refresh_token, Config.SECRET_KEY, algorithms=["HS256"])
 
-        is_refresh_revoked(jwt_payload=decoded_refresh)
-        is_access_revoked(jwt_payload=access_token)
+        is_refresh_valid(jwt_payload=decoded_refresh)
+        is_access_valid(jwt_payload=access_token)
 
         jti_access = access_token["jti"]
         access_token_type = access_token["type"]
@@ -382,6 +385,7 @@ class Logout(Resource):
 #
 @user_info.route('/profile/<int:user_id>', methods=['GET'])
 def get_profile(user_id):
+    #last 5 games of current player and get data (opp and win or lose)
     user_info = session.query(User.email, User.username).filter(User.id == user_id).first()
     if not user_info:
         raise Exception("404:User doesn't exist")
@@ -420,7 +424,7 @@ def change():
 
 
 user_info.add_url_rule('/refresh_tokens', view_func=TokenRefresh.as_view("refresh_tokens"))
-user_info.add_url_rule('/registration', view_func=RegisterApi.as_view("register"))
+user_info.add_url_rule('/registration', view_func=RegisterApi.as_view("registration"))
 user_info.add_url_rule('/login', view_func=LoginApi.as_view("login"))
 user_info.add_url_rule('/logout', view_func=Logout.as_view("logout"))
 user_info.add_url_rule('/verify_email', view_func=EmailVerification.as_view("verify_email"))

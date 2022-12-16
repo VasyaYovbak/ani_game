@@ -1,14 +1,17 @@
 from sendgrid import SendGridAPIClient
+import os
 
-USERNAME = 'root'
-PASSWORD = ''
-SERVER = 'localhost'
-DB = "anigame"
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+SERVER = os.getenv("SERVER")
+DB = os.getenv("DB")
+
 
 class Config:
-    SECRET_KEY = ''
+    SECRET_KEY = os.getenv("SECRET_KEY")
+
 
 class SendGridApi_key:
-    API_KEY = ""
+    API_KEY = os.getenv("API_KEY")
 
 # mysql+pymysql://root:root@127.0.0.1:3306/narutodatabase

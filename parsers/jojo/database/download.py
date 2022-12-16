@@ -3,7 +3,9 @@ from parsers.functions.download import download_anime, download_characters, prin
 from parsers.functions.mapper import anime_character_foreign_keys, one_image_size_usual
 from parsers.functions.setup import *
 
-df = pd.read_csv('../data/jojo.txt')
+import os
+
+df = pd.read_csv(os.path.dirname(__file__) + '\\..\data\\jojo.txt')
 number_of_img = len(df.index) - 1
 
 df = prepare_characters_dataframe(df=df, columns_to_drop=['image'], columns_rename_mapper={
@@ -16,9 +18,8 @@ jojo_characters_df = df.assign(
 
 def download_jojo_data(session):
     download_anime(session=session, name='jojo',
-                   image_url="https://cdn.mos.cms.futurecdn.net/4T7dXG2Btv4QMeAdqxrzXK.jpg")
+                   image_url="https://www.pngmart.com/files/13/JoJos-Bizarre-Adventure-Jojo-PNG-HD.png")
     download_characters(session=session, df=jojo_characters_df)
-
 
 # # download only jojo data
 # download_jojo_data(session=session)

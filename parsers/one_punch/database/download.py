@@ -5,7 +5,9 @@ from parsers.functions.setup import *
 
 # preparing data
 
-df = pd.read_csv('../data/one_punch.txt')
+import os
+
+df = pd.read_csv(os.path.dirname(__file__) + '\\..\data\\one_punch.txt')
 number_of_img = len(df.index) - 1
 
 df = prepare_characters_dataframe(df=df, columns_to_drop=['image'], columns_rename_mapper={'full_name': 'name'},

@@ -1,4 +1,3 @@
-from character_view.models import Character
 from connection import session
 from parsers.functions.convert import prepare_characters_dataframe
 from parsers.functions.create_collage import get_one_row_image_coordinates
@@ -8,23 +7,26 @@ from parsers.functions.setup import *
 
 import os
 
-df = pd.read_csv(os.path.dirname(__file__) + '\\..\data\\bleach.txt')
+df = pd.read_csv(os.path.dirname(__file__) + '\\..\data\\fairy_tail.txt')
 number_of_img = len(df.index) - 1
 
 df = prepare_characters_dataframe(df=df, columns_to_drop=['image'], columns_rename_mapper={
     'full_name': 'name'},
-                                  anime_foreign_key=anime_character_foreign_keys['bleach'])
+                                  anime_foreign_key=anime_character_foreign_keys['fairy_tail'])
 
-bleach_characters_df = df.assign(
+fairy_tail_df = df.assign(
     image=get_one_row_image_coordinates(number_of_img, one_image_size_usual))
 
 
-def download_bleach_data(session):
-    download_anime(session=session, name='bleach',
-                   image_url="https://www.pngall.com/wp-content/uploads/13/Bleach-Anime-1.png")
-    download_characters(session=session, df=bleach_characters_df)
+# print(fairy_tail_df)
 
-# # download only bleach data
-# download_bleach_data(session=session)
 
-# print_particular_anime_characters(anime_character_foreign_keys['bleach'])
+def download_fairy_tail_data(session):
+    download_anime(session=session, name='fairy_tail',
+                   image_url="https://freepikpsd.com/file/2019/10/happy-fairy-tail-png-7-Transparent-Images.png")
+    download_characters(session=session, df=fairy_tail_df)
+
+# # download only demon slayer data
+# download_demon_slayer_data(session=session)
+
+# print_particular_anime_characters(anime_character_foreign_keys['demon_slayer'])

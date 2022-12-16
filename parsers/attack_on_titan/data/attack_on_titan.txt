@@ -1,0 +1,66 @@
+full_name,image
+Eren Yeager,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648482-0334993896-latest
+Mikasa Ackerman,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362923-9787401036-latest.png
+Armin Arlert,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362922-1790160518-latest.png
+Connie Springer,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362924-6919115352-latest.png
+Jean Kirstein,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362925-5907641269-latest.png
+Reiner Braun,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648505-2341048844-latest
+Levi Ackerman,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362926-5295813392-latest.png
+Sasha Blouse,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362930-5943059996-latest.jpg
+Zoe Hange,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362934-0207371133-latest.png
+Bertolt Hoover,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362935-4364561895-latest.png
+Krista Lenz,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362928-7204616426-latest.png
+Erwin Smith,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3943719-6786513864-Erwin.jpg
+Annie Leonhart,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362932-4609714442-latest.png
+Beast Titan,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/4176479-2178132720-Hairy.jpg
+Dot Pixis,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362939-6579145543-latest.png
+Ymir,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362937-4135236969-latest.png
+Gabi Braun,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7551056-6135541461-latest.png
+Pieck Finger,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7030528-6879946027-latest
+Grisha Yeager,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648499-0215188111-latest
+Marco Bott,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362940-4987577178-latest.jpg
+Theo Magath,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7030533-2142272992-latest
+Hannes,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911639-4538089840-Hanne.jpg
+Moblit Berner,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648550-7875345487-latest
+Keith Shadis,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648501-1859011979-latest
+Marlowe Freudenberg,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911674-6527042347-Marlo.jpg
+Kenny Ackerman,https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4666161-0848834053-Capta.jpg
+Floch Forster,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7030526-7684616983-latest
+Porco Galliard,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7030530-8016955795-latest
+Carla Yeager,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3943718-2683960613-Kalur.jpg
+Nile Dok,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911671-9401639678-Comma.jpg
+Yelena,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7030534-6894738888-latest
+Rod Reiss,https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4666359-0066982185-500px.jpg
+Petra Ral,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911642-9241764844-Close.jpg
+Eld Jinn,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648539-5070548109-latest
+Colt Grice,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7030525-3368631969-latest
+Gunther Schultz,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648546-9698848116-latest
+Hitch,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911673-1081907789-Hitch.jpg
+Frieda Reiss,https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4666183-5466053203-461
+Smiling Titan,https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4666326-9227750590-tumbl.jpg
+Onyankopon,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8325119-4102503592-latest.png
+Oluo Bozado,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911646-9251491137-Oluo_.jpg
+Abel Reiss,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8359001-2379530365-latest.png
+Dirk Reiss,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8359002-5123278461-latest.png
+Flegel Reeves,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/4719350-flegel_reeves.jpg
+Anka Rheinberger,https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4666174-6953433581-Anka_.jpg
+Florian Reiss,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8359003-9619963580-latest.jpg
+Ulklin Reiss,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8359004-5902971078-latest.jpg
+Thomas Wagner,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911672-4489651195-Tomas.jpg
+Rico Brzenska,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911644-2565277105-Rico_.jpg
+Mike Zacharias,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911640-7341790389-Mike_.jpg
+Mina Carolina,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648503-5984275658-latest
+Samuel Linke-Jackson,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648507-9699868448-latest
+Zofia ,https://comicvine.gamespot.com/a/uploads/square_small/11154/111540164/8040121-0197919605-442.jpg
+Hannah Diamant,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648500-7424541027-latest
+Keiji,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911679-0386644559-Keiji.jpg
+Dimo Reeves,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362907-0480557917-latest.png
+Franz Kefka,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648492-4021158230-latest
+Ian Dietrich,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/8362921-4634236387-latest.png
+Gelgar,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648545-3508382852-latest
+Nanaba,https://comicvine.gamespot.com/a/uploads/square_small/11112/111121983/6648552-5233642494-latest
+Daz,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911685-6691418034-Dazz_.jpg
+Ilse Langnar,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911684-5167377876-Ilse_.jpg
+Lynne,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/3911676-0554490964-Rene_.jpg
+Louise,https://comicvine.gamespot.com/a/uploads/square_small/6/67663/7030527-9059387235-latest
+Ymir Fritz,https://comicvine.gamespot.com/a/uploads/square_small/11154/111540164/8039815-3059684003-500.jpg

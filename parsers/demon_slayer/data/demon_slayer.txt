@@ -1,0 +1,59 @@
+full_name,image
+Tanjiro Kamado,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5738727-tanjiro.jpg
+Agatsuma Zenitsu,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535416-5017161558-latest.png
+Hashibira Inosuke,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535418-9927758824-latest.png
+Nezuko Kamado,https://comicvine.gamespot.com/a/uploads/square_small/11118/111187046/7113416-8761917394-EFSNQYHUEAAbdkR.jpg%3Aorig
+Kibutsuji Muzan,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535357-7215058463-latest.png
+Tomioka Giyuu,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535371-9349637071-latest.png
+Kochou Shinobu,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535415-0094181215-latest.png
+Tsuyuri Kanao,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535407-0215191562-latest.png
+Iguro Obanai,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535363-9556267315-latest.png
+Tokitou Muichirou,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535364-8717839591-latest.png
+Kanroji Mitsuri,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535408-8086030917-latest.png
+Uzui Tengen,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5652340-u.jpg
+Shinazugawa Sanemi,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535360-1885193618-latest.png
+Genya Shinazugawa,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266318-9891920077-latest
+Himejima Gyoumei,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535358-7654313329-latest.png
+Murata,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5909175-murata.jpg
+Kokushibo,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266335-0561626076-latest
+Tamayo,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5338916-tamayo.jpg
+Yushiro,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5338910-yushiro.jpg
+Rengoku Kyoujuro,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535367-2872956271-latest.png
+Akaza,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7535419-4722387868-latest.png
+Yoriichi Tsugikuni,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266319-7859074472-latest
+Doma,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266336-5921284267-latest
+Naho Takada,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5905400-naho.jpg
+Kiyo Terauchi,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5905406-kiyo.jpg
+Sumi Nakahara,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5905404-sumi.jpg
+Aoi Kanzaki,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5905390-aoi.jpg
+Kochou Kanae,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5916754-ae.jpg
+Rengoku Shinjurou,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5916821-father.jpg
+Daki,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/6068562-daki.jpg
+Nakime,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266334-6993988472-latest
+Oyakata,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/6154004-oyakata.png
+Kie Kamado,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5918871-kie.jpg
+Makio,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5987970-makio.jpg
+Hinatsuru,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/6073001-hinat.jpg
+Gyūtarō,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/6154005-gyu.jpg
+Hantengu,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266337-7067628985-latest
+Kaigaku,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266339-9207760839-latest
+Sabito,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5294828-profile_2.png
+Makomo,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5294855-u001.jpg
+Hotaru Haganezuka,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5738633-ha.jpg
+Enmu,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5809453-enmu.jpg
+Rengoku Senjuro,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5916816-sen.jpg
+Suma,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/6073030-suma.png
+Gyokko,https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/7266338-3408053034-latest
+Urokodaki Sakonji,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5294792-profile_5.png
+Susamaru,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5338941-susamaru.jpg
+Yahaba,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5338939-yahaba.jpg
+Teruko,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5339019-teruko.jpg
+Shoichi,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5349056-shoichi.jpg
+Kiyoshi,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5358152-kiyoshi%2Btamayoyushironezuko.jpg
+Rui,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5439687-r.jpg
+Tanjuro Kamado,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5901863-tanjuro.jpg
+Rengoku Ruka,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5916814-mother.jpg
+Rokuta Kamado,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5918889-rokuta.jpg
+Shigeru Kamado,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5918927-shigeru.jpg
+Hanako Kamado,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5918929-hanako.jpg
+Takeo Kamado,https://comicvine.gamespot.com/a/uploads/square_small/13/136525/5918907-takeo.jpg

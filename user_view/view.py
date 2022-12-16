@@ -25,7 +25,6 @@ user_info = Blueprint('user_info', __name__)
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
 
-
 def send_email(message):
     try:
         sg = sendgrid.SendGridAPIClient(SendGridApi_key.API_KEY)

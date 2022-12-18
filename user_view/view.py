@@ -15,14 +15,13 @@ from marshmallow import ValidationError
 from config import Config, SendGridApi_key
 from user_view.redis_connection import jwt_redis_blacklist
 
-
 ACCESS_EXPIRES = timedelta(minutes=3)
-
 
 user_info = Blueprint('user_info', __name__)
 
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
+
 
 def send_email(message):
     try:
@@ -201,7 +200,6 @@ class EmailVerification(Resource):
 # This method cheking if you clicked on special link from method above, if yes then youre confirmed
 @user_info.route('/confirm/<token>')
 def confirm_email(token):
-
     decoded_verify = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
     user = session.query(User).filter(User.id == f'{decoded_verify["sub"]}').first()
 
@@ -254,7 +252,6 @@ class ResetPassword(Resource):
 # This Method responsible for reseting password
 @user_info.route('/reset/<token>', methods=['POST'])
 def reset_password(token):
-
     decoded_reset = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
     user = session.query(User).filter(User.id == f'{decoded_reset["sub"]}').first()
 
@@ -278,7 +275,6 @@ class Logout(Resource):
 
     @jwt_required()
     def post(self):
-
         refresh_token = request.json.get("refresh_token")
         if refresh_token == '':
             raise Exception("Refresh token is required")
@@ -384,7 +380,7 @@ class Logout(Resource):
 #
 @user_info.route('/profile/<int:user_id>', methods=['GET'])
 def get_profile(user_id):
-    #last 5 games of current player and get data (opp and win or lose)
+    # last 5 games of current player and get data (opp and win or lose)
     user_info = session.query(User.email, User.username).filter(User.id == user_id).first()
     if not user_info:
         raise Exception("404:User doesn't exist")

@@ -3,6 +3,8 @@ from marshmallow.validate import *
 
 def password_check(password):
 
+    Special_Symbols = ['$', '@', '#', '%', '/']
+
     if len(password) <= 5 or len(password) >= 37:
         raise ValidationError('Password length should be between 6 and 36 digits')
 
@@ -13,7 +15,11 @@ def password_check(password):
 # check if username have digits
 def username_check(username):
 
+    Special_Symbols = {'$', '@', '#', '%', '/', '^', '~', }
+
+
     special_symbols = {'$', '@', '#', '%', '/', '^', '~', }
+
 
     ans = any(char.isdigit() for char in username)
 
@@ -43,6 +49,7 @@ def validate_registration(username, password, email):
 def validate_password(password):
     return password_check(password)
 
+
 # class AchievementSchema(Schema):
 #
 #     name = fields.String(required=True, validate=Length(min=3, max=15))
@@ -58,5 +65,3 @@ def validate_password(password):
 #     class Meta:
 #         fields = ('name', 'experience', 'description')
 # newAchievement = NewAchievement()
-
-

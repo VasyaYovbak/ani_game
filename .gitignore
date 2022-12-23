@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .idea
+user_view/client_secrets.json
+user_view/google_oauth.py

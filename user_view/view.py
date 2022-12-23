@@ -1,91 +1,25 @@
-from datetime import timedelta, datetime, timezone
+from datetime import datetime, timezone
+import flask
 import jwt as jwt1
 from flask import Blueprint, request, jsonify, url_for
 from app import app
 from passlib.hash import argon2
 from flask_restful import Resource
-from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_mail import Mail
 from itsdangerous import URLSafeTimedSerializer
-import sendgrid
 from sendgrid.helpers.mail import Mail
 from connection import session
 from user_view.models import User, TokenBlocklist
-from user_view.validation import password_check, username_check, email_check
-from marshmallow import ValidationError
-from config import Config, SendGridApi_key
-from user_view.redis_connection import jwt_redis_blacklist
-
-
-ACCESS_EXPIRES = timedelta(minutes=3)
+from user_view.validation import validate_registration, validate_password
+from config import Config
+from user_view.additional_methods import send_email, revoke_refresh_token, revoke_access_token, \
+    is_refresh_valid, is_access_valid, send_registration_email
 
 
 user_info = Blueprint('user_info', __name__)
-
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
-
-def send_email(message):
-    try:
-        sg = sendgrid.SendGridAPIClient(SendGridApi_key.API_KEY)
-        response = sg.send(message)
-        code, body, headers = response.status_code, response.body, response.headers
-        print(f"Response code: {code}")
-        print(f"Response headers: {headers}")
-        print(f"Response body: {body}")
-    except:
-        raise Exception("Email have not been sent")
-
-    return response
-
-
-def revoke_refresh_token(decoded_refresh):
-    jti_refresh = decoded_refresh["jti"]
-    refresh_token_type = decoded_refresh["type"]
-    now = datetime.now(timezone.utc)
-
-    session.add(TokenBlocklist(jti=jti_refresh, type=refresh_token_type, created_at=now))
-    session.commit()
-
-
-# This method is responsible for checking if refresh token is revoked or not
-def is_refresh_valid(jwt_payload: dict):
-    jti = jwt_payload["jti"]
-    token_type = jwt_payload["type"]
-    expired = jwt_payload["exp"]
-
-    if token_type != "refresh":
-        raise Exception("Invalid token type, this method needs refresh token")
-
-    if expired == 0:
-        raise Exception("Token already expired, enter valid one")
-
-    token = session.query(TokenBlocklist.id).filter_by(jti=jti).scalar()
-
-    if token is not None:
-        raise Exception("Refresh token already revoked")
-
-    return True
-
-
-# This method is responsible for checking if access token is revoked or not
-def is_access_valid(jwt_payload: dict):
-    jti_access = jwt_payload["jti"]
-    token_type = jwt_payload["type"]
-    expired = jwt_payload["exp"]
-
-    if token_type != "access":
-        raise ValidationError("Invalid token type, this method needs access token")
-
-    if expired == 0:
-        raise Exception("Token already expired, enter valid one")
-
-    token = jwt_redis_blacklist.get(name=jti_access)
-
-    if token is not None:
-        raise Exception("Access token already revoked")
-
-    return True
 
 
 # This method made for refreshing tokens
@@ -124,9 +58,7 @@ class RegisterApi(Resource):
         email = request.json.get('email')
         password = request.json.get('password')
 
-        username_check(username)
-        email_check(email)
-        password_check(password)
+        validate_registration(username, password, email)
 
         user = User(username=username, email=email, password=password)
 
@@ -136,6 +68,9 @@ class RegisterApi(Resource):
 
         session.add(user)
         session.commit()
+
+        send_token = user.get_verify_token()
+        send_registration_email(email, send_token)
 
         tokens = user.get_tokens()
         user = user.__dict__
@@ -173,7 +108,6 @@ class LoginApi(Resource):
         return jsonify(tokens), 200
 
 
-# This method is intended for user validation his email, it is generating special confirmation link and sending this link to you email with special template
 class EmailVerification(Resource):
 
     def post(self):
@@ -188,7 +122,7 @@ class EmailVerification(Resource):
 
         template_id = "d-9b6742a4eab545d5819cf658be051f61"
 
-        message = Mail(from_email="romaostrovskiy616@gmail.com",
+        message = Mail(from_email="anigamegroup@gmail.com",
                        to_emails=email)
         message.dynamic_template_data = {
             'text': 'Verify your email!',
@@ -199,7 +133,6 @@ class EmailVerification(Resource):
         return jsonify({"Message": str(send_email(message).status_code), "url": confirm_url}), 202
 
 
-# This method cheking if you clicked on special link from method above, if yes then youre confirmed
 @user_info.route('/confirm/<token>')
 def confirm_email(token):
 
@@ -225,7 +158,6 @@ def confirm_email(token):
     return jsonify(response), 200
 
 
-# This method responsible for sending password reset messages
 class ResetPassword(Resource):
 
     def post(self):
@@ -240,7 +172,7 @@ class ResetPassword(Resource):
 
         template_id = "d-f6f22043bd8f4459b73beaee98e1b848"
 
-        message = Mail(from_email="romaostrovskiy616@gmail.com",
+        message = Mail(from_email="anigamegroup@gmail.com",
                        to_emails=email)
         message.dynamic_template_data = {
             'text': "Reset password!",
@@ -252,7 +184,6 @@ class ResetPassword(Resource):
         return jsonify({"Message": str(send_email(message).status_code), "url": reset_url}), 202
 
 
-# This Method responsible for reseting password
 @user_info.route('/reset/<token>', methods=['POST'])
 def reset_password(token):
 
@@ -262,7 +193,7 @@ def reset_password(token):
     is_refresh_valid(decoded_reset)
 
     new_password = request.json["password"]
-    password_check(new_password)
+    validate_password(new_password)
 
     session.query(User).filter(User.id == user.id).update(
         {"password": str(argon2.using(rounds=5).hash(new_password))})
@@ -271,36 +202,33 @@ def reset_password(token):
     revoke_refresh_token(decoded_reset)
 
     response = {"Message": "Password successfully changed"}
-    return jsonify(response), 200
+    return jsonify(response)
 
 
-# This method responsible for logout
 class Logout(Resource):
 
     @jwt_required()
     def post(self):
 
+        headers = flask.request.headers
+        bearer = headers.get('Authorization')
+        access_token = bearer.split()[1]
+
         refresh_token = request.json.get("refresh_token")
         if refresh_token == '':
             raise Exception("Refresh token is required")
 
-        access_token = get_jwt()
-
         decoded_refresh = jwt1.decode(refresh_token, Config.SECRET_KEY, algorithms=["HS256"])
+        decoded_access = jwt1.decode(access_token, Config.SECRET_KEY, algorithms=["HS256"])
 
+        is_access_valid(jwt_payload=decoded_access)
         is_refresh_valid(jwt_payload=decoded_refresh)
-        is_access_valid(jwt_payload=access_token)
 
-        jti_access = access_token["jti"]
-        access_token_type = access_token["type"]
-
+        revoke_access_token(decoded_access)
         revoke_refresh_token(decoded_refresh)
 
-        jwt_redis_blacklist.set(name=jti_access, value=jti_access, ex=ACCESS_EXPIRES)
-        jwt_redis_blacklist.close()
-
         return jsonify(
-            msg=f"Refresh token and {access_token_type} token were successfully revoked, you are logged out!")
+            msg=f"Refresh token and Access token were successfully revoked, you are logged out!")
 
 
 # class AchievementsBase(Resource):
@@ -429,6 +357,8 @@ user_info.add_url_rule('/login', view_func=LoginApi.as_view("login"))
 user_info.add_url_rule('/logout', view_func=Logout.as_view("logout"))
 user_info.add_url_rule('/verify_email', view_func=EmailVerification.as_view("verify_email"))
 user_info.add_url_rule('/send_reset_list', view_func=ResetPassword.as_view("send_reset_list"))
+
+
 
 # user_info.add_url_rule('/achievements', view_func=AchievementsBase.as_view("achievements_base"))
 # user_info.add_url_rule('/achievement/<int:achievement_id>', view_func=AchievementCRUD.as_view("achievementCRUD"))

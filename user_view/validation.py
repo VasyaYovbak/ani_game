@@ -3,51 +3,45 @@ from marshmallow.validate import *
 
 def password_check(password):
 
-    Special_Symbols = ['$', '@', '#', '%', '/']
-
-    if len(password) <=5 or len(password) >= 37:
+    if len(password) <= 5 or len(password) >= 37:
         raise ValidationError('Password length should be between 6 and 36 digits')
 
     if not any(char.isdigit() for char in password):
-        raise ValidationError('Password should have at least one numeral')
-
-    if not any(char.isupper() for char in password):
-        raise ValidationError('Password should have at least one uppercase letter')
-
-    if not any(char.islower() for char in password):
-        raise ValidationError('Password should have at least one lowercase letter')
-
-    if not any(char in Special_Symbols for char in password):
         raise ValidationError('Password should have at least one of the symbols: $, @, #, %, /')
 
 
-#check if usernmae have digits
+# check if username have digits
 def username_check(username):
 
-    Special_Symbols = ['$', '@', '#', '%', '/', '^', '~', ]
+    special_symbols = {'$', '@', '#', '%', '/', '^', '~', }
 
     ans = any(char.isdigit() for char in username)
 
-    if len(username) <=2 or len(username) >= 33:
+    if len(username) <= 2 or len(username) >= 33:
         raise ValidationError('Username length should be between 3 and 32 digits')
 
-    if ans == True:
+    if ans:
         raise ValidationError("Username should have only letters, digits are not allowed.")
 
-    if any(char in Special_Symbols for char in username):
+    if any(char in special_symbols for char in username):
         raise ValidationError('This symbols are not allowed.')
 
 
 def email_check(email):
 
-    Special_Symbols = ['@', '.']
-
-    if len(email) <=7 or len(email) >= 346:
+    if len(email) <= 7 or len(email) >= 346:
         raise ValidationError('Email length should be between 8 and 345 digits')
 
-    if not any(char in Special_Symbols[0] for char in email) or not any(char in Special_Symbols[1] for char in email):
+    if email.count('@') != 1:
         raise ValidationError('Email is not valid')
 
+
+def validate_registration(username, password, email):
+    return username_check(username), email_check(email), password_check(password)
+
+
+def validate_password(password):
+    return password_check(password)
 
 # class AchievementSchema(Schema):
 #

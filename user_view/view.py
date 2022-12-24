@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import flask
 import jwt as jwt1
 from flask import Blueprint, request, jsonify, url_for
@@ -6,16 +6,11 @@ from app import app
 from passlib.hash import argon2
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
-from flask_jwt_extended import jwt_required, get_jwt_identity
-from flask_mail import Mail
 from itsdangerous import URLSafeTimedSerializer
 from sendgrid.helpers.mail import Mail
 from connection import session
 from user_view.models import User, TokenBlocklist
-from user_view.validation import password_check, username_check, email_check
-from marshmallow import ValidationError
 from config import Config, SendGridApi_key
-from user_view.redis_connection import jwt_redis_blacklist
 
 ACCESS_EXPIRES = timedelta(minutes=3)
 
@@ -28,69 +23,6 @@ from user_view.additional_methods import send_email, revoke_refresh_token, revok
 user_info = Blueprint('user_info', __name__)
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
-
-
-def send_email(message):
-    try:
-        sg = sendgrid.SendGridAPIClient(SendGridApi_key.API_KEY)
-        response = sg.send(message)
-        code, body, headers = response.status_code, response.body, response.headers
-        print(f"Response code: {code}")
-        print(f"Response headers: {headers}")
-        print(f"Response body: {body}")
-    except:
-        raise Exception("Email have not been sent")
-
-    return response
-
-
-def revoke_refresh_token(decoded_refresh):
-    jti_refresh = decoded_refresh["jti"]
-    refresh_token_type = decoded_refresh["type"]
-    now = datetime.now(timezone.utc)
-
-    session.add(TokenBlocklist(jti=jti_refresh, type=refresh_token_type, created_at=now))
-    session.commit()
-
-
-# This method is responsible for checking if refresh token is revoked or not
-def is_refresh_valid(jwt_payload: dict):
-    jti = jwt_payload["jti"]
-    token_type = jwt_payload["type"]
-    expired = jwt_payload["exp"]
-
-    if token_type != "refresh":
-        raise Exception("Invalid token type, this method needs refresh token")
-
-    if expired == 0:
-        raise Exception("Token already expired, enter valid one")
-
-    token = session.query(TokenBlocklist.id).filter_by(jti=jti).scalar()
-
-    if token is not None:
-        raise Exception("Refresh token already revoked")
-
-    return True
-
-
-# This method is responsible for checking if access token is revoked or not
-def is_access_valid(jwt_payload: dict):
-    jti_access = jwt_payload["jti"]
-    token_type = jwt_payload["type"]
-    expired = jwt_payload["exp"]
-
-    if token_type != "access":
-        raise ValidationError("Invalid token type, this method needs access token")
-
-    if expired == 0:
-        raise Exception("Token already expired, enter valid one")
-
-    token = jwt_redis_blacklist.get(name=jti_access)
-
-    if token is not None:
-        raise Exception("Access token already revoked")
-
-    return True
 
 
 # This method made for refreshing tokens

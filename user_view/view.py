@@ -7,7 +7,6 @@ from passlib.hash import argon2
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from flask_mail import Mail
 from itsdangerous import URLSafeTimedSerializer
 from sendgrid.helpers.mail import Mail
 from connection import session

@@ -10,9 +10,7 @@ from passlib.hash import bcrypt_sha256
 from base import Base
 
 
-
 class User(Base):
-
     __tablename__ = 'user'
 
     id = Column(Integer(), primary_key=True)
@@ -63,25 +61,34 @@ class User(Base):
         return verify_token
 
     def get_tokens(self):
-
         access = self.get_access_token(self.access_expire_time)
         refresh = self.get_refresh_token(self.refresh_expire_time)
 
         return {'access_token': access, 'refresh_token': refresh}
 
     def get_reset_token(self):
-
         reset = self.generate_reset_token(self.reset_expire_time)
         return reset
 
     def get_verify_token(self):
-
         verify = self.generate_verify_token(self.verify_expire_time)
         return verify
 
+    def get_user_data(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'rating': self.rating,
+            'image': self.image
+        }
+
+    def get_tokens_and_user_data(self):
+        res = self.get_tokens()
+        res['user'] = self.get_user_data()
+        return res
 
 class TokenBlocklist(Base):
-
     __tablename__ = 'token_block_list'
 
     id = Column(Integer(), primary_key=True)

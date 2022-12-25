@@ -31,7 +31,7 @@ class TestRegistration:
         response = Register().register_user(body=body, schema=already_exists_schema)
 
         assert response.status_code == 400
-        assert response.response_data.get("error") == "409:User with this email or username is already registered."
+        assert response.response_data.get("error") == "User with this email or username is already registered."
 
     def test_registration_empty_data(self):
         body = RegisterUserData.empty_data()

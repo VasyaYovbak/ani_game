@@ -53,7 +53,7 @@ class RegisterApi(Resource):
     def post(self):
 
         if "Authorization" in request.headers.keys():
-            raise Exception("405:Sorry, you can't register now. You have to log out first!")
+            raise Exception("Sorry, you can't register now. You have to log out first!")
 
         username = request.json.get('username')
         email = request.json.get('email')
@@ -65,7 +65,7 @@ class RegisterApi(Resource):
 
         if session.query(User).filter(User.email == f'{user.email}').count() or \
                 session.query(User).filter(User.username == f'{user.username}').count():
-            raise Exception("409:User with this email or username is already registered.")
+            raise Exception("User with this email or username is already registered.")
 
         session.add(user)
         session.commit()
@@ -87,7 +87,7 @@ class LoginApi(Resource):
     def post(self):
 
         if "Authorization" in request.headers.keys():
-            raise Exception("405:Sorry, you can't log in now. You have to log out first!")
+            raise Exception("Sorry, you can't log in now. You have to log out first!")
 
         email = request.json.get('email')
         password = request.json.get('password')

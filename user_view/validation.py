@@ -1,54 +1,66 @@
+from typing import Tuple
+
 from marshmallow.validate import *
 
 
-def password_check(password):
-    special_symbols = {'$', '@', '#', '%', '/'}
+def password_check(password: str) -> None:
+    special_symbols = {'$', '@', '#', '%', '/', '!', '&', '|'}
+    password_min_length = 8
+    password_max_length = 36
 
-    if len(password) <= 5 or len(password) >= 37:
-        raise ValidationError('Password length should be between 6 and 36 digits.')
+    if not password_min_length <= len(password) <= password_max_length:
+        raise ValidationError(
+            f"Password length should be between {password_min_length} and {password_max_length} digits.")
 
-    if not any(char.isdigit() for char in password):
-        raise ValidationError('Password should contain at least one digit.')
+    if not contains_digit(password):
+        raise ValidationError("Password should contain at least one digit.")
 
-    if not any(char in special_symbols for char in password):
+    if not contains_special_char(password, special_symbols):
         raise ValidationError(
             f"Password should have at least one of the symbols: {get_special_symbols_repr(special_symbols)}")
 
 
-# check if username have digits
-def username_check(username):
-    special_symbols = {'$', '@', '#', '%', '/', '^', '~', }
+def username_check(username: str) -> None:
+    username_min_length = 3
+    username_max_length = 15
 
-    ans = any(char.isdigit() for char in username)
+    if not username_min_length <= len(username) <= username_max_length:
+        raise ValidationError(
+            f"Username length should be between {username_min_length} and {username_max_length} digits.")
 
-    if len(username) <= 2 or len(username) >= 33:
-        raise ValidationError('Username length should be between 3 and 32 digits.')
-
-    if ans:
-        raise ValidationError("Username should contain only letters. Digits are not allowed!")
-
-    if any(char in special_symbols for char in username):
-        raise ValidationError(f"{get_special_symbols_repr(special_symbols)} symbols are not allowed.")
+    if not username.isalpha():
+        raise ValidationError("Username should contain only alphabetic letters!")
 
 
-def email_check(email):
-    if len(email) <= 7 or len(email) >= 346:
-        raise ValidationError('Email length should be between 8 and 345 digits.')
+def email_check(email: str) -> None:
+    email_min_length = 3
+    email_max_length = 199
+
+    if not email_min_length <= len(email) <= email_max_length:
+        raise ValidationError(f"Email length should be between {email_min_length} and {email_max_length} digits.")
 
     if email.count('@') != 1:
-        raise ValidationError('Email is not valid.')
+        raise ValidationError("Email is not valid.")
 
 
-def validate_registration(username, password, email):
+def validate_registration(username: str, password: str, email: str) -> Tuple[None, None, None]:
     return username_check(username), email_check(email), password_check(password)
 
 
-def validate_password(password):
+def validate_password(password: str) -> None:
     return password_check(password)
 
 
-def get_special_symbols_repr(special_symbols):
-    return ', '.join(list(special_symbols))
+def get_special_symbols_repr(special_symbols: set) -> str:
+    return ", ".join(list(special_symbols))
+
+
+def contains_digit(field: str) -> bool:
+    return any(char.isdigit() for char in field)
+
+
+def contains_special_char(field: str, special_chars: set) -> bool:
+    return any(char in special_chars for char in field)
 
 # class AchievementSchema(Schema):
 #

@@ -26,10 +26,10 @@ def username_check(username: str) -> None:
 
     if not username_min_length <= len(username) <= username_max_length:
         raise ValidationError(
-            f"Username length should be between {username_min_length} and {username_max_length} digits.")
+            f"Username length should be between {username_min_length} and {username_max_length}.")
 
-    if not username.isalpha():
-        raise ValidationError("Username should contain only alphabetic letters!")
+    if not username.isalnum():
+        raise ValidationError("Username should contain only digits and alphabetic letters!")
 
 
 def email_check(email: str) -> None:

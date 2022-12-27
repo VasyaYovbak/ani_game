@@ -30,7 +30,7 @@ class TokenRefresh(Resource):
         refresh_token = request.json.get("refresh_token")
 
         if len(refresh_token) == 0:
-            raise Exception("This field cannot be empty, please enter valid refresh_token")
+            raise Exception("This field cannot be empty; please enter a valid refresh_token.")
 
         decoded_refresh = jwt1.decode(refresh_token, Config.SECRET_KEY, algorithms=["HS256"])
 
@@ -53,7 +53,7 @@ class RegisterApi(Resource):
     def post(self):
 
         if "Authorization" in request.headers.keys():
-            raise Exception("405:Sorry, you can't register now. Please first logout")
+            raise Exception("Sorry, you can't register now. You have to log out first!")
 
         username = request.json.get('username')
         email = request.json.get('email')
@@ -65,7 +65,7 @@ class RegisterApi(Resource):
 
         if session.query(User).filter(User.email == f'{user.email}').count() or \
                 session.query(User).filter(User.username == f'{user.username}').count():
-            raise Exception("409:User with this email or username already registered")
+            raise Exception("User with this email or username is already registered.")
 
         session.add(user)
         session.commit()
@@ -87,7 +87,7 @@ class LoginApi(Resource):
     def post(self):
 
         if "Authorization" in request.headers.keys():
-            raise Exception("405:Sorry, you can't login now. Please first logout")
+            raise Exception("Sorry, you can't log in now. You have to log out first!")
 
         email = request.json.get('email')
         password = request.json.get('password')
@@ -98,9 +98,9 @@ class LoginApi(Resource):
         user = session.query(User).filter(User.email == login_data.email).first()
 
         if not user:
-            raise Exception('Wrong user email')
+            raise Exception('User with such an email does not exist.')
         if not argon2.verify(password, user.password):
-            raise Exception('Wrong user password')
+            raise Exception('Your email or password is not correct.')
 
         tokens = user.get_tokens()
         user = user.__dict__
@@ -116,7 +116,7 @@ class EmailVerification(Resource):
 
         user = session.query(User).filter(User.email == email).first()
         if user is None:
-            raise Exception("User with this email is not registered")
+            raise Exception("User with this email is not registered.")
 
         token = user.get_verify_token()
         confirm_url = url_for('user_info.confirm_email', token=token, _external=True)
@@ -140,7 +140,7 @@ def confirm_email(token):
     user = session.query(User).filter(User.id == f'{decoded_verify["sub"]}').first()
 
     if user.confirmed:
-        raise Exception('Account already confirmed. Please login.')
+        raise Exception('Account already confirmed. Please, log in.')
 
     is_refresh_valid(decoded_verify)
 
@@ -165,7 +165,7 @@ class ResetPassword(Resource):
 
         user = session.query(User).filter(User.email == email).first()
         if user is None:
-            raise Exception("User with this email is not registered")
+            raise Exception("User with this email is not registered.")
 
         token = user.get_reset_token()
         reset_url = url_for('user_info.reset_password', token=token, _external=True)
@@ -200,7 +200,7 @@ def reset_password(token):
 
     revoke_refresh_token(decoded_reset)
 
-    response = {"Message": "Password successfully changed"}
+    response = {"Message": "Password successfully changed!"}
     return jsonify(response)
 
 
@@ -214,7 +214,7 @@ class Logout(Resource):
 
         refresh_token = request.json.get("refresh_token")
         if refresh_token == '':
-            raise Exception("Refresh token is required")
+            raise Exception("Refresh token is required!")
 
         decoded_refresh = jwt1.decode(refresh_token, Config.SECRET_KEY, algorithms=["HS256"])
         decoded_access = jwt1.decode(access_token, Config.SECRET_KEY, algorithms=["HS256"])
@@ -226,7 +226,7 @@ class Logout(Resource):
         revoke_refresh_token(decoded_refresh)
 
         return jsonify(
-            msg=f"Refresh token and Access token were successfully revoked, you are logged out!")
+            msg=f"Refresh and Access tokens were successfully revoked, you are logged out!")
 
 
 # class AchievementsBase(Resource):
@@ -314,7 +314,7 @@ def get_profile(user_id):
     # last 5 games of current player and get data (opp and win or lose)
     user_info = session.query(User.email, User.username).filter(User.id == user_id).first()
     if not user_info:
-        raise Exception("404:User doesn't exist")
+        raise Exception("404:User doesn't exist!")
     response = dict()
 
     response.setdefault('user_info', {"email": user_info[0],
@@ -346,7 +346,7 @@ def change():
         if data == "username":
             session.query(User).filter(User.id == user_id).update({"username": str(request.json["username"])})
     session.commit()
-    return "All info changed successfully", 200
+    return "Profile info was changed successfully!", 200
 
 
 user_info.add_url_rule('/refresh_tokens', view_func=TokenRefresh.as_view("refresh_tokens"))

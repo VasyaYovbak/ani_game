@@ -31,7 +31,7 @@ class TestRegistration:
         response = Register().register_user(body=body, schema=already_exists_schema)
 
         assert response.status_code == 400
-        assert response.response_data.get("error") == "409:User with this email or username already registered"
+        assert response.response_data.get("error") == "User with this email or username is already registered."
 
     def test_registration_empty_data(self):
         body = RegisterUserData.empty_data()
@@ -99,7 +99,7 @@ class TestLogin:
         response = Login().login_user(body=body, schema=invalid_schema)
 
         assert response.status_code == 400
-        assert response.response_data.get('error') == "Wrong user email"
+        assert response.response_data.get('error') == "User with such an email does not exist."
 
     def test_login_empty_data(self):
         body = LoginUserData.empty_data()
@@ -173,7 +173,7 @@ class TestLogout:
         logout_response = Logout().logout_user(body=logout_body, schema=empty_schema, access_token=access_token)
 
         assert logout_response.status_code == 400
-        assert logout_response.response_data.get('error') == "Refresh token is required"
+        assert logout_response.response_data.get('error') == "Refresh token is required!"
 
 
 class TestRefreshTokens:
@@ -199,8 +199,8 @@ class TestRefreshTokens:
         refresh_tokens_response = RefreshToken().refresh_token(body=refresh_tokens_body, schema=empty_schema)
 
         assert refresh_tokens_response.status_code == 400
-        assert refresh_tokens_response.response_data.get("error") == "This field cannot be empty, please enter valid " \
-                                                                     "refresh_token"
+        assert refresh_tokens_response.response_data.get("error") == "This field cannot be empty; please enter a valid " \
+                                                                     "refresh_token."
 
     def test_refresh_tokens_invalid_data(self):
 

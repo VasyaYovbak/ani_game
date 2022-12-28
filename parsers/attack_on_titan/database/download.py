@@ -7,7 +7,7 @@ from parsers.functions.setup import *
 
 import os
 
-print(os.path.dirname(__file__) + '\\..\data\\attack_on_titan.txt')
+# print(os.path.dirname(__file__) + '\\..\data\\attack_on_titan.txt')
 df = pd.read_csv(os.path.dirname(__file__) + '\\..\data\\attack_on_titan.txt')
 number_of_img = len(df.index) - 1
 

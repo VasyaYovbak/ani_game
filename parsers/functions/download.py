@@ -5,9 +5,9 @@ from parsers.functions.mapper import anime_character_foreign_keys
 
 def download_anime(session, name, image_url):
     anime_id = anime_character_foreign_keys[name]
-    one_punch = Anime(anime_id=anime_id, name=name,
-                      image=image_url)
-    session.add(one_punch)
+    anime = Anime(anime_id=anime_id, name=name,
+                  image=image_url)
+    session.add(anime)
     session.commit()
 
 

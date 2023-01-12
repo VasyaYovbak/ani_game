@@ -97,7 +97,7 @@ def setup_rooms_logic(sio):
         room_id = f'room{room_id}'
         join_room(room_id)
 
-    @sio.on('room-create')
+    @sio.on('room-create.py')
     @login_required
     def createRoom(message, user_id):
         data = message['data']
@@ -116,7 +116,7 @@ def setup_rooms_logic(sio):
         session.commit()
 
         emit('room-info',
-             {'event': 'create', 'data': {'room': get_rooms_info([get_clear_object_from_db(new_game_room)])[0]}})
+             {'event': 'create.py', 'data': {'room': get_rooms_info([get_clear_object_from_db(new_game_room)])[0]}})
         sio.emit('rooms',
                  {'add': get_rooms_info([get_clear_object_from_db(new_game_room)]), 'remove': [], 'update': []})
         session.close()

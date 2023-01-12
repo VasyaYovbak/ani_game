@@ -1,0 +1,170 @@
+ full_name image
+0 "Naruto Uzumaki" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5603895-dcc2d502-6c35-49c9-c93c-6eae7f44d551.jpg
+1 "Sasuke Uchiha" https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/08/Featured-Hated-Loved-Sasuke-Uchiha.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5
+2 "Sakura Haruno" https://comicvine.gamespot.com/a/uploads/square_small/11117/111173561/5325033-7699960593-Harun.jpg
+3 "Kakashi Hatake" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204760-1563555570-59219.jpg
+4 "Shikamaru Nara" https://comicvine.gamespot.com/a/uploads/square_small/0/378/863386-jfzsyo.png
+5 "Choji Akimichi" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204747-5537357827-7c8f3.jpg
+6 Tsunade https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5587132-6465793746-e5bad.jpg
+7 "Kiba Inuzuka" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204714-5299706877-9dc9b.jpg
+8 Gaara https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5581910-gaara.full.361088.jpg
+9 Orochimaru https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5587140-7020129019-tumbl.png
+10 "Ino Yamanaka" https://comicvine.gamespot.com/a/uploads/square_small/11117/111173561/5102176-1798529133-tumbl.jpg
+11 "Hinata Hyuga" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204689-4484292530-05f69.jpg
+12 "Rock Lee" https://comicvine.gamespot.com/a/uploads/square_small/0/3133/147797-198795-lee.jpg
+13 Akamaru https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204740-2184016079-ae941.jpg
+14 "Itachi Uchiha" https://comicvine.gamespot.com/a/uploads/square_small/0/378/859934-god2vj0xj3.jpg
+15 "Shino Aburame" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204642-3805240659-ab8f3.jpg
+16 "Neji Hyuga" https://comicvine.gamespot.com/a/uploads/square_small/0/378/703892-hyuuga_neji_chapter_256_by_hollisisgod.jpg
+17 "Might Guy" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204764-1352148667-09c1d.jpg
+18 "Kabuto Yakushi" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5559826-64.jpg
+19 "Iruka Umino" https://comicvine.gamespot.com/a/uploads/square_small/0/9804/248634-15306-iruka-umino.jpg
+20 Jiraiya https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168215-03-04.jpg
+21 "Third Hokage" https://comicvine.gamespot.com/a/uploads/square_small/0/378/275709-98454-the-third-hokage.jpg
+22 Tenten https://comicvine.gamespot.com/a/uploads/square_small/0/378/338286-134310-tenten.jpg
+23 Tobi https://comicvine.gamespot.com/a/uploads/square_small/0/378/1703401-uchiha_madara_by_buddypj_d35lp5z.jpg
+24 "Temari Nara" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204711-2768460266-e03e1.jpg
+25 Pain https://comicvine.gamespot.com/a/uploads/square_small/0/378/816336-the_new_six_path_sage_by_eshutin.jpg
+26 Kurama https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204931-7277065069-c2b19.jpg
+27 Shizune https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204806-0217631336-68e83.jpg
+28 Sai https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204746-1188289306-ad662.jpg
+29 Zetsu https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3199832-01.png
+30 Kankuro https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3187072-naruto%20-%20125%20-%2006.png
+31 "Fourth Hokage" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5581905-namikaze.minato.full.100135.jpg
+32 "Asuma Sarutobi" https://comicvine.gamespot.com/a/uploads/square_small/0/378/267278-200-asuma.jpg
+33 Yamato https://comicvine.gamespot.com/a/uploads/square_small/0/378/527286-yamatoby_libri_nyu.jpg
+34 "Kurenai Yuhi" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5581901-naruto.full.355058.jpg
+35 "Suigetsu Hozuki" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168273-suigetsu.jpg
+36 Jugo https://comicvine.gamespot.com/a/uploads/square_small/0/378/218643-121145-juugo.png
+37 Karin https://comicvine.gamespot.com/a/uploads/square_small/11117/111173561/5123917-4338387959-80805.jpg
+38 "Killer Bee" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204786-8095617146-95fe8.jpg
+39 "First Hokage" https://comicvine.gamespot.com/a/uploads/square_small/0/378/267340-129083-the-first-hokage.jpg
+40 "Anko Mitarashi" https://comicvine.gamespot.com/a/uploads/square_small/0/6342/621948-naruto_anko0039.jpg
+41 Yahiko https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168407-ch363_uk_page_16.png
+42 Gyuki https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204794-2274610588-daa13.jpg
+43 Deidara https://comicvine.gamespot.com/a/uploads/square_small/0/6342/180480-12461-deidara.jpg
+44 "Kisame Hoshigaki" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5568504-hoshigaki.kisame.full.1218919.jpg
+45 "Fourth Raikage" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5559823-28-29.jpg
+46 "Third Tsuchikage" https://comicvine.gamespot.com/a/uploads/square_small/0/378/1095680-800px_onoki.jpg
+47 "Madara Uchiha" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168046-chapter_398.jpg
+48 "Shikaku Nara" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3037639-tumblr_mdwxavfbq51rg3akeo1_500.png
+49 "Fifth Mizukage" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5558443-28-29.jpg
+50 "Konohamaru Sarutobi" https://comicvine.gamespot.com/a/uploads/square_small/11117/111173561/6257290-8361232029-latest
+51 Konan https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5558414-tumblr_nau7jwgoyr1sof1evo1_500.png
+52 Gamabunta https://comicvine.gamespot.com/a/uploads/square_small/0/9804/256665-20279-gamabunta.jpg
+53 "Choza Akimichi" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153361-1014273771-40851.jpg
+54 "Danzo Shimura" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5568505-naruto.full.2011375.jpg
+55 "Inoichi Yamanaka" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3166461-2374183948-24499.png
+56 Tonton https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170560-6552578855-14156.jpg
+57 Haku https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5558422-40.jpg
+58 Kimimaro https://comicvine.gamespot.com/a/uploads/square_small/3/38952/1644293-kimimaro_blood_limit_by_kimimaro77.jpg
+59 Kakuzu https://comicvine.gamespot.com/a/uploads/square_small/0/378/190079-161049-kakuzu.jpg
+60 "Second Hokage" https://comicvine.gamespot.com/a/uploads/square_small/0/378/1101801-800px_tobisenju.jpg
+61 "Sage of the Six Paths" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3735984-sage.jpg
+62 Darui https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204918-2833935260-Darui.jpg
+63 "Ibiki Morino" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3166436-2746049830-Ibiki.PNG
+64 Sasori https://comicvine.gamespot.com/a/uploads/square_small/11117/111173561/5102154-3641481888-latest
+65 "Fourth Mizukage" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153448-jinch%C5%ABriki.jpg
+66 Ebisu https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153393-9986099687-55655.png
+67 "Kotetsu Hagane" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167804-1868047431-24706.jpg
+68 Pakkun https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170719-5420200811-23389.jpg
+69 "Zabuza Momochi" https://comicvine.gamespot.com/a/uploads/square_small/0/378/2096657-b59077043944f4165edbaa273b63a70e.jpeg
+70 Chiyo https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3189041-naruto_ch261_p01.png
+71 "Kushina Uzumaki" https://comicvine.gamespot.com/a/uploads/square_small/0/378/624787-657.jpg
+72 Gamakichi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3163478-gamakichi.jpg
+73 Mifune https://comicvine.gamespot.com/a/uploads/square_small/0/378/1712770-11491741.jpg
+74 Katsuyu https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3130055-katsuyu.jpg
+75 "Dan Katō" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153390-8734685127-37423.png
+76 "Genma Shiranui" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154735-500521.jpg
+77 Isobu https://comicvine.gamespot.com/a/uploads/square_small/2/20728/606330-isonadeqh9.jpg
+78 "Yugito Nii" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154851-utakata.jpg
+79 Matatabi https://comicvine.gamespot.com/a/uploads/square_small/3/35262/1786580-nibi.jpg
+80 "Izumo Kamizuki" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3166490-7956714498-24706.jpg
+81 Hidan https://comicvine.gamespot.com/a/uploads/square_small/0/378/273778-24967-hidan.jpg
+82 Shukaku https://comicvine.gamespot.com/a/uploads/square_small/0/4439/293611-164400-shukaku.png
+83 "Sakon & Ukon" https://comicvine.gamespot.com/a/uploads/square_small/1/13725/282327-3181-sakon.jpg
+84 "Rin Nohara" https://comicvine.gamespot.com/a/uploads/square_small/0/3437/950925-721px_rin.jpg
+85 Chōjūrō https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204888-4624437814-Choju.jpg
+86 Ao https://comicvine.gamespot.com/a/uploads/square_small/4/46706/1688305-442px_ao_1.png
+87 Mabui https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3128899-5188230754-57109.png
+88 Kurotsuchi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3131503-untitled-1.jpg
+89 "Asura Path" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3165064-3135148-0687823003-narut.png
+90 Baki https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153273-6756612038-55673.jpg
+91 "Hiashi Hyūga" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154738-6968086592-39519.jpg
+92 Kokuo https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154858-1986138895-39269.png
+93 "Son Goku" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154874-1521521511-23330.jpg
+94 "Homura Mitokado" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3165019-homura%20mitokado.jpg
+95 "Human Path" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3165042-3135148-0687823003-narut.png
+96 "Preta Path" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3165065-3135148-0687823003-narut.png
+97 "Naraka Path" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3165090-3135148-0687823003-narut.png
+98 "Koharu Utatane" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3166425-minitokyo.naruto.500847.jpg
+99 "Mikoto Uchiha" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168562-9166447814-37957.jpg
+100 "Raidō Namiashi" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170696-6821885242-38034.png
+101 "Dosu Kinuta" https://comicvine.gamespot.com/a/uploads/square_small/1/11863/435001-dosu_01_1_.jpg
+102 Tayuya https://comicvine.gamespot.com/a/uploads/square_small/1/13725/278985-112232-tayuya.jpg
+103 Nawaki https://comicvine.gamespot.com/a/uploads/square_small/1/19999/381099-198377-nawaki.gif
+104 Omoi https://comicvine.gamespot.com/a/uploads/square_small/6/61311/1599206-naruto_452_omoi_by_rudrik.jpg
+105 "Karui Akimichi" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204751-3979657601-ce7bb.jpg
+106 "Second Tsuchikage" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167851-7694390879-63070.png
+107 Chomei https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153351-5801193108-23331.jpg
+108 Fukasaku https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153404-1126417191-39531.png
+109 Roshi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154832-roshi.jpg
+110 Saiken https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154868-7830560521-Six-T.JPG
+111 "Fugaku Uchiha" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168563-3956867453-37956.jpg
+112 C https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170237-4419722379-Shi.p.png
+113 "Fourth Kazekage" https://comicvine.gamespot.com/a/uploads/square_small/0/378/3052416-303ifed.jpg
+114 Kidomaru https://comicvine.gamespot.com/a/uploads/square_small/1/13725/280405-178859-kidomaru.jpg
+115 Jirobo https://comicvine.gamespot.com/a/uploads/square_small/1/13725/280740-95542-jirobo.jpg
+116 "Kin Tsuchi" https://comicvine.gamespot.com/a/uploads/square_small/1/11863/346855-73968-kin-tsuchi.jpg
+117 "Third Raikage" https://comicvine.gamespot.com/a/uploads/square_small/0/378/1997416-by_ale_mangekyo.jpg
+118 Juubi https://comicvine.gamespot.com/a/uploads/square_small/0/378/2717134-naruto_609_juubi___colored_by_ahrifox_d5ltsg0.jpg
+119 Samui https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3127467-8374919867-41992.png
+120 Akatsuchi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3135108-akatsuchi.jpg
+121 "Animal Path" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3135168-animal.jpg
+122 "Aoba Yamashiro" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153235-8659690104-19861.jpg
+123 Fuu https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153408-jinch%C5%ABriki.jpg
+124 Han https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154691-han.jpg
+125 "Hayate Gekko" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154717-500521.jpg
+126 Utakata https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154843-utakata.jpg
+127 Shima https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167920-7899560807-39531.jpg
+128 Udon https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204814-4454204090-c2118.jpg
+129 "Zaku Abumi" https://comicvine.gamespot.com/a/uploads/square_small/1/11863/343077-20740-zaku-abumi.jpg
+130 Kitsuchi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167782-kitsuchi_y_su_divisi%C3%B3n.jpg
+131 Moegi https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4204812-8831362418-85df1.jpg
+132 Tazuna https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170547-8823643900-7461-.jpg
+133 Teuchi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170552-8606971982-37574.jpg
+134 Hanzo https://comicvine.gamespot.com/a/uploads/square_small/0/378/716926-hanzouak46ambushfs9.png
+135 "Sakumo Hatake" https://comicvine.gamespot.com/a/uploads/square_small/0/378/621132-hatake_sakumo_by_dayamon.jpg
+136 Torune https://comicvine.gamespot.com/a/uploads/square_small/11117/111173561/5123392-1927557982-11007.jpg
+137 "Shisui Uchiha" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5558389-589b0533-331d-4ca4-ccc4-5540c298676f.jpg
+138 "Fū Yamanaka" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153401-2840447401-23325.jpg
+139 Inari https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3166460-4774142911-55543.jpg
+140 Motoi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167846-8362271953-39995.png
+141 "Shibi Aburame" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170276-7893121636-57384.png
+142 "Second Mizukage" https://comicvine.gamespot.com/a/uploads/square_small/0/378/2426950-nidaime_mizukage.jpg
+143 "Izuna Uchiha" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/2923674-izuna_uchiha.jpg
+144 "Animal Path" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3135131-3976385689-39797.png
+145 "First Tsuchikage" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3348070-1st%2002.jpg
+146 "Fuguki Suikazan" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153403-8542625063-34359.jpg
+147 Gerotora https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3153447-8194873634-39794.png
+148 "Hanabi Hyūga" https://comicvine.gamespot.com/a/uploads/square_small/11117/111178336/5927602-hanabi_in_boruto.png
+149 "Mito Uzumaki" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3154823-6659271429-23834.png
+150 "Hizashi Hyūga" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3165003-2629616287-39670.png
+151 Gamahiro https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167866-7160945597-39830.png
+152 "Great Toad Sage" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167884-2360420434-39794.png
+153 Shiho https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168197-shiho.png
+154 "Shimon Hijiri" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170524-6247507165-39853.png
+155 Shiore https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170533-9655740826-24550.jpg
+156 "Tonbo Tobitake" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3170559-9923297620-39866.png
+157 Yashamaru https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3171798-0311259284-40353.jpg
+158 Yudachi https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3171835-1965261390-39821.jpg
+159 "Island Turtle" https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3202439-03.jpg
+160 "Indra Otsutsuki" https://static.wikia.nocookie.net/naruto/images/b/bd/Indra_%C5%8Ctsutsuki.png/revision/latest?cb=20220214090844
+161 "Asura Otsutsuki" https://static.wikia.nocookie.net/naruto/images/5/56/Asura_%C5%8Ctsutsuki.png/revision/latest/scale-to-width-down/300?cb=20220214090535
+162 Mizuki https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3167842-9847046713-37466.png
+163 Gamatarsu https://comicvine.gamespot.com/a/uploads/square_small/4/47703/3168271-gamatatsu.jpg
+164 "Might Dai" https://comicvine.gamespot.com/a/uploads/square_small/8/83555/4103713-8093038699-chapt.jpg
+165 "Hamura Otsutsuki" https://static.wikia.nocookie.net/naruto/images/e/e8/Hamura.png/revision/latest?cb=20200402155357&path-prefix=ru
+166 "Kagua Otsutsuki" https://comicvine.gamespot.com/a/uploads/square_small/0/378/3827280--kaguya-otsutsuki-naruto-shippuuden-36852744-828-965.png
+167 Kinkaku https://wiki.jcdn.ru/w/images/thumb/5/56/Kinkaku%27s_Tools.jpg/300px-Kinkaku%27s_Tools.jpg
+168 Ginkaku https://static.wikia.nocookie.net/naruto/images/3/34/Ginkaku%27s_Tools.png/revision/latest?cb=20160702040916

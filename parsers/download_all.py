@@ -7,6 +7,7 @@ from parsers.fairy_tail.database.download import download_fairy_tail_data
 from parsers.hunter.database.download import download_hunter_data
 from parsers.jojo.database.download import download_jojo_data
 from parsers.my_hero_academia.database.download import download_my_hero_academia_data
+from parsers.naruto.database.download import download_naruto_data
 from parsers.one_piece.database.download import download_one_piece_data
 from parsers.one_punch.database.download import download_one_punch_data
 
@@ -22,3 +23,4 @@ download_demon_slayer_data(session=session)
 download_attack_on_titan_data(session=session)
 download_my_hero_academia_data(session=session)
 download_fairy_tail_data(session=session)
+download_naruto_data(session=session)

@@ -11,6 +11,7 @@ from connection import engine
 from sqlalchemy.orm import Session
 
 from game_view.models import Card, Game
+from game_view.profile_analytics.functions import update_profile_analytics
 from user_view.models import User
 
 gamers = dict()
@@ -130,6 +131,8 @@ def setup_socket_game_logic(sio):
                 winner.rating += 25
                 db_game.loser_id = opponent_id
                 loser = session.query(User).filter(User.id == opponent_id).first()
+                update_profile_analytics(loser, winner)
+                # looser, not loser
                 if loser.rating > 25:
                     loser.rating -= 25
                 db_game.date = datetime.datetime.today()

@@ -97,7 +97,7 @@ def setup_rooms_logic(sio):
         room_id = f'room{room_id}'
         join_room(room_id)
 
-    @sio.on('room-create.py')
+    @sio.on('room-create')
     @login_required
     def createRoom(message, user_id):
         data = message['data']

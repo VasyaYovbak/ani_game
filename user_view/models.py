@@ -10,7 +10,6 @@ from passlib.hash import bcrypt_sha256
 from base import Base
 
 
-
 class User(Base):
 
     __tablename__ = 'user'
@@ -29,7 +28,6 @@ class User(Base):
         self.username = username
         self.email = email
         self.password = argon2.using(rounds=5, ).hash(password)
-        # self.password = generate_password_hash(kwargs.get('password'))
         self.permission = 'user'
         self.rating = 0
 

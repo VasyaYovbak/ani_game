@@ -1,13 +1,15 @@
 from sendgrid import sendgrid
 from config import SendGridApi_key
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from connection import session
 from user_view.models import TokenBlocklist, User
 from marshmallow import ValidationError
-from user_view.redis_connection import r
+from user_view.redis_connection import r, r2
 from flask import url_for
 from sendgrid.helpers.mail import Mail
 from redis.commands.json.path import Path
+import random
+import string
 
 
 def send_email(message):
@@ -34,18 +36,13 @@ def revoke_refresh_token(decoded_refresh):
 
 
 def revoke_access_token(jwt_payload: dict):
-
     jti_access = jwt_payload["jti"]
-    token_type = jwt_payload["type"]
-    expired = jwt_payload["exp"]
 
-    token = {
-        'jti': jti_access,
-        'type': token_type,
-        'expired': expired
-    }
-
-    r.json().set(jti_access, Path.root_path(), token)
+    r.setex(
+        jti_access,
+        timedelta(minutes=3),
+        value=jti_access
+    )
 
 
 # This method is responsible for checking if refresh token is revoked or not
@@ -67,12 +64,8 @@ def is_refresh_valid(jwt_payload: dict):
 # This method is responsible for checking if access token is revoked or not
 def is_access_valid(jwt_payload: dict):
     jti_access = jwt_payload["jti"]
-    token_type = jwt_payload["type"]
 
-    if token_type != "access":
-        raise ValidationError("Invalid token type, this method needs access token")
-
-    token = r.json().get(jti_access)
+    token = r.get(jti_access)
 
     if token is not None:
         raise Exception("Access token already revoked")
@@ -81,7 +74,6 @@ def is_access_valid(jwt_payload: dict):
 
 
 def send_registration_email(email, send_token):
-
     confirm_url = url_for('user_info.confirm_email', token=send_token, _external=True)
 
     template_id = "d-158e896d27074481a8916af25a935551"
@@ -97,4 +89,13 @@ def send_registration_email(email, send_token):
     return send_email(message)
 
 
+def generate_random_password():
+    letters = ''.join((random.choice(string.ascii_letters) for i in range(17)))
+    digits = ''.join((random.choice(string.digits) for i in range(11)))
 
+    sample_list = list(letters + digits)
+    random.shuffle(sample_list)
+
+    final_string = ''.join(sample_list)
+
+    return final_string

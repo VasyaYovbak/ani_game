@@ -60,4 +60,4 @@ app.register_blueprint(rooms_blueprint)
 app.register_blueprint(anime_blueprint)
 
 if __name__ == '__main__':
-    sio.run(app, debug=True, port=2012)
+    sio.run(app, debug=True, port=5001)

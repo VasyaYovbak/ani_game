@@ -1,25 +1,46 @@
 from datetime import datetime, timezone
+from functools import wraps
+
 import flask
 import jwt as jwt1
-from flask import Blueprint, request, jsonify, url_for
+from flask import Blueprint, request, jsonify, url_for, redirect
 from app import app
 from passlib.hash import argon2
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from flask_mail import Mail
 from itsdangerous import URLSafeTimedSerializer
 from sendgrid.helpers.mail import Mail
 from connection import session
 from user_view.models import User, TokenBlocklist
-from user_view.validation import validate_registration, validate_password
+from user_view.redis_connection import r, r2
+from user_view.validation import validate_registration, validate_password, validate_google_auth
 from config import Config
 from user_view.additional_methods import send_email, revoke_refresh_token, revoke_access_token, \
-    is_refresh_valid, is_access_valid, send_registration_email
-
+    is_refresh_valid, is_access_valid, send_registration_email, generate_random_password
 
 user_info = Blueprint('user_info', __name__)
 mail = Mail(app)
 STS = URLSafeTimedSerializer(Config.SECRET_KEY)
+
+
+def token_required(func):
+    @wraps(func)
+    def wrapper(username, email, *args, **kwargs):
+
+        token = r2.json().get(email)['PCKE']
+
+        if token is None or len(token) == 0:
+            raise Exception('Something went wrong, try again later!')
+
+        final_digits = ''.join([char for char in token if char.isdigit()])
+        final_letters = ''.join([char for char in token if char.isalpha()])
+
+        if len(final_digits) != 21 and len(final_letters) != 33:
+            raise Exception('Something went wrong, try again later!')
+
+        return func(username, email, *args, **kwargs)
+
+    return wrapper
 
 
 # This method made for refreshing tokens
@@ -70,14 +91,85 @@ class RegisterApi(Resource):
         session.commit()
 
         send_token = user.get_verify_token()
-        send_registration_email(email, send_token)
+
+        try:
+            send_registration_email(email, send_token)
+        except:
+            pass
 
         tokens = user.get_tokens()
         user = user.__dict__
-        del user['password'], user['_sa_instance_state'], user['permission']
+        del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
+            user['confirmed_on']
         tokens['user'] = user
 
         return jsonify(tokens), 201
+
+
+@user_info.route('/authorization_gateway/', methods=['GET'])
+def authorization_gateway():
+
+    args = request.args
+    username = args.get("username")
+    email = args.get("email")
+
+    def choose():
+        if session.query(User).filter(User.email == f'{email}').count() and \
+                session.query(User).filter(User.username == f'{username}').count():
+            query_url = url_for('user_info.login_via_google', username=username, email=email, _external=True)
+            return redirect(query_url)
+        else:
+            query_url = url_for('user_info.register_via_google', username=username, email=email, _external=True)
+            return redirect(query_url)
+    return choose()
+
+
+@user_info.route('/register_via_google/<username>/<email>')
+@token_required
+def register_via_google(username, email):
+
+    password = generate_random_password()
+    validate_google_auth(username, email)
+
+    user = User(username=username, email=email, password=password)
+
+    now = datetime.now(timezone.utc)
+    user.confirmed = True
+    user.confirmed_on = now
+
+    session.add(user)
+    session.commit()
+
+    tokens = user.get_tokens()
+    user = user.__dict__
+    del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
+        user['confirmed_on']
+    tokens['user'] = user
+
+    r2.json().delete(email)
+
+    return jsonify(tokens, 'reg'), 201
+
+
+@user_info.route('/login_via_google/<username>/<email>')
+@token_required
+def login_via_google(username, email):
+
+    password = ''
+    validate_google_auth(username, email)
+    login_data = User(username=username, email=email, password=password)
+    user = session.query(User).filter(User.email == login_data.email).first()
+
+    tokens = user.get_tokens()
+
+    user = user.__dict__
+    del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
+        user['confirmed_on']
+    tokens['user'] = user
+
+    r2.json().delete(email)
+
+    return jsonify(tokens, 'log'), 200
 
 
 # This is login method
@@ -103,7 +195,8 @@ class LoginApi(Resource):
 
         tokens = user.get_tokens()
         user = user.__dict__
-        del user['password'], user['_sa_instance_state'], user['permission']
+        del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
+            user['confirmed_on']
         tokens['user'] = user
         return jsonify(tokens), 200
 
@@ -135,7 +228,6 @@ class EmailVerification(Resource):
 
 @user_info.route('/confirm/<token>')
 def confirm_email(token):
-
     decoded_verify = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
     user = session.query(User).filter(User.id == f'{decoded_verify["sub"]}').first()
 
@@ -164,7 +256,8 @@ class ResetPassword(Resource):
         email = request.json.get("email")
 
         user = session.query(User).filter(User.email == email).first()
-        if user == None:
+
+        if user is None:
             raise Exception("User with this email is not registered")
 
         token = user.get_reset_token()
@@ -186,13 +279,13 @@ class ResetPassword(Resource):
 
 @user_info.route('/reset/<token>', methods=['POST'])
 def reset_password(token):
-
     decoded_reset = jwt1.decode(token, Config.SECRET_KEY, algorithms=["HS256"])
     user = session.query(User).filter(User.id == f'{decoded_reset["sub"]}').first()
 
     is_refresh_valid(decoded_reset)
 
-    new_password = request.json["password"]
+    new_password = request.json.get("password")
+
     validate_password(new_password)
 
     session.query(User).filter(User.id == user.id).update(
@@ -209,7 +302,6 @@ class Logout(Resource):
 
     @jwt_required()
     def post(self):
-
         headers = flask.request.headers
         bearer = headers.get('Authorization')
         access_token = bearer.split()[1]
@@ -223,6 +315,7 @@ class Logout(Resource):
 
         is_access_valid(jwt_payload=decoded_access)
         is_refresh_valid(jwt_payload=decoded_refresh)
+
 
         revoke_access_token(decoded_access)
         revoke_refresh_token(decoded_refresh)
@@ -313,7 +406,7 @@ class Logout(Resource):
 #
 @user_info.route('/profile/<int:user_id>', methods=['GET'])
 def get_profile(user_id):
-    #last 5 games of current player and get data (opp and win or lose)
+    # last 5 games of current player and get data (opp and win or lose)
     user_info = session.query(User.email, User.username).filter(User.id == user_id).first()
     if not user_info:
         raise Exception("404:User doesn't exist")
@@ -325,19 +418,6 @@ def get_profile(user_id):
     return jsonify(response), 200
 
 
-# @user_info.route('/profile/change/password', methods=['PUT'])
-# @jwt_required()
-# def change_password():  # check old_password
-#     user_id = get_jwt_identity()
-#     old_password = session.query(User.password).filter(User.id == user_id)
-#     info = request.json
-#     if not bcrypt.verify(info['old_password'], old_password[0][0]):
-#         return jsonify({"msg": "old_password is not correct"})
-#     session.query(User).filter(User.id == user_id).update({"password": str(bcrypt.hash(info['new_password']))})
-#     session.commit()
-#     return jsonify({"msg": "Password successfully changed"}), 200
-#
-#
 @user_info.route('/profile/change', methods=['PUT'])
 @jwt_required()
 def change():
@@ -357,8 +437,6 @@ user_info.add_url_rule('/login', view_func=LoginApi.as_view("login"))
 user_info.add_url_rule('/logout', view_func=Logout.as_view("logout"))
 user_info.add_url_rule('/verify_email', view_func=EmailVerification.as_view("verify_email"))
 user_info.add_url_rule('/send_reset_list', view_func=ResetPassword.as_view("send_reset_list"))
-
-
 
 # user_info.add_url_rule('/achievements', view_func=AchievementsBase.as_view("achievements_base"))
 # user_info.add_url_rule('/achievement/<int:achievement_id>', view_func=AchievementCRUD.as_view("achievementCRUD"))

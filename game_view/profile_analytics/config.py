@@ -4,10 +4,8 @@ from datetime import datetime, timezone
 
 from azure.cosmos import CosmosClient, PartitionKey
 
-
 endpoint = os.getenv("AZURE_ENDPOINT")
 key = os.getenv("AZURE_KEY")
-
 
 client = CosmosClient(url=endpoint, credential=key)
 
@@ -19,7 +17,9 @@ container = database.create_container_if_not_exists(
     id="ProfileAnalytics", partition_key=partition_key_path, offer_throughput=400
 )
 
-# Getting UTC +0 date
-time_now = datetime.now(timezone.utc)
 
-date_now = time_now.date()
+def get_date_now():
+    """returns UTC +0 date."""
+    time_now = datetime.now(timezone.utc)
+    date_now = time_now.date()
+    return date_now

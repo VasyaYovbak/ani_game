@@ -1,7 +1,7 @@
 import json
 
 from azure.cosmos.exceptions import CosmosResourceNotFoundError
-from game_view.profile_analytics.config import date_now, container
+from game_view.profile_analytics.config import container, get_date_now
 
 
 def get_primary_key(date, user_id):
@@ -28,7 +28,7 @@ def find_item(item_id, container=container):
 
 
 def create_analytics_item(user):
-    date = date_now
+    date = get_date_now()
     user_id = user.id
     games_played_today = 0
     data = {
@@ -42,7 +42,7 @@ def create_analytics_item(user):
 
 
 def update_profile_analytics(looser, winner, container=container):
-    date = date_now
+    date = get_date_now()
     looser_primary_key, winner_primary_key = get_primary_key(date, looser.id), get_primary_key(date, winner.id)
     looser_item = find_item(looser_primary_key)
     winner_item = find_item(winner_primary_key)

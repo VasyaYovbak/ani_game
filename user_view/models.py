@@ -77,6 +77,20 @@ class User(Base):
         verify = self.generate_verify_token(self.verify_expire_time)
         return verify
 
+    def get_user_data(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'rating': self.rating,
+            'image': self.image
+        }
+
+    def get_tokens_and_user_data(self):
+        res = self.get_tokens()
+        res['user'] = self.get_user_data()
+        return res
+
 
 class TokenBlocklist(Base):
 

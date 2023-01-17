@@ -14,3 +14,5 @@ class Config:
 class SendGridApi_key:
     API_KEY = os.getenv("API_KEY")
 
+
+

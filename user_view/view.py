@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from functools import wraps
-
+from user_view.RSA import decode_PCKE
 import flask
 import jwt as jwt1
 from flask import Blueprint, request, jsonify, url_for, redirect
@@ -28,6 +28,8 @@ def token_required(func):
     def wrapper(username, email, *args, **kwargs):
 
         token = r2.json().get(email)['PCKE']
+        token = bytes.fromhex(token)
+        token = decode_PCKE(token)
 
         if token is None or len(token) == 0:
             raise Exception('Something went wrong, try again later!')
@@ -50,14 +52,14 @@ class TokenRefresh(Resource):
         refresh_token = request.json.get("refresh_token")
 
         if len(refresh_token) == 0:
-            raise Exception("This field cannot be empty, please enter valid refresh_token")
+            raise Exception("This field cannot be empty; please enter a valid refresh_token.")
 
         decoded_refresh = jwt1.decode(refresh_token, Config.SECRET_KEY, algorithms=["HS256"])
 
         is_refresh_valid(decoded_refresh)
         user = session.query(User).filter(User.id == f'{decoded_refresh["sub"]}').first()
 
-        tokens = user.get_tokens()
+        tokens = user.get_tokens_and_user_data()
 
         now = datetime.now(timezone.utc)
         token_type = decoded_refresh['type']
@@ -73,7 +75,7 @@ class RegisterApi(Resource):
     def post(self):
 
         if "Authorization" in request.headers.keys():
-            raise Exception("405:Sorry, you can't register now. Please first logout")
+            raise Exception("Sorry, you can't register now. You have to log out first!")
 
         username = request.json.get('username')
         email = request.json.get('email')
@@ -85,7 +87,7 @@ class RegisterApi(Resource):
 
         if session.query(User).filter(User.email == f'{user.email}').count() or \
                 session.query(User).filter(User.username == f'{user.username}').count():
-            raise Exception("409:User with this email or username already registered")
+            raise Exception("User with this email or username is already registered.")
 
         session.add(user)
         session.commit()
@@ -99,8 +101,7 @@ class RegisterApi(Resource):
 
         tokens = user.get_tokens()
         user = user.__dict__
-        del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
-            user['confirmed_on']
+        del user['password'], user['_sa_instance_state'], user['permission']
         tokens['user'] = user
 
         return jsonify(tokens), 201
@@ -142,8 +143,7 @@ def register_via_google(username, email):
 
     tokens = user.get_tokens()
     user = user.__dict__
-    del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
-        user['confirmed_on']
+    del user['password'], user['_sa_instance_state'], user['permission']
     tokens['user'] = user
 
     r2.json().delete(email)
@@ -163,8 +163,7 @@ def login_via_google(username, email):
     tokens = user.get_tokens()
 
     user = user.__dict__
-    del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
-        user['confirmed_on']
+    del user['password'], user['_sa_instance_state'], user['permission']
     tokens['user'] = user
 
     r2.json().delete(email)
@@ -178,7 +177,7 @@ class LoginApi(Resource):
     def post(self):
 
         if "Authorization" in request.headers.keys():
-            raise Exception("405:Sorry, you can't login now. Please first logout")
+            raise Exception("Sorry, you can't log in now. You have to log out first!")
 
         email = request.json.get('email')
         password = request.json.get('password')
@@ -189,14 +188,13 @@ class LoginApi(Resource):
         user = session.query(User).filter(User.email == login_data.email).first()
 
         if not user:
-            raise Exception('Wrong user email')
+            raise Exception('User with such an email does not exist.')
         if not argon2.verify(password, user.password):
-            raise Exception('Wrong user password')
+            raise Exception('Your email or password is not correct.')
 
         tokens = user.get_tokens()
         user = user.__dict__
-        del user['password'], user['_sa_instance_state'], user['permission'], user['confirmed'], user['id'], \
-            user['confirmed_on']
+        del user['password'], user['_sa_instance_state'], user['permission']
         tokens['user'] = user
         return jsonify(tokens), 200
 
@@ -232,7 +230,7 @@ def confirm_email(token):
     user = session.query(User).filter(User.id == f'{decoded_verify["sub"]}').first()
 
     if user.confirmed:
-        raise Exception('Account already confirmed. Please login.')
+        raise Exception('Account already confirmed. Please, log in.')
 
     is_refresh_valid(decoded_verify)
 
@@ -315,7 +313,6 @@ class Logout(Resource):
 
         is_access_valid(jwt_payload=decoded_access)
         is_refresh_valid(jwt_payload=decoded_refresh)
-
 
         revoke_access_token(decoded_access)
         revoke_refresh_token(decoded_refresh)

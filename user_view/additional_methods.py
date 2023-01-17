@@ -10,6 +10,7 @@ from sendgrid.helpers.mail import Mail
 from redis.commands.json.path import Path
 import random
 import string
+from faker import Faker
 
 
 def send_email(message):
@@ -99,3 +100,22 @@ def generate_random_password():
     final_string = ''.join(sample_list)
 
     return final_string
+
+
+def get_data_for_guest():
+
+    number = [5, 6, 7, 8, 9, 10, 11, 12]
+    get_random_number = random.choice(number)
+
+    endings = ["com", "org", "net"]
+
+    random_digits = ''.join((random.choice(string.digits) for i in range(16)))
+    letters = ''.join((random.choice(string.ascii_letters) for i in range(get_random_number)))
+    ending = random.choice(endings)
+
+    username = f"GuestUsername{random_digits}"
+    email = f"GuestEmailAddress@{letters}.{ending}"
+    password = generate_random_password()
+
+    return {"username": username, "email": email, "password": password}
+

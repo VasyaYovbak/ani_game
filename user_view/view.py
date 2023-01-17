@@ -16,7 +16,7 @@ from user_view.redis_connection import r, r2
 from user_view.validation import validate_registration, validate_password, validate_google_auth
 from config import Config
 from user_view.additional_methods import send_email, revoke_refresh_token, revoke_access_token, \
-    is_refresh_valid, is_access_valid, send_registration_email, generate_random_password
+    is_refresh_valid, is_access_valid, send_registration_email, generate_random_password, get_data_for_guest
 
 user_info = Blueprint('user_info', __name__)
 mail = Mail(app)
@@ -197,6 +197,35 @@ class LoginApi(Resource):
         del user['password'], user['_sa_instance_state'], user['permission']
         tokens['user'] = user
         return jsonify(tokens), 200
+
+
+class Login_as_guest(Resource):
+
+    def post(self):
+
+        if "Authorization" in request.headers.keys():
+            raise Exception("Sorry, you can't log in now. You have to log out first!")
+
+        data = get_data_for_guest()
+        username = data["username"]
+        email = data["email"]
+        password = data["password"]
+
+        user = User(username=username, email=email, password=password)
+
+        if session.query(User).filter(User.email == f'{user.email}').count() or \
+                session.query(User).filter(User.username == f'{user.username}').count():
+            raise Exception("User with this email or username is already registered. Please try again!")
+
+        session.add(user)
+        session.commit()
+
+        tokens = user.get_tokens()
+        user = user.__dict__
+        del user['password'], user['_sa_instance_state'], user['permission']
+        tokens['user'] = user
+
+        return jsonify(tokens), 201
 
 
 class EmailVerification(Resource):
@@ -434,6 +463,7 @@ user_info.add_url_rule('/login', view_func=LoginApi.as_view("login"))
 user_info.add_url_rule('/logout', view_func=Logout.as_view("logout"))
 user_info.add_url_rule('/verify_email', view_func=EmailVerification.as_view("verify_email"))
 user_info.add_url_rule('/send_reset_list', view_func=ResetPassword.as_view("send_reset_list"))
+user_info.add_url_rule('/login_as_guest', view_func=Login_as_guest.as_view("login_as_guest"))
 
 # user_info.add_url_rule('/achievements', view_func=AchievementsBase.as_view("achievements_base"))
 # user_info.add_url_rule('/achievement/<int:achievement_id>', view_func=AchievementCRUD.as_view("achievementCRUD"))
